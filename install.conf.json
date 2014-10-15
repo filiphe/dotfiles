@@ -10,7 +10,9 @@
       "~/.compton.conf": "compton.conf",
       "~/.dircolors.256dark": "dircolors.256dark",
       "~/.gitconfig": "gitconfig",
-      "~/.gitignore_global": "gitignore_global"
+      "~/.gitignore_global": "gitignore_global",
+      "~/.config/bspwm/bspwmrc": "bspwm/bspwmrc.dualscreen",
+      "~/.config/sxhkd/sxhkdrc": "sxhkd/sxhkdrc.dualscreen"
     }
   },
   {
