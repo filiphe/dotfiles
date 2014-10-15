@@ -1,0 +1,17 @@
+g:landscape_highlight_full_space	landscape.txt	/*g:landscape_highlight_full_space*
+g:landscape_highlight_todo	landscape.txt	/*g:landscape_highlight_todo*
+g:landscape_highlight_url	landscape.txt	/*g:landscape_highlight_url*
+g:landscape_syntax_quickrun	landscape.txt	/*g:landscape_syntax_quickrun*
+g:landscape_syntax_unite	landscape.txt	/*g:landscape_syntax_unite*
+g:landscape_syntax_vimfiler	landscape.txt	/*g:landscape_syntax_vimfiler*
+g:landscape_syntax_vimshell	landscape.txt	/*g:landscape_syntax_vimshell*
+landscape	landscape.txt	/*landscape*
+landscape-airline	landscape.txt	/*landscape-airline*
+landscape-contents	landscape.txt	/*landscape-contents*
+landscape-install	landscape.txt	/*landscape-install*
+landscape-introduction	landscape.txt	/*landscape-introduction*
+landscape-powerline	landscape.txt	/*landscape-powerline*
+landscape-syntax	landscape.txt	/*landscape-syntax*
+landscape-variables	landscape.txt	/*landscape-variables*
+landscape-vim-powerline	landscape.txt	/*landscape-vim-powerline*
+landscape.txt	landscape.txt	/*landscape.txt*

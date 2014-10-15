@@ -1,0 +1,21 @@
+[
+  {
+    "clean": ["~"]
+  },
+  {
+    "link": {
+      "~/.vimrc": "vimrc",
+      "~/.vim": "vim/",
+      "~/.bin": "bin/",
+      "~/.compton.conf": "compton.conf",
+      "~/.dircolors.256dark": "dircolors.256dark",
+      "~/.gitconfig": "gitconfig",
+      "~/.gitignore_global": "gitignore_global"
+    }
+  },
+  {
+    "shell": [
+      ["git submodule update --init --recursive", "Installing submodules"]
+    ]
+  }
+]

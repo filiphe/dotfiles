@@ -1,0 +1,137 @@
+#!/bin/bash
+# tb01110100's experimental bar setup
+
+## SETTINGS
+BAR_FIFO=/tmp/bar-fifo  # you should probably just leave this alone
+# colors, in the format "#<alpha><rr><gg><bb>"
+color_fg="#ffffbb00"    # bar foreground
+color_bg="#ff141414"    # bar background
+# colors for tags
+#color_01="#ffffffff"	  # focused & occupied
+#color_02="#ffffffff"	  # focused & empty
+#color_03="#ffffffff"	  # focused & urgent
+#color_04="#ffffbb00"	  # unfocused & occupied
+#color_05="#ffffbb00"	  # unfocused & empty
+#color_06="#ffff0000"	  # unfocused & urgent
+
+# colors
+color_black="#ff1c1c1fc"
+color_red="#ffdc322f"
+color_green="#ff859900"
+color_yellow="#ffffbb00"
+color_blue="#ff268bd2"
+color_magenta="#ffd33682"
+color_cyan="#ff2aa198"
+color_white="#ffeee8d5"
+
+# colors for tags
+color_01="$color_white"	  # focused & occupied
+color_02="$color_white"	  # focused & empty
+color_03="$color_white"	  # focused & urgent
+color_04="$color_green"  # unfocused & occupied
+color_05="$color_yellow"  # unfocused & empty
+color_06="$color_red"	  # unfocused & urgent
+
+# weather
+citycode="SWXX0007" # yahoo city code for weather
+units=c		  # weather temp units, f or c
+# bar options
+font="-*-terminesspowerline-medium-*-normal-*-12-*-*-*-c-*-*-*"
+font2="-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+geometry="1880x30+20+1035" # in the format "<width>x<height>+<xoffset>+<yoffset>"
+## END SETTINGS
+
+modules() {
+	# bspwm stats
+	bspc control --subscribe > "$BAR_FIFO" &
+
+	# date & time
+	while true; do
+		date +"c%{F$color_green} %d·%m·%y%{F-} |  %H:%M"
+		sleep 1
+	done > "$BAR_FIFO" &
+
+	# mpd info
+	while true; do
+		if [[ -z $(mpc) ]]; then
+			echo "p  mopidy not running"
+		elif [[ $(mpc | tail -n 2 | head -n 1 | awk '{print $1}' | tr -d '[]') == "paused" ]]; then
+			echo "p  mopidy paused"
+		else
+			echo "p  " $(mpc current)
+		fi
+		sleep .4
+	done > "$BAR_FIFO" &
+
+	# dropbox
+	while true; do
+		dbox=$(dropbox status)
+		echo "d ${dbox:0:45}"
+		sleep 7
+	done > "$BAR_FIFO" &
+}
+
+parse-module-output() {
+while read -r line ; do
+	case $line in
+		p*)
+			# set up mpd indicator
+			mpdinfo="${line#?}" ;;
+		c*)
+			# set up clock
+			clock="${line#?}" ;;
+		d*)
+			# set up dbox
+			drop="${line#?}" ;;
+		W*)
+			# set up tags
+			wm_infos=""
+			IFS=':'
+			set -- ${line#?}
+			while [ $# -gt 0 ] ; do
+				item=$1
+				name=${item#?}
+				desk=" $name "
+				case $item in
+					O*)
+						# focused occupied desktop
+						wm_infos="$wm_infos%{F$color_01}%{A:bspc desktop -f $name:}$desk%{A}" ;;
+					F*)
+						# focused empty desktop
+						wm_infos="$wm_infos%{F$color_02}%{A:bspc desktop -f $name:}$desk%{A}" ;;
+					U*)
+						# focused urgent desktop
+						wm_infos="$wm_infos%{F$color_03}%{A:bspc desktop -f $name:}$desk%{A}" ;;
+					o*)
+						# occupied desktop
+						wm_infos="$wm_infos%{F$color_04}%{A:bspc desktop -f $name:}$desk%{A}" ;;
+					f*)
+						# free desktop
+						wm_infos="$wm_infos%{F$color_05}%{A:bspc desktop -f $name:}$desk%{A}" ;;
+					u*)
+						# urgent desktop
+						wm_infos="$wm_infos%{F$color_06}%{A:bspc desktop -f $name:}$desk%{A}" ;;
+				esac
+				shift
+			done ;;
+	esac
+	printf "%s\n" "%{l}%{F$color_blue} %{F-} $wm_infos%{F-} | %{F$color_white}$mpdinfo%{F-} %{r}%{F$color_blue}$drop%{F-} | $clock "
+done
+}
+
+# prepare
+if [[ $(pgrep -cx bard) -gt 1 ]]; then
+	echo "bar-aint-recursive is already running" >&2
+	exit 1
+fi
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+[ -e "$BAR_FIFO" ] && rm "$BAR_FIFO"
+mkfifo "$BAR_FIFO"
+
+# run module commands
+modules &
+
+# pull it all together
+parse-module-output < "$BAR_FIFO" | bar-aint-recursive -p -f "$font","$font2" -B "$color_bg" -F "$color_fg" -g "$geometry" | while read line; do eval "$line"; done &
+
+wait
