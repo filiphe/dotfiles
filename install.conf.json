@@ -1,6 +1,6 @@
 [
   {
-    "clean": ["~", "~/.config/bspwm", "~/.config/sxhkd", "~/.vim"]
+    "clean": ["~", "~/.config/bspwm", "~/.config/sxhkd"]
   },
   {
     "link": {
@@ -11,7 +11,6 @@
       "~/.dircolors.256dark": "dircolors.256dark",
       "~/.gitconfig": "gitconfig",
       "~/.gitignore_global": "gitignore_global",
-      "~/.xinitrc": "xinitrc",
       "~/.config/bspwm": "bspwm/",
       "~/.config/sxhkd": "sxhkd/"
     }

@@ -1,26 +1,8 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'fatih/vim-go'
-
-" Track the engine.
-Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-
-call vundle#end()
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"

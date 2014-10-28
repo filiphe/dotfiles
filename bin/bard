@@ -53,13 +53,7 @@ modules() {
 
 	# mpd info
 	while true; do
-		if [[ -z $(mpc) ]]; then
-			echo "p  mopidy not running"
-		elif [[ $(mpc | tail -n 2 | head -n 1 | awk '{print $1}' | tr -d '[]') == "paused" ]]; then
-			echo "p  mopidy paused"
-		else
-			echo "p  " $(mpc current)
-		fi
+	    playing=$(now_playing)
 		sleep .4
 	done > "$BAR_FIFO" &
 
