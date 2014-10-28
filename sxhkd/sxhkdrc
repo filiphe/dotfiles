@@ -115,6 +115,15 @@ super + Delete
 super + End
   xkill
 
+XF86MonBrightnessDown
+  xbacklight -dec 10
+
+XF86MonBrightnessUp
+  xbacklight -inc 10
+
+XF86AudioMute
+  amixer -q set Master toggle
+
 # programs
 super + q
   qutebrowser

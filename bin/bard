@@ -53,7 +53,7 @@ modules() {
 
 	# mpd info
 	while true; do
-	    playing=$(now_playing)
+		now_playing
 		sleep .4
 	done > "$BAR_FIFO" &
 
@@ -66,20 +66,20 @@ modules() {
 
 	# batteries
 	while true; do
-	  bat=$(batteries)
-	  sleep 31
+		batteries
+		sleep 31
 	done > "$BAR_FIFO" &
 
 	# ssid
 	while true; do
-	  ssid=$(ssid)
-	  sleep 101
+		ssid
+		sleep 101
 	done > "$BAR_FIFO" &
 
 	# volume
 	while true; do
-	  vol=$(volume)
-	  sleep .3
+		volume
+		sleep .3
 	done > "$BAR_FIFO" &
 }
 
