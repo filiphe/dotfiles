@@ -1,6 +1,6 @@
 [
   {
-    "clean": ["~"]
+    "clean": ["~", "~/.config/bspwm", "~/.config/sxhkd", "~/.vim"]
   },
   {
     "link": {
@@ -12,8 +12,8 @@
       "~/.gitconfig": "gitconfig",
       "~/.gitignore_global": "gitignore_global",
       "~/.xinitrc": "xinitrc",
-      "~/.config/bspwm/bspwmrc": "bspwm/bspwmrc.dualscreen",
-      "~/.config/sxhkd/sxhkdrc": "sxhkd/sxhkdrc.dualscreen"
+      "~/.config/bspwm": "bspwm/",
+      "~/.config/sxhkd": "sxhkd/"
     }
   },
   {
