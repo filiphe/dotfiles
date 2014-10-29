@@ -123,6 +123,10 @@ XF86MonBrightnessUp
 
 XF86AudioMute
   amixer -q set Master toggle
+XF86AudioLowerVolume
+  amixer -q set Master 5%-
+XF86AudioRaiseVolume
+  amixer -q set Master 5%+
 
 ctrl + alt + l
   i3lock -i /home/filip/pictures/patterns/square_bg.png -t -u
