@@ -124,6 +124,9 @@ XF86MonBrightnessUp
 XF86AudioMute
   amixer -q set Master toggle
 
+ctrl + alt + l
+  i3lock -i /home/filip/pictures/patterns/square_bg.png -t -u
+
 # programs
 super + q
   qutebrowser
