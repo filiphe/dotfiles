@@ -16,35 +16,40 @@ c2550=""
 c5075=""
 c75100=""
 
-if [[ $bat0_stat == "Charging" ]]; then
-	bat0_icon=$charging
+if [[ -z $bat0_val && -z $bat1_val ]]; then
+  echo 'b AC'
 else
-	bat0_icon=""
-fi
-if [[ $bat0_val -lt 25 ]]; then
-	bat0_charge=$c025
-elif [[ $bat0_val -lt 50 && $bat0_val -gt 25 ]]; then
-	bat0_charge=$c2550
-elif [[ $bat0_val -lt 75 && $bat0_val -gt 50 ]]; then
-	bat0_charge=$c5075
-elif [[ $bat0_val -gt 75 ]]; then
-	bat0_charge=$c75100
-fi
+
+  if [[ $bat0_stat == "Charging" ]]; then
+    bat0_icon=$charging
+  else
+    bat0_icon=""
+  fi
+  if [[ $bat0_val -lt 25 ]]; then
+    bat0_charge=$c025
+  elif [[ $bat0_val -lt 50 && $bat0_val -gt 25 ]]; then
+    bat0_charge=$c2550
+  elif [[ $bat0_val -lt 75 && $bat0_val -gt 50 ]]; then
+    bat0_charge=$c5075
+  elif [[ $bat0_val -gt 75 ]]; then
+    bat0_charge=$c75100
+  fi
 
 
-if [[ $bat1_stat == "Charging" ]]; then
-	bat1_icon=$charging
-else
-	bat1_icon=""
-fi
-if [[ $bat1_val -lt 25 ]]; then
-	bat1_charge=$c025
-elif [[ $bat1_val -lt 50 && $bat1_val -gt 25 ]]; then
-	bat1_charge=$c2550
-elif [[ $bat1_val -lt 75 && $bat1_val -gt 50 ]]; then
-	bat1_charge=$c5075
-elif [[ $bat1_val -gt 75 ]]; then
-	bat1_charge=$c75100
+  if [[ $bat1_stat == "Charging" ]]; then
+    bat1_icon=$charging
+  else
+    bat1_icon=""
+  fi
+  if [[ $bat1_val -lt 25 ]]; then
+    bat1_charge=$c025
+  elif [[ $bat1_val -lt 50 && $bat1_val -gt 25 ]]; then
+    bat1_charge=$c2550
+  elif [[ $bat1_val -lt 75 && $bat1_val -gt 50 ]]; then
+    bat1_charge=$c5075
+  elif [[ $bat1_val -gt 75 ]]; then
+    bat1_charge=$c75100
+  fi
+  echo 'b'$bat0_charge $bat0_icon $bat0_val'%% '$bat1_charge $bat1_icon $bat1_val'%%'
 fi
 
-echo 'b'$bat0_charge $bat0_icon $bat0_val'%% '$bat1_charge $bat1_icon $bat1_val'%%'
