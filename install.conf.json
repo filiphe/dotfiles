@@ -12,7 +12,8 @@
       "~/.gitconfig": "gitconfig",
       "~/.gitignore_global": "gitignore_global",
       "~/.config/bspwm": "bspwm/",
-      "~/.config/sxhkd": "sxhkd/"
+      "~/.config/sxhkd": "sxhkd/",
+      "~/.config/termite": "termite/"
     }
   },
   {
