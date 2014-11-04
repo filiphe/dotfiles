@@ -52,6 +52,9 @@ set pastetoggle=<F10>
 nmap <C-e> <nop>
 map <C-e> :NERDTreeToggle<CR>
 
+nmap <F5> <nop>
+map <F5> :GundoToggle<CR>
+
 " Gui specific options
 set guifont=Terminess\ Powerline\ 9
 set guioptions-=m  "remove menu bar
