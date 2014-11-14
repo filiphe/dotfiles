@@ -1,10 +1,15 @@
 #!/bin/sh
 
-error="error: Connection refused"
-if [[ -z $(mpc) ]]; then
-	echo "p mopidy not running"
-elif [[ $(mpc | tail -n 2 | head -n 1 | awk '{print $1}' | tr -d '[]') == "paused" ]]; then
-	echo "p mopidy is paused"
+mopidystat=$(mpc | tail -n 2 | head -n 1 | awk '{print $1}' | tr -d '[]')
+spotifystat=$(playerctl status)
+if [[ -z $(mpc) && $spotifystat == "Connection to player failed: No players found" ]]; then
+	echo "p player not running"
+elif [[  $mopidystat == "paused" || $spotifystat == "Paused" ]]; then
+	echo "p paused"
 else
-	echo "p " $(mpc current)
+	if [[ -z $(mpc) ]]; then
+		echo "p $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)"
+	else
+		echo "p " $(mpc current)
+	fi
 fi
