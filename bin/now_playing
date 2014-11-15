@@ -2,7 +2,7 @@
 
 mopidystat=$(mpc | tail -n 2 | head -n 1 | awk '{print $1}' | tr -d '[]')
 spotifystat=$(playerctl status)
-if [[ -z $(mpc) && $spotifystat == "Connection to player failed: No players found" ]]; then
+if [[ -z $(mpc) && -z $(playerctl status) ]]; then
 	echo "p player not running"
 elif [[  $mopidystat == "paused" || $spotifystat == "Paused" ]]; then
 	echo "p paused"
