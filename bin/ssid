@@ -4,8 +4,8 @@ ssid=$(iwgetid -r)
 signal=$(cat /proc/net/wireless | tail -n 1 | awk '{print $3}' | tr -d '.')
 
 if [[ -z "$ssid" ]]; then
-	device=$(ip link | tail -n 2 | head -n 1 | awk '{print $2}' | tr -d ':')
-	echo 'w '$device
+	#device=$(ip link | tail -n 2 | head -n 1 | awk '{print $2}' | tr -d ':')
+	echo 'w '$(hostname)
 
 elif [[ $signal -lt 35 ]]; then
 	echo 'w '$ssid
