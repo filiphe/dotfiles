@@ -1,12 +1,14 @@
 #!/bin/bash
 MONITOR=$(bspc query --monitors --monitor focused)
 WINDOW=$(bspc query --windows --window focused)
-if [[ "$MONITOR" == "DVI-I-1" ]]; then
-	bspc window -f focused -m DVI-I-2
+MONITOR_1=$(bspc query -M | head -n 1)
+MONITOR_2=$(bspc query -M | tail -n 1)
+if [[ $MONITOR == $MONITOR_1 ]]; then
+	bspc window -f focused -m $MONITOR_2
 	bspc window -f "$WINDOW"
 fi
-if [[ "$MONITOR" == "DVI-I-2" ]]; then
-	bspc window -f focused -m DVI-I-1
+if [[ $MONITOR == $MONITOR_2 ]]; then
+	bspc window -f focused -m $MONITOR_1
 	bspc window -f "$WINDOW"
 fi
 
