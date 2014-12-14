@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FONT="-lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1"
+BG="#141414"
+FG="#ffbb00"
+SELECT_BG=$FG
+SELECT_FG=$BG
+LINES=20
+WIDTH=250
+PROMPT="->"
+X=20 #x offset
+Y=20 #y offset
+OPACITY=0.8
+
+dmenu_run -fn $FONT -nb $BG -nf $FG -sb $SELECT_BG -sf $SELECT_FG -l $LINES -w $WIDTH -p $PROMPT -x $X -y $Y -o $OPACITY
+

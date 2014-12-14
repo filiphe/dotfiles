@@ -100,8 +100,7 @@ super + Return
   termite
 
 super + r
-#  dmenu_run -fn "-xos4-terminesspowerline-medium-r-normal-*-12-120-72-72-c-60-iso10646-1" -nb "#141414" -nf "#ffbb00" -sb "#ffbb00" -sf "#141414" -l 20 -w 250 -p "->" -x 20 -y 20 -o 0.8
-  dmenu_run -fn "-lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1" -nb "#141414" -nf "#ffbb00" -sb "#ffbb00" -sf "#141414" -l 20 -w 250 -p "->" -x 20 -y 20 -o 0.8
+  dmenu_wrapper
 
 # make sxhkd reload its configuration files:
 super + Escape
