@@ -59,6 +59,9 @@ super + ctrl + {j,k}
 #super + ctrl + {_,shift + }space
 #  bspc {window -p cancel,desktop -c}
 
+super + ctrl + alt + {h,j,k,l}
+  bspc window -p {left, down, up, right} -r 0.5
+
 super + alt + {h,j,k,l}
   bspc window -e {left -10,down +10,up -10,right +10}
 
