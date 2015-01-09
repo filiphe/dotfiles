@@ -17,9 +17,6 @@ set listchars=tab:▸\ ,extends:❯,precedes:❮
 set scrolloff=5
 set noswapfile
 
-set shiftwidth=2
-set softtabstop=2
-
 " Airline coolness
 set laststatus=2
 let g:airline_powerline_fonts=1
@@ -40,11 +37,10 @@ set background=dark
 colorscheme molokai
 syntax enable
 
-" The following alternative may be less obtrusive.
-:highlight ExtraWhitespace ctermbg=darkred guibg=red
 
-" Show leading whitespace that includes spaces, and trailing whitespace.
-":autocmd BufWinEnter * match ExtraWhitespace /^\s* \s*\|\s\+$/
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
 
 nmap <F10> <nop>
 set pastetoggle=<F10>
