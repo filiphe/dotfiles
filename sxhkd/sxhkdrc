@@ -140,4 +140,4 @@ super + q
 super + e
   pcmanfm
 super + alt + m
- mpv $(xclip -o)
+  mpv $(xclip -o)
