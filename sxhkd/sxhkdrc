@@ -9,31 +9,8 @@ super + ctrl + q
 super + shift + c
   bspc window -c
 
-#super + t
-#  bspc desktop -l next
-#
-#super + b
-#  bspc desktop -B
-#
-#super + e
-#  bspc desktop -E
-#
 super + {s,f,p}
   bspc window -t {floating,fullscreen,pseudo_tiled}
-#
-#super + {grave,Tab}
-#  bspc {window,desktop} -f last
-#
-#super + apostrophe
-#  bspc window -s last
-
-#super + {o,i}
-#  bspc control --record-history off; \
-#  bspc window {older,newer} -f; \
-#  bspc control --record-history on
-
-#super + y
-#  bspc window -w last.manual
 
 super + m
   bspc window -s biggest
@@ -44,9 +21,6 @@ super + {h,j,k,l}
 super + shift + {h,j,k,l}
   bspc window -s {left,down,up,right}
 
-#super + {_,shift + }c
-#  bspc window -f {next,prev}
-
 super + {comma,period}
   bspc desktop -C {backward,forward}
 
@@ -56,9 +30,6 @@ super + {Left,Right}
 super + ctrl + {j,k}
   bspc monitor -f {prev,next}
 
-#super + ctrl + {_,shift + }space
-#  bspc {window -p cancel,desktop -c}
-
 super + ctrl + alt + {h,j,k,l}
   bspc window -p {left, down, up, right} -r 0.5
 
@@ -67,9 +38,6 @@ super + alt + {h,j,k,l}
 
 super + alt + shift + {h,j,k,l}
   bspc window -e {right -10,up +10,down -10,left +10}
-
-#super + ctrl + {1-9}
-#  bspc window -r 0.{1-9}
 
 super + {1-9}
   bspc desktop -f focused:^{1-9}
@@ -107,12 +75,6 @@ super + Escape
   pkill -USR1 -x sxhkd
 
 # Random nice keybinds I like
-super + Pause
-  eject /dev/sr0
-super + Print
-  scrot -e 'mv $f ~/photos/screenshots/'
-super + z
-  sleep .5; xset dpms force off
 super + Delete
   termite -e htop
 super + End
@@ -141,3 +103,5 @@ super + e
   pcmanfm
 super + alt + m
   mpv $(xclip -o)
+super + c
+ termite -e ~/vattnadal.sh
