@@ -1,0 +1,15 @@
+#!/bin/bash
+
+LINES=2
+WIDTH=220
+
+DIRNAME=$(dirname $0)
+source $DIRNAME/popup_config
+source $DIRNAME/mouselocation
+
+INET=$(ip addr | grep 'scope global' | awk '{print $2}' | sed 's/[^/]*$//' | tr -d '/')
+
+(echo "Addresses"
+echo "$PAD^fg("$label")IP:        ^fg() $INET"
+) | dzen2 -p "$TIME" -x "$XPOS" -w "$WIDTH" -l "$LINES" -sa 'l' -title-name 'popup_inet' -fn "$FONT" ${OPTIONS}
+

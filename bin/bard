@@ -1,18 +1,12 @@
 #!/bin/bash
 # tb01110100's experimental bar setup
+# modified by filiphe
 
 ## SETTINGS
 BAR_FIFO=/tmp/bar-fifo  # you should probably just leave this alone
 # colors, in the format "#<alpha><rr><gg><bb>"
 color_fg="#ffffbb00"    # bar foreground
 color_bg="#ff141414"    # bar background
-# colors for tags
-#color_01="#ffffffff"	  # focused & occupied
-#color_02="#ffffffff"	  # focused & empty
-#color_03="#ffffffff"	  # focused & urgent
-#color_04="#ffffbb00"	  # unfocused & occupied
-#color_05="#ffffbb00"	  # unfocused & empty
-#color_06="#ffff0000"	  # unfocused & urgent
 
 # colors
 color_black="#ff1c1c1fc"
@@ -48,7 +42,7 @@ modules() {
 
 	# date & time
 	while true; do
-		date +"c%{F$color_green} %d·%m·%y%{F-} |  %H:%M"
+		date +"c%{A:popup_toggle calendar:}%{F$color_green} %d·%m·%y%{F-}%{A} |  %{A:popup_toggle timezones:}%H:%M%{A}"
 		sleep 1
 	done > "$BAR_FIFO" &
 
@@ -138,7 +132,7 @@ while read -r line ; do
 				shift
 			done ;;
 	esac
-	printf "%s\n" "%{l}%{F$color_blue} %{F-} $wm_infos%{F-} | %{F$color_white}$mpdinfo%{F-} %{r}%{F$color_blue}$drop%{F-} | %{F$color_magenta}$volu%{F-} | %{F$color_cyan}$wlan%{F-} | %{F$color_red}$batter%{F-} | $clock "
+	printf "%s\n" "%{l}%{F$color_blue} %{F-} $wm_infos%{F-} | %{F$color_white}$mpdinfo%{F-} %{r}%{F$color_blue}$drop%{F-} | %{F$color_magenta}$volu%{F-} | %{A:popup_toggle inet:}%{F$color_cyan}$wlan%{F-}%{A} | %{F$color_red}$batter%{F-} | $clock "
 done
 }
 

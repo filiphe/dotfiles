@@ -1,0 +1,25 @@
+#!/bin/bash
+
+LINES=7
+WIDTH=180
+
+DIRNAME=$(dirname $0)
+source $DIRNAME/popup_config
+source $DIRNAME/mouselocation
+
+JST=$(date -d "+9 hours" +"%H:%M - %d/%m")
+HKT=$(date -d "+8 hours" +"%H:%M - %d/%m")
+CET=$(date +"%H:%M (±0)")
+GMT=$(date -d "-2 hours" +"%H:%M - %d/%m")
+EST=$(date -d "-6 hours" +"%H:%M - %d/%m")
+PST=$(date -d "-9 hours" +"%H:%M - %d/%m")
+
+(echo "Timezones"
+echo "$PAD^fg("$label")Tokyo:       ^fg()$JST"
+echo "$PAD^fg("$label")Hong Kong:   ^fg()$HKT"
+echo "$PAD^fg("$label")Gothenburg:  ^fg()$CET"
+echo "$PAD^fg("$label")Reykjavík:   ^fg()$GMT"
+echo "$PAD^fg("$label")New York:    ^fg()$EST"
+echo "$PAD^fg("$label")Los Angeles: ^fg()$PST"
+) | dzen2 -p "$TIME" -x 1720 -w "$WIDTH" -l "$LINES" -sa 'l' -title-name 'popup_timezones' -fn "$FONT" ${OPTIONS}
+
