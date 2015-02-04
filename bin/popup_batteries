@@ -1,0 +1,28 @@
+#!/bin/bash
+
+WIDTH=180
+DIRNAME=$(dirname $0)
+source $DIRNAME/popup_config
+source $DIRNAME/mouselocation
+
+BAT0_remaining=$(acpi | grep 'Battery 0:' | awk '{print $5}')
+BAT1_remaining=$(acpi | grep 'Battery 1:' | awk '{print $5}')
+
+if [[ -z  $BAT0_remaining && -z $BAT1_remaining ]]; then
+	LINES=2
+	(echo "Batteries"
+	echo Fully charged
+	) | dzen2 -p "$TIME" -x "$XPOS" -w "$WIDTH" -l "$LINES" -sa 'l' -title-name 'popup_batteries' -fn "$FONT" ${OPTIONS}
+else
+	LINES=3
+	if [[ -z $BAT0_remaining ]]; then
+		BAT0_remaining="Fully charged"
+	elif [[ -z $BAT1_remaining ]]; then
+		BAT1_remaining="Fully charged"
+	fi
+	(echo "Batteries"
+	echo "$PAD^fg("$label")Battery 0: ^fg()$BAT0_remaining"
+	echo "$PAD^fg("$label")Battery 1: ^fg()$BAT1_remaining"
+	) | dzen2 -p "$TIME" -x "$XPOS" -w "$WIDTH" -l "$LINES" -sa 'l' -title-name 'popup_batteries' -fn "$FONT" ${OPTIONS}
+fi
+
