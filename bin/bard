@@ -54,7 +54,7 @@ modules() {
 
 	# dropbox
 	while true; do
-		dbox=$(dropbox status)
+		dbox=$(dropbox-cli status)
 		echo "d ${dbox:0:45}"
 		sleep 7
 	done > "$BAR_FIFO" &
