@@ -28,8 +28,14 @@ super + shift + {h,j,k,l}
   bspc window -s {left,down,up,right}
 
 # Cycle counter-clockwise, clockwise
+# Moves windows around in current layout
 super + {comma,period}
   bspc desktop -C {backward,forward}
+
+# Rotates counter-clockwise, clockwise
+# Changes layout
+super + shift + {comma, period}
+  bspc desktop -R {270, 90}
 
 # Shift desktop
 super + {Left,Right}
@@ -118,5 +124,5 @@ super + e
   pcmanfm
 super + alt + m
   mpv $(xclip -o)
-super + c
+super + v
  termite -e ~/vattnadal.sh
