@@ -2,49 +2,70 @@
 # bspwm hotkeys
 #
 
+# Restart
 super + ctrl + q
   killall bard sxhkd; \
   bspc quit
 
+# Kill window
 super + shift + c
   bspc window -c
 
+# Set floating, fullscreen, pseudo-tiled
 super + {s,f,p}
   bspc window -t {floating,fullscreen,pseudo_tiled}
 
+# Maximise
 super + m
   bspc window -s biggest
 
+# Focus left, down, right, up
 super + {h,j,k,l}
   bspc window -f {left,down,up,right}
 
+# Move left, down, right, up
 super + shift + {h,j,k,l}
   bspc window -s {left,down,up,right}
 
+# Cycle counter-clockwise, clockwise
+# Moves windows around in current layout
 super + {comma,period}
   bspc desktop -C {backward,forward}
 
+# Rotates counter-clockwise, clockwise
+# Changes layout
+super + shift + {comma, period}
+  bspc desktop -R {270, 90}
+
+# Shift desktop
 super + {Left,Right}
   bspc desktop -f {prev,next}
 
+# Focus other monitor
 super + ctrl + {j,k}
   bspc monitor -f {prev,next}
 
+# Split and insert next; left, down, right, up
 super + ctrl + alt + {h,j,k,l}
   bspc window -p {left, down, up, right} -r 0.5
 
+# Increase size
 super + alt + {h,j,k,l}
   bspc window -e {left -10,down +10,up -10,right +10}
 
+# Decrease size
 super + alt + shift + {h,j,k,l}
   bspc window -e {right -10,up +10,down -10,left +10}
 
+# Focus desktop #1-9
 super + {1-9}
   bspc desktop -f focused:^{1-9}
 
+# Move window to desktop #1-9
 super + shift + {1-9}
   bspc window -d focused:^{1-9}
 
+# Move window to other monitor (own script)
 super + o
   monitor-switch
 
@@ -103,5 +124,5 @@ super + e
   pcmanfm
 super + alt + m
   mpv $(xclip -o)
-super + c
+super + v
  termite -e ~/vattnadal.sh
