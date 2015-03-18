@@ -117,6 +117,12 @@ XF86AudioRaiseVolume
 ctrl + alt + l
   i3lock -i /home/filip/pictures/patterns/square_bg.png -t -u
 
+# Change keyboard layout
+super + F1
+  setxkbmap us -variant colemak
+super + F2
+  setxkbmap usaswe
+
 # programs
 super + q
   qutebrowser
