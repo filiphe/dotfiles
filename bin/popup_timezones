@@ -7,12 +7,12 @@ DIRNAME=$(dirname $0)
 source $DIRNAME/popup_config
 source $DIRNAME/mouselocation
 
-JST=$(date -d "+9 hours" +"%H:%M")
-HKT=$(date -d "+8 hours" +"%H:%M")
+JST=$(TZ='Asia/Tokyo' date +"%H:%M")
+HKT=$(TZ='Asia/Hong_Kong' date +"%H:%M")
 CET=$(date +"%H:%M")
-GMT=$(date -d "-2 hours" +"%H:%M")
-EST=$(date -d "-6 hours" +"%H:%M")
-PST=$(date -d "-9 hours" +"%H:%M")
+GMT=$(TZ='UTC' date +"%H:%M")
+EST=$(TZ='America/New_York' date +"%H:%M")
+PST=$(TZ='America/Los_Angeles' date +"%H:%M")
 
 JST_difference=$(date -d "+9 hours" +"%_d")
 HKT_difference=$(date -d "+8 hours" +"%_d")
@@ -53,5 +53,5 @@ echo "$PAD^fg("$label")Göteborg:    ^fg()$CET" $(difference $CET_difference $CE
 echo "$PAD^fg("$label")Reykjavík:   ^fg()$GMT" $(difference $CET_difference $GMT_difference)
 echo "$PAD^fg("$label")New York:    ^fg()$EST" $(difference $CET_difference $EST_difference)
 echo "$PAD^fg("$label")Los Angeles: ^fg()$PST" $(difference $CET_difference $PST_difference)
-) | dzen2 -p "$TIME" -x 1720 -w "$WIDTH" -l "$LINES" -sa 'l' -title-name 'popup_timezones' -fn "$FONT" ${OPTIONS}
+) | dzen2 -p "$TIME" -x 1730 -w "$WIDTH" -l "$LINES" -sa 'l' -title-name 'popup_timezones' -fn "$FONT" ${OPTIONS}
 

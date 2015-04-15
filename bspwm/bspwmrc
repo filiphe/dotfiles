@@ -17,8 +17,8 @@ if [[ $(bspc query -M | wc -l) -eq 2 ]]; then
 	bspc config -m ^1 bottom_padding 60
 	bspc config -m ^2 bottom_padding 15
 	# set up tags
-	bspc monitor $monitor_one -d web dev term
-	bspc monitor $monitor_two -d im media misc
+	bspc monitor $monitor_one -d web dev
+	bspc monitor $monitor_two -d misc
 	bspc rule -a firefox desktop=^1
 	bspc rule -a qutebrowser desktop=^1
 	~/.screenlayout/dual.sh &
@@ -39,13 +39,8 @@ bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor true
 
 # set up some rules
-bspc rule -a feh floating=on
-bspc rule -a Steam floating=on
-bspc rule -a mpv floating=on desktop=^5
-bspc rule -a lxappearance floating=on
+bspc rule -a mpv desktop=^3
 bspc rule -a pcmanfm floating=on
-bspc rule -a xfburn floating=on
-bspc rule -a zathura floating=on
 bspc rule -a xfontsel floating=on
 bspc rule -a pavucontrol floating=on
 

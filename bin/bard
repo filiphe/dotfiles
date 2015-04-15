@@ -148,6 +148,6 @@ mkfifo "$BAR_FIFO"
 modules &
 
 # pull it all together
-parse-module-output < "$BAR_FIFO" | bar-aint-recursive -p -f "$font","$font2" -B "$color_bg" -F "$color_fg" -g "$geometry" | while read line; do eval "$line"; done &
+parse-module-output < "$BAR_FIFO" | lemonbar -p -f "$font","$font2" -B "$color_bg" -F "$color_fg" -g "$geometry" | while read line; do eval "$line"; done &
 
 wait

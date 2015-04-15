@@ -6,7 +6,7 @@
 FONT="-lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1"
 PAD='  '
 ACT='onstart=uncollapse;button1=exit;button3=exit'
-YPOS='1010'
+YPOS='920'
 TIME='4'
 
 # Colors
