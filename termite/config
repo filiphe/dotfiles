@@ -16,12 +16,12 @@ cursor_blink = off
 cursor_shape = underline
 browser = open_browser
 
+# Tried and true
 [colors]
 foreground = #ccccdc
 foreground_bold = #ffffff
 background = #141414
 highlight = #2f2f2f
-
 color0 = #1c1c1c
 color1 = #dc322f
 color2 = #859900
@@ -38,6 +38,75 @@ color12 = #839496
 color13 = #6c71c4
 color14 = #93a1a1
 color15 = #fdf6e3
+
+# Tried and true, toned down
+#[colors]
+#foreground = #ccccdc
+#foreground_bold = #ffffff
+#background = #363636
+#highlight = #2f2f2f
+#color0 = #1c1c1c
+#color1 = #dc322f
+#color2 = #859900
+#color3 = #ffbb00
+#color4 = #268bd2
+#color5 = #d33682
+#color6 = #2aa198
+#color7 = #eee8d5
+#color8 = #002b36
+#color9 = #cb4b16
+#color10 = #586e75
+#color11 = #ffbb00
+#color12 = #839496
+#color13 = #6c71c4
+#color14 = #93a1a1
+#color15 = #fdf6e3
+
+# Base16 eighties
+#[colors]
+#foreground = #d3d0c8
+#foreground_bold = #ffffff
+#background = #2d2d2d
+#highlight = #2f2f2f
+#color0 = #2d2d2d
+#color1 = #f2777a
+#color2 = #99cc99
+#color3 = #ffcc66
+#color4 = #6699cc
+#color5 = #cc99cc
+#color6 = #66cccc
+#color7 = #d3d0c8
+#color8 = #747469
+#color9 = #f99157
+#color10 = #393939
+#color11 = #515151
+#color12 = #a09f93
+#color13 = #e8e6df
+#color14 = #d27b53
+#color15 = #f2f0ec
+
+# Base16 molokai
+#[colors]
+#foreground = #f8f8f2
+#foreground_bold = #ffffff
+#background = #272822
+#highlight = #2f2f2f
+#color0 = #272822
+#color1 = #f92672
+#color2 = #a6e22e
+#color3 = #f4bf75
+#color4 = #66d9ef
+#color5 = #ae81ff
+#color6 = #a1efe4
+#color7 = #f8f8f2
+#color8 = #75715e
+#color9 = #fd971f
+#color10 = #383830
+#color11 = #49483e
+#color12 = #a59f85
+#color13 = #f5f4f1
+#color14 = #cc6633
+#color15 = #f9f8f5
 
 [hints]
 font = Terminess Powerline 9
