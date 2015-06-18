@@ -30,7 +30,8 @@ color_06="$color_red"	  # unfocused & urgent
 citycode="SWXX0007" # yahoo city code for weather
 units=c		  # weather temp units, f or c
 # bar options
-font="-lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1"
+font="-lucy-tewi-medium-*-*--11-*-*-*-*-*-*-*"
+#font="-lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1"
 font2="-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1"
 geometry="1880x30+20+1035" # in the format "<width>x<height>+<xoffset>+<yoffset>"
 ## END SETTINGS
