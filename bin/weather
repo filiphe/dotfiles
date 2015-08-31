@@ -1,0 +1,5 @@
+#!/bin/sh
+
+weather=$(shaman --location="Göteborg, SE" -m)
+
+echo 's' $weather
