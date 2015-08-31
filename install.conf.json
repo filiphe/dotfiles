@@ -6,6 +6,8 @@
     "link": {
       "~/.vimrc": "vimrc",
       "~/.vim": "vim/",
+      "~/.nvimrc": "nvimrc",
+      "~/.nvim": "nvim",
       "~/.bin": "bin/",
       "~/.compton.conf": "compton.conf",
       "~/.dircolors.256dark": "dircolors.256dark",
