@@ -10,6 +10,7 @@
       "~/.nvim": "nvim",
       "~/.zshenv": "zshenv",
       "~/.zshrc": "zshrc",
+      "~/.tmux.conf": "tmux.conf",
       "~/.bin": "bin/",
       "~/.compton.conf": "compton.conf",
       "~/.dircolors": "dircolors",
