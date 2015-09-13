@@ -12,7 +12,7 @@
       "~/.zshrc": "zshrc",
       "~/.bin": "bin/",
       "~/.compton.conf": "compton.conf",
-      "~/.dircolors.256dark": "dircolors.256dark",
+      "~/.dircolors": "dircolors",
       "~/.gitconfig": "gitconfig",
       "~/.gitignore_global": "gitignore_global",
       "~/.config/bspwm": "bspwm/",
