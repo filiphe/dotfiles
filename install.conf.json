@@ -8,6 +8,8 @@
       "~/.vim": "vim/",
       "~/.nvimrc": "nvimrc",
       "~/.nvim": "nvim",
+      "~/.zshenv": "zshenv",
+      "~/.zshrc": "zshrc",
       "~/.bin": "bin/",
       "~/.compton.conf": "compton.conf",
       "~/.dircolors.256dark": "dircolors.256dark",
