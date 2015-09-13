@@ -4,8 +4,6 @@
   },
   {
     "link": {
-      "~/.vimrc": "vimrc",
-      "~/.vim": "vim/",
       "~/.nvimrc": "nvimrc",
       "~/.nvim": "nvim",
       "~/.zshenv": "zshenv",

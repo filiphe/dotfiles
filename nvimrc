@@ -1,22 +1,26 @@
-"set nocompatible
-"filetype off
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+call plug#begin('~/.nvim/plugged')
+Plug 'junegunn/seoul256.vim'
+Plug 'tomasr/molokai'
+Plug 'junegunn/vim-easy-align'
+
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/syntastic'
+
+Plug 'bling/vim-airline'
+Plug 'airblade/vim-gitgutter'
+
+Plug 'fatih/vim-go', { 'for': 'go' }
+
+call plug#end()
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" Misc vim settings
-"filetype plugin indent on
-"set number
-"set relativenumber
-"set list
-"set listchars=tab:▸\ ,extends:❯,precedes:❮
-"set scrolloff=5
-"set noswapfile
 
 " {{{ Settings
 " moving around, searching and patterns
@@ -101,24 +105,13 @@ autocmd VimEnter * call AirlineInit()
 
 let g:neocomplete#enable_at_startup = 1
 
-" Color settings
-"set background=dark
-"colorscheme molokai
-"syntax enable
 
-
-"au WinLeave * set nocursorline nocursorcolumn
-"au WinEnter * set cursorline cursorcolumn
-"set cursorline cursorcolumn
 
 nmap <F10> <nop>
 set pastetoggle=<F10>
 
 nmap <C-e> <nop>
 map <C-e> :NERDTreeToggle<CR>
-
-nmap <F5> <nop>
-map <F5> :GundoToggle<CR>
 
 " Gui specific options
 set guifont=Terminess\ Powerline\ 9
