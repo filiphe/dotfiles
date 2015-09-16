@@ -6,7 +6,7 @@
     "link": {
       "~/.nvimrc": "nvimrc",
       "~/.nvim": "nvim",
-      "~/.zshenv": "zshenv",
+      "~/.zprofile": "zprofile",
       "~/.zshrc": "zshrc",
       "~/.tmux.conf": "tmux.conf",
       "~/.bin": "bin/",
