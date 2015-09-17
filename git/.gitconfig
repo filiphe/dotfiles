@@ -1,0 +1,7 @@
+[user]
+	email = filip@hesslund.org
+	name = Filip Hesslund
+[push]
+	default = simple
+[core]
+	excludesfile = .gitignore_global
