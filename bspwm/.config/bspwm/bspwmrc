@@ -25,11 +25,13 @@ if [[ $(bspc query -M | wc -l) -eq 2 ]]; then
 
 else
 	monitor=$(bspc query -M | head -n 1)
-	bspc config bottom_padding 60
+#	bspc config bottom_padding 60
+	bspc config bottom_padding 15
 	# set up tags
-	bspc monitor $monitor -d im web dev term media misc
-	bspc rule -a qutebrowser desktop=^2
-	bspc rule -a firefox desktop=^2
+        bspc monitor $monitor -d i ii iii iv v vi vii ix x
+#	bspc monitor $monitor -d im web dev term media misc
+#	bspc rule -a qutebrowser desktop=^2
+#	bspc rule -a firefox desktop=^2
 fi
 
 
@@ -48,4 +50,4 @@ bspc rule -a pavucontrol floating=on
 sxhkd &
 
 # start bar
-bard &
+#bard &
