@@ -1,5 +1,4 @@
 #!/bin/bash
-# adapted from tb01110100's bspwm config
 
 # bspwm options
 bspc config border_width 1
@@ -14,24 +13,16 @@ bspc config right_padding 15
 if [[ $(bspc query -M | wc -l) -eq 2 ]]; then
 	monitor_one=$(bspc query -M | head -n 1)
 	monitor_two=$(bspc query -M | tail -n 1)
-	bspc config -m ^1 bottom_padding 60
-	bspc config -m ^2 bottom_padding 15
 	# set up tags
-	bspc monitor $monitor_one -d web dev
-	bspc monitor $monitor_two -d misc
-	bspc rule -a firefox desktop=^1
-	bspc rule -a qutebrowser desktop=^1
+	bspc monitor $monitor_one -d i ii iii iv v vi vii ix x
+	bspc monitor $monitor_two -d xi
 	~/.screenlayout/dual.sh &
 
 else
 	monitor=$(bspc query -M | head -n 1)
-#	bspc config bottom_padding 60
 	bspc config bottom_padding 15
 	# set up tags
         bspc monitor $monitor -d i ii iii iv v vi vii ix x
-#	bspc monitor $monitor -d im web dev term media misc
-#	bspc rule -a qutebrowser desktop=^2
-#	bspc rule -a firefox desktop=^2
 fi
 
 
@@ -41,7 +32,6 @@ bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor true
 
 # set up some rules
-bspc rule -a mpv desktop=^3
 bspc rule -a pcmanfm floating=on
 bspc rule -a xfontsel floating=on
 bspc rule -a pavucontrol floating=on
@@ -49,5 +39,3 @@ bspc rule -a pavucontrol floating=on
 # start sxhkd
 sxhkd &
 
-# start bar
-#bard &
