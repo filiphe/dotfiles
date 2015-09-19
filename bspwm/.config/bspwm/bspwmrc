@@ -38,4 +38,6 @@ bspc rule -a pavucontrol floating=on
 
 # start sxhkd
 sxhkd &
+compton --config ~/.compton.conf -b &
+unclutter &
 
