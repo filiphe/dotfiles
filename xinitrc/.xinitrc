@@ -1,7 +1,3 @@
-if [ -f $HOME/.Xmodmap ]; then
-	/usr/bin/xmodmap $HOME/.Xmodmap
-fi
-
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
