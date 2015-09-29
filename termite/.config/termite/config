@@ -17,33 +17,10 @@ cursor_shape = underline
 browser = open_browser
 
 # Tried and true
-[colors]
-foreground = #ccccdc
-foreground_bold = #ffffff
-background = #141414
-highlight = #2f2f2f
-color0 = #1c1c1c
-color1 = #dc322f
-color2 = #859900
-color3 = #ffbb00
-color4 = #268bd2
-color5 = #d33682
-color6 = #2aa198
-color7 = #eee8d5
-color8 = #002b36
-color9 = #cb4b16
-color10 = #586e75
-color11 = #ffbb00
-color12 = #839496
-color13 = #6c71c4
-color14 = #93a1a1
-color15 = #fdf6e3
-
-# Tried and true, toned down
 #[colors]
 #foreground = #ccccdc
 #foreground_bold = #ffffff
-#background = #363636
+#background = #141414
 #highlight = #2f2f2f
 #color0 = #1c1c1c
 #color1 = #dc322f
@@ -61,6 +38,29 @@ color15 = #fdf6e3
 #color13 = #6c71c4
 #color14 = #93a1a1
 #color15 = #fdf6e3
+
+# Tried and true, toned down
+[colors]
+foreground = #ccccdc
+foreground_bold = #ffffff
+background = #363636
+highlight = #2f2f2f
+color0 = #1c1c1c
+color1 = #dc322f
+color2 = #859900
+color3 = #ffbb00
+color4 = #268bd2
+color5 = #d33682
+color6 = #2aa198
+color7 = #eee8d5
+color8 = #002b36
+color9 = #cb4b16
+color10 = #586e75
+color11 = #ffbb00
+color12 = #839496
+color13 = #6c71c4
+color14 = #93a1a1
+color15 = #fdf6e3
 
 # Base16 eighties
 #[colors]

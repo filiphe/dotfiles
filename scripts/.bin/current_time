@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+DIR=$(pwd)
+source $DIR/popup_config
+
+(echo $(date) ) | dzen2 -p $TIME -x $XPOS -y $YPOS -bg $BG -fg $FG -fn $FN

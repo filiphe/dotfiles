@@ -13,7 +13,7 @@ super + shift + c
 
 # Set floating, fullscreen, pseudo-tiled
 super + {s,f,p}
-  bspc window -t {floating,fullscreen,pseudo_tiled}
+  bspc window -t {floating,fullscreen,sticky}
 
 # Maximise
 super + m

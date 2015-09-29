@@ -28,7 +28,7 @@ set ignorecase
 set smartcase
 
 " displaying text
-colorscheme molokai
+colorscheme seoul256
 syntax on
 set fillchars=vert:│
 set lazyredraw

@@ -1,24 +1,9 @@
-#!/bin/bash
+#!/bin/zsh
 
-# Edited for February 2015 desktop. See panel config and termcolors.
-
-#FONT="tamsynmod:pixelsize=11"
-FONT="-lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1"
-PAD='  '
-ACT='onstart=uncollapse;button1=exit;button3=exit'
-YPOS='920'
-TIME='4'
-
-# Colors
-FG="#ffbb00"
+TIME=5
+XPOS=20
+YPOS=20
 BG="#141414"
-
-bar_bg="#141414"
-bar_fg="#ffbb00"
-label="#ffbb00"
-highlight="#ffbb00" # fg
-highlight2="#474747" # bg
-warn="#ffbb00"
-
-OPTIONS="-bg ${BG} -fg ${FG} -y ${YPOS} -e ${ACT} -ta 'c'"
-
+FG="#ffbb00"
+#FN="-lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1"
+FN="-*-terminesspowerline-*-*-*-*-14-140-72-72-c-80-iso10646-*"
