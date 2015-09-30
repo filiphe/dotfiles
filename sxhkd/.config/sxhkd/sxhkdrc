@@ -132,3 +132,9 @@ super + alt + m
   mpv $(xclip -o)
 super + v
  termite -e ~/vattnadal.sh
+
+# notifications
+super + b
+  battinfo
+super + t
+  current_time

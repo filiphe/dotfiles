@@ -1,15 +1,23 @@
 #!/bin/sh
 
-mopidystat=$(mpc | tail -n 2 | head -n 1 | awk '{print $1}' | tr -d '[]')
-spotifystat=$(playerctl status)
-if [[ -z $(mpc) && -z $(playerctl status) ]]; then
-	echo "p player not running"
-elif [[  $mopidystat == "paused" || $spotifystat == "Paused" ]]; then
-	echo "p paused"
+#mopidystat=$(mpc | tail -n 2 | head -n 1 | awk '{print $1}' | tr -d '[]')
+#spotifystat=$(playerctl status)
+#if [[ -z $(mpc) && -z $(playerctl status) ]]; then
+#	echo "p player not running"
+#elif [[  $mopidystat == "paused" || $spotifystat == "Paused" ]]; then
+#	echo "p paused"
+#else
+#	if [[ -z $(mpc) ]]; then
+#		echo "p $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)"
+#	else
+#		echo "p " $(mpc current)
+#	fi
+#fi
+
+if [[ -z $(mpc) ]]; then
+  FINAL="$(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)"
 else
-	if [[ -z $(mpc) ]]; then
-		echo "p $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)"
-	else
-		echo "p " $(mpc current)
-	fi
+  FINAL="$(mpc current)"
 fi
+
+notify-send $FINAL | dunst

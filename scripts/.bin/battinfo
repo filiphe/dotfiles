@@ -6,5 +6,5 @@ source $DIR/popup_config
 BAT0_perc=$(acpi | grep 'Battery 0:' | awk '{print $4}')
 BAT1_perc=$(acpi | grep 'Battery 1:' | awk '{print $4}')
 
-(echo "Batteries: $BAT0_perc $BAT1_perc"
-) | dzen2 -p $TIME -x $XPOS -y $YPOS -bg $BG -fg $FG -fn $FN -w 200
+FINAL="Batteries: $BAT0_perc $BAT1_perc"
+notify-send $FINAL | dunst
