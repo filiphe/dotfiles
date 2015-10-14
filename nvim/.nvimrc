@@ -1,26 +1,19 @@
 
 call plug#begin('~/.nvim/plugged')
+" Colors
 Plug 'junegunn/seoul256.vim'
+Plug 'michalbachowski/vim-wombat256mod'
 Plug 'tomasr/molokai'
-Plug 'junegunn/vim-easy-align'
 
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
 
-Plug 'bling/vim-airline'
-Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 
 " {{{ Settings
 " moving around, searching and patterns
@@ -28,7 +21,7 @@ set ignorecase
 set smartcase
 
 " displaying text
-colorscheme seoul256
+colorscheme wombat256mod
 syntax on
 set fillchars=vert:│
 set lazyredraw
@@ -52,6 +45,7 @@ set laststatus=2
 set noerrorbells
 set novisualbell
 set showcmd
+set noshowmode
 
 " editing text
 set formatoptions+=ron
@@ -90,33 +84,49 @@ hi def link myTodo Todo
 " }}}
 
 
-" Airline coolness
-set laststatus=2
-let g:airline_powerline_fonts=1
-function! AirlineInit()
-	let g:airline_section_a = airline#section#create(['mode',' ','branch'])
-	let g:airline_section_b = airline#section#create_left(['ffenc','hunks','%f'])
-	let g:airline_section_c = airline#section#create(['filetype'])
-	let g:airline_section_x = airline#section#create(['%P'])
-	let g:airline_section_y = airline#section#create(['%B'])
-	let g:airline_section_z = airline#section#create_right(['%l','%c'])
-endfunction
-autocmd VimEnter * call AirlineInit()
-
 let g:neocomplete#enable_at_startup = 1
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightLineFugitive',
+      \   'readonly': 'LightLineReadonly',
+      \   'modified': 'LightLineModified',
+      \   'filename': 'LightLineFilename'
+      \ }
+      \ }
 
+function! LightLineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
 
+function! LightLineReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "⭤"
+  else
+    return ""
+  endif
+endfunction
 
-nmap <F10> <nop>
-set pastetoggle=<F10>
+function! LightLineFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
 
-nmap <C-e> <nop>
-map <C-e> :NERDTreeToggle<CR>
-
-" Gui specific options
-set guifont=Terminess\ Powerline\ 9
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-
+function! LightLineFilename()
+  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+       \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction

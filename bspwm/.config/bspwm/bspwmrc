@@ -15,8 +15,8 @@ if [[ $(bspc query -M | wc -l) -eq 2 ]]; then
 	monitor_one=$(bspc query -M | head -n 1)
 	monitor_two=$(bspc query -M | tail -n 1)
 	# set up tags
-	bspc monitor $monitor_one -d i ii iii iv v vi vii ix x
-	bspc monitor $monitor_two -d xi
+	bspc monitor $monitor_one -d i ii iii iv
+	bspc monitor $monitor_two -d v
 	~/.screenlayout/dual.sh &
 
 else
