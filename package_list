@@ -1,7 +1,1 @@
-bspwm
-compton
-neovim-git
-sxhkd
-tmux
-termite
-zsh
+bspwm compton dunst-git neovim-git stow sxhkd tmux termite-git zsh 

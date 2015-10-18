@@ -1,8 +1,8 @@
 #!/bin/bash
 
 FONT="-lucy-tewi-medium-*-*--11-*-*-*-*-*-*-*"
-BG="#141414"
-FG="#ffbb00"
+BG="#1d1f21"
+FG="#81a2be"
 SELECT_BG=$FG
 SELECT_FG=$BG
 LINES=20
