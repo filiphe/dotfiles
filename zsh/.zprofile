@@ -1,5 +1,5 @@
 #!/bin/zsh
 
 GOPATH=$HOME/git/go
-PATH=$PATH:$HOME/.bin:$GOPATH/bin
+PATH=$HOME/.cabal/bin:$PATH:$HOME/.bin:$GOPATH/bin
 
