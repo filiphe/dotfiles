@@ -2,9 +2,9 @@
 
 # bspwm options
 bspc config border_width 1
-bspc config normal_border_color "#272822"
-bspc config active_border_color "#f9f8f5"
-bspc config focused_border_color "#f4bf75"
+bspc config normal_border_color "#969896"
+bspc config active_border_color "#929593"
+bspc config focused_border_color "#81a2be"
 bspc config window_gap 5
 bspc config top_padding 15
 bspc config left_padding 15
@@ -37,7 +37,7 @@ bspc rule -a xfontsel floating=on
 bspc rule -a pavucontrol floating=on
 
 # set wallpaper
-setroot --span -c /home/filip/dotfiles/bspwm/.config/bspwm/wallhaven-182976.jpg &
+setroot --span -c /home/filip/dotfiles/bspwm/.config/bspwm/wallhaven-4039.jpg &
 # start other programs
 sxhkd &
 compton --config ~/.compton.conf -b &

@@ -4,6 +4,8 @@ call plug#begin('~/.nvim/plugged')
 Plug 'junegunn/seoul256.vim'
 Plug 'michalbachowski/vim-wombat256mod'
 Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
@@ -21,7 +23,9 @@ set ignorecase
 set smartcase
 
 " displaying text
-colorscheme wombat256mod
+let base16colorspace=256
+colorscheme base16-tomorrow
+set background=dark
 syntax on
 set fillchars=vert:│
 set lazyredraw
