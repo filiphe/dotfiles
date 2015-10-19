@@ -7,7 +7,7 @@ autoload -U colors && colors
 autoload -U compinit promptinit
 compinit
 promptinit
-prompt steeef
+prompt skwp
 
 export EDITOR='nvim'
 export PAGER='less'
