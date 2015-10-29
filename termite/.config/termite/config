@@ -14,7 +14,7 @@ scrollback_lines = 1000000
 search_wrap = true
 cursor_blink = off
 cursor_shape = underline
-browser = qutebrowser
+browser = qutebrowser-new-tab
 
 [colors]
 foreground = #c5c8c6
