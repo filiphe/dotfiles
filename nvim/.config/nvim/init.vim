@@ -1,5 +1,5 @@
 
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 " Colors
 Plug 'junegunn/seoul256.vim'
 Plug 'michalbachowski/vim-wombat256mod'
@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'itchyny/lightline.vim'
 
+Plug 'lambdatoast/elm.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'neovimhaskell/haskell-vim'
 
@@ -40,6 +41,7 @@ set sidescrolloff=5
 " syntax, highlighting and spelling
 set cursorcolumn
 set cursorline
+set colorcolumn=79
 
 " multiple windows
 set hidden
@@ -61,12 +63,6 @@ set expandtab
 set shiftround
 set shiftwidth=2
 set softtabstop=2
-
-" folding
-set foldlevel=0
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
 
 " reading and writing files
 set autowrite
@@ -90,7 +86,7 @@ hi def link myTodo Todo
 
 let g:neocomplete#enable_at_startup = 1
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
