@@ -35,5 +35,10 @@ alias vim='nvim'
 eval $(dircolors ~/.dircolors)
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
+#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Gruvbox shell
+GRUVBOX_SHELL="$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+[[ -s $GRUVBOX_SHELL ]] && source $GRUVBOX_SHELL
+

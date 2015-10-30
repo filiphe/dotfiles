@@ -6,6 +6,7 @@ Plug 'michalbachowski/vim-wombat256mod'
 Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
 
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
@@ -24,14 +25,14 @@ set ignorecase
 set smartcase
 
 " displaying text
-let base16colorspace=256
-colorscheme base16-tomorrow
+"let base16colorspace=256
+colorscheme gruvbox
 set background=dark
 syntax on
 set fillchars=vert:│
 set lazyredraw
 set list
-set listchars=tab:▸\ ,extends:❯,precedes:❮
+set listchars=eol:¬,tab:▸▸,space:· 
 set nowrap
 set number
 set relativenumber

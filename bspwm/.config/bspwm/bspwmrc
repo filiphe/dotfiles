@@ -37,7 +37,7 @@ bspc rule -a xfontsel floating=on
 bspc rule -a pavucontrol floating=on
 
 # set wallpaper
-setroot ~/.config/bspwm/wallhaven-4039.jpg --on 1 &
+setroot ~/.config/bspwm/wallhaven-32339.jpg  --on 1 &
 # start other programs
 sxhkd &
 compton --config ~/.compton.conf -b &
