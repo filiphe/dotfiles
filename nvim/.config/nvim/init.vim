@@ -12,6 +12,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 
 Plug 'itchyny/lightline.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -43,6 +44,10 @@ set sidescrolloff=5
 set cursorcolumn
 set cursorline
 set colorcolumn=79
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " multiple windows
 set hidden
