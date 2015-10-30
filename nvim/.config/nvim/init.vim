@@ -13,9 +13,9 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'itchyny/lightline.vim'
 
-Plug 'lambdatoast/elm.vim'
+Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 
 call plug#end()
 
