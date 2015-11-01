@@ -10,6 +10,7 @@ Plug 'morhetz/gruvbox'
 
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'itchyny/lightline.vim'
 Plug 'kien/rainbow_parentheses.vim'

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-FONT="-lucy-tewi-medium-*-*--11-*-*-*-*-*-*-*"
+#FONT="-lucy-tewi-medium-*-*--11-*-*-*-*-*-*-*"
+FONT="-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1"
 BG="#1d1f21"
 FG="#81a2be"
 SELECT_BG=$FG
