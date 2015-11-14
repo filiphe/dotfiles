@@ -15,6 +15,8 @@ desktops() {
             desktops="$desktops $focused"
         elif [ "${e:0:1}" == "o" ]; then
             desktops="$desktops $active"
+        elif [ "${e:0:1}" == "u" ]; then
+            desktops="$desktops $urgent"
         else
             desktops="$desktops $normal"
         fi
