@@ -1,8 +1,9 @@
 #!/bin/bash
 
-focused="%{U#FF81a2be+u}----------%{U-}"
-active="%{U#FF8abeb7+u}----------%{U-}"
+active="%{U#FF81a2be+u}----------%{U-}"
+focused="%{U#FF8abeb7+u}----------%{U-}"
 normal="%{U#FF969896+u}----------%{U-}"
+urgent="%{U#FFcc241d+u}----------%{U-}"
 
 desktops() {
     desktops=""
