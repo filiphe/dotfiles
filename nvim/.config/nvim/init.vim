@@ -4,7 +4,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/seoul256.vim'
 Plug 'michalbachowski/vim-wombat256mod'
 Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 
@@ -15,7 +14,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'kien/rainbow_parentheses.vim'
 
-Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
