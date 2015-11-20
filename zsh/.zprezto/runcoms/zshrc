@@ -19,3 +19,6 @@ export EDITOR='nvim'
 export PAGER='less'
 
 alias vim='nvim'
+
+# dircolors
+eval $(dircolors ~/.dircolors)
