@@ -26,8 +26,8 @@ set ignorecase
 set smartcase
 
 " displaying text
-"let base16colorspace=256
-colorscheme gruvbox
+let base16colorspace=256
+colorscheme base16-tomorrow
 set background=dark
 syntax on
 set fillchars=vert:│
