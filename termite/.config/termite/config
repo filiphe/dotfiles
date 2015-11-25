@@ -13,16 +13,16 @@ font = Source Code Pro for Powerline 11px
 scrollback_lines = 1000000
 search_wrap = true
 cursor_blink = off
-cursor_shape = underline
+cursor_shape = block
 browser = qutebrowser-new-tab
 
 [colors]
 foreground = #c5c8c6
 foreground_bold = #ffffff
-#foreground_dim = #888888
+foreground_dim = #888888
 #background = #ededed
 background = #1d1f21
-#cursor = #aeafad
+cursor = #aeafad
 
 # if unset, will reverse foreground and background
 highlight = #d6d6d6

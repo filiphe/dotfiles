@@ -17,9 +17,8 @@ if [[ $(bspc query -M | wc -l) -eq 2 ]]; then
 	monitor_two=$(bspc query -M | tail -n 1)
 	# set up tags
 	bspc monitor $monitor_one -d i ii iii iv
-	bspc monitor $monitor_two -d v
+	bspc monitor $monitor_two -d v vi
 	~/.screenlayout/dual.sh &
-
 else
 	monitor=$(bspc query -M | head -n 1)
 	# set up tags
@@ -33,12 +32,9 @@ bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor true
 
 # set up some rules
-bspc rule -a pcmanfm floating=on
-bspc rule -a xfontsel floating=on
-bspc rule -a pavucontrol floating=on
 
 # set wallpaper
-setroot ~/.config/bspwm/wallhaven-32339.jpg  --on 1 &
+setroot ~/.config/bspwm/Rocky\ Beach\ \-\ FullRes.jpg --on 1 &
 # start other programs
 sxhkd &
 compton --config ~/.compton.conf -b &
