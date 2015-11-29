@@ -121,7 +121,7 @@ XF86AudioPlay
   mpc toggle
 
 ctrl + alt + l
-  lock
+  fancy-lock
 
 # Change keyboard layout
 super + F1
