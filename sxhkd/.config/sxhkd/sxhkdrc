@@ -121,7 +121,7 @@ XF86AudioPlay
   mpc toggle
 
 ctrl + alt + l
-  i3lock -i /home/filip/pictures/patterns/square_bg.png -t -u
+  lock
 
 # Change keyboard layout
 super + F1
