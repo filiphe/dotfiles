@@ -113,6 +113,12 @@ XF86AudioLowerVolume
   amixer -q set Master 5%-
 XF86AudioRaiseVolume
   amixer -q set Master 5%+
+XF86AudioNext
+  mpc next
+XF86AudioPrev
+  mpc prev
+XF86AudioPlay
+  mpc toggle
 
 ctrl + alt + l
   i3lock -i /home/filip/pictures/patterns/square_bg.png -t -u

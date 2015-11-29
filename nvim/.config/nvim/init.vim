@@ -70,8 +70,7 @@ set shiftround
 set shiftwidth=2
 set softtabstop=2
 
-" reading and writing files
-set autowrite
+" reading and writing files set autowrite
 set nobackup
 set backupdir=/tmp
 

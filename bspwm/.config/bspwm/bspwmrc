@@ -34,7 +34,7 @@ bspc config pointer_follows_monitor true
 # set up some rules
 
 # set wallpaper
-setroot ~/.config/bspwm/Rocky\ Beach\ \-\ FullRes.jpg --on 1 &
+setroot -z ~/.config/bspwm/Rocky\ Beach\ \-\ FullRes.jpg --on 1 -c ~/.config/bspwm/wallhaven-182976.jpg --on 2 &
 # start other programs
 sxhkd &
 compton --config ~/.compton.conf -b &
