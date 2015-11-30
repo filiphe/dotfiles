@@ -9,7 +9,6 @@ hc() {
 hc emit_hook reload
 
 #xsetroot -solid '#5A8E3A'
-setroot -z ~/.config/bspwm/Rocky\ Beach\ \-\ FullRes.jpg --on 1 -c ~/.config/bspwm/wallhaven-182976.jpg --on 2 &
 
 # remove all existing keybindings
 hc keyunbind --all
