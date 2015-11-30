@@ -4,7 +4,6 @@
 
 # Restart
 super + ctrl + q
-  killall bard sxhkd; \
   bspc quit
 
 # Kill window
@@ -86,7 +85,7 @@ super + @button{1-3}
 #
 
 super + Return
-  termite
+  gnome-terminal
 
 super + r
   dmenu_wrapper
@@ -97,7 +96,7 @@ super + Escape
 
 # Random nice keybinds I like
 super + Delete
-  termite -e htop
+  gnome-terminal -e htop
 super + End
   xkill
 
@@ -128,11 +127,3 @@ super + q
   qutebrowser
 super + e
   pcmanfm
-super + alt + m
-  mpv $(xclip -o)
-super + v
- termite -e ~/vattnadal.sh
-
-# notifications
-super + z
-  info-notify
