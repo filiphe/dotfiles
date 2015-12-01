@@ -111,7 +111,7 @@ hc keybind $Mod-Shift-i jumpto urgent
 
 
 # own keybinds
-hc keybind $Mod-d-r spawn dmenu_wrapper
+hc keybind $Mod-d spawn dmenu_wrapper
 hc keybind $Mod-q spawn qutebrowser
 hc keybind Ctrl-Mod1-l spawn fancy-lock
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
@@ -121,10 +121,13 @@ hc keybind XF86AudioNext spawn mpc next
 hc keybind XF86AudioPrev spawn mpc prev
 hc keybind XF86AudioPlay spawn mpc toggle
 
+# own settings
+hc set focus_follows_mouse 1
+
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-hc set frame_border_active_color '#ecebec'
+hc set frame_border_active_color '#81a2be'
 hc set frame_border_normal_color '#1d1f21'
 hc set frame_bg_normal_color '#1d1f21'
 hc set frame_bg_active_color '#ecebec'
@@ -147,7 +150,7 @@ hc attr theme.active.inner_color '#1d1f21'
 hc attr theme.active.outer_color '#81a2be'
 hc attr theme.background_color '#1d1f21'
 
-hc set window_gap 5
+hc set window_gap 0
 hc set frame_padding 0
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 0
