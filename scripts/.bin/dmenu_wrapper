@@ -9,8 +9,8 @@ SELECT_FG=$BG
 LINES=20
 WIDTH=250
 PROMPT=">>>"
-X=20 #x offset
-Y=20 #y offset
+X=15 #x offset
+Y=31 #y offset
 OPACITY=0.8
 
 dmenu_run -fn $FONT -nb $BG -nf $FG -sb $SELECT_BG -sf $SELECT_FG -l $LINES -w $WIDTH -p $PROMPT -x $X -y $Y -o $OPACITY
