@@ -34,9 +34,9 @@ alias tree='tree -C'
 alias grep='grep --color=auto'
 
 alias l='ls'
-alias ll='ls -l'
+alias ll='ls -o'
 alias la='ls --almost-all'
-alias lla='ls -l --almost-all'
+alias lla='ls -o --almost-all'
 alias vim='nvim'
 
 alias bell="echo -ne '\a'"
