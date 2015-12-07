@@ -122,7 +122,8 @@ hc keybind XF86AudioPrev spawn mpc prev
 hc keybind XF86AudioPlay spawn mpc toggle
 
 # own settings
-hc set focus_follows_mouse 1
+hc set focus_follows_mouse 0
+hc set swap_monitors_to_get_tag 0
 
 # theme
 hc attr theme.tiling.reset 1
