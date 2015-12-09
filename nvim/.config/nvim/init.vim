@@ -17,6 +17,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
+Plug 'tfnico/vim-gradle'
 
 call plug#end()
 
