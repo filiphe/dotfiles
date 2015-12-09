@@ -111,7 +111,7 @@ hc keybind $Mod-Shift-i jumpto urgent
 
 
 # own keybinds
-hc keybind $Mod-d spawn dmenu_wrapper
+hc keybind $Mod-d spawn rofi -show run -font "source code pro for powerline 10"
 hc keybind $Mod-q spawn qutebrowser
 hc keybind Ctrl-Mod1-l spawn fancy-lock
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
@@ -187,3 +187,8 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
     # start it on each monitor
     "$panel" $monitor &
 done
+
+# start bar if it's not running
+#if ! pidof lemonbar; then
+#  sh ~/.config/herbstluftwm/topbar.sh &
+#fi
