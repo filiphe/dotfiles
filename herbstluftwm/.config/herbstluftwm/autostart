@@ -120,6 +120,8 @@ hc keybind XF86AudioRaiseVolume spawn amixer -q set Master 5%+
 hc keybind XF86AudioNext spawn mpc next
 hc keybind XF86AudioPrev spawn mpc prev
 hc keybind XF86AudioPlay spawn mpc toggle
+hc keybind XF86BrightnessDown spawn xbacklight -dec 10
+hc keybind XG86BrightnessUp spawn xbacklight -inc 10
 
 # own settings
 hc set focus_follows_mouse 0
