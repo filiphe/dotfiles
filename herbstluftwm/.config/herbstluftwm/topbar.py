@@ -114,7 +114,7 @@ class Battery(Widget):
             icon = ' %%{T2}%s%%{T1} ' % self.icon_charging
         else:
             icon = ' %%{T2}%s%%{T1} ' % self.icons[round(charge0 / 100 * len(self.icons))]
-        return fg(c, icon) + str(charge0) + " " + str(charge1)
+        return fg(c, icon) + str(charge0) + " " + fg(color['muted'],str(charge1))
 
 class PulseAudio(Widget):
     icon_loud = ' \ue05d '
