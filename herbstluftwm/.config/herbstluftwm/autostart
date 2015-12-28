@@ -177,7 +177,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
 # hc detect_monitors
-#~/.screenlayout/dual.sh
+~/.screenlayout/dual.sh
 herbstclient detect_monitors
 
 # find the panel
