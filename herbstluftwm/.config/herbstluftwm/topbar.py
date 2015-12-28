@@ -104,15 +104,17 @@ class Battery(Widget):
         return file_contents('/sys/class/power_supply/BAT0/present') == '1'
     def render(self):
         try:
-            charge = int(file_contents('/sys/class/power_supply/BAT0/capacity'))
+            charge0 = int(file_contents('/sys/class/power_supply/BAT0/capacity'))
+            charge1 = int(file_contents('/sys/class/power_supply/BAT1/capacity'))
         except:
-            charge = 0
-        c = color['bad'] if charge < 30 else color['good']
-        if file_contents('/sys/class/power_supply/BAT0/status') != 'Discharging':
+            charge0 = 0
+            charge1 = 0
+        c = color['bad'] if charge0 < 30 else color['good']
+        if file_contents('/sys/class/power_supply/BAT0/status') != 'Discharging':# and file_contents('/sys/class/power_supply/BAT1/status') != 'Discharging':
             icon = ' %%{T2}%s%%{T1} ' % self.icon_charging
         else:
-            icon = ' %%{T2}%s%%{T1} ' % self.icons[round(charge / 100 * len(self.icons))]
-        return fg(c, icon) + str(charge)
+            icon = ' %%{T2}%s%%{T1} ' % self.icons[round(charge0 / 100 * len(self.icons))]
+        return fg(c, icon) + str(charge0) + " " + fg(color['muted'],str(charge1))
 
 class PulseAudio(Widget):
     icon_loud = ' \ue05d '
