@@ -1,18 +1,20 @@
 
 call plug#begin('~/.config/nvim/plugged')
 " Colors
-Plug 'junegunn/seoul256.vim'
-Plug 'michalbachowski/vim-wombat256mod'
-Plug 'tomasr/molokai'
 Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree' 
+Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 
 Plug 'itchyny/lightline.vim'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
@@ -90,7 +92,7 @@ hi def link myTodo Todo
 " }}}
 
 
-let g:neocomplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'active': {

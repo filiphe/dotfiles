@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/filip/git/others/daoo-dotfiles/xmonad/.xmonad'
 let g:netrw_dirhist_2='/home/yur763/.config'
 let g:netrw_dirhist_3='/home/yur763/.config/herbstluftwm'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/home/filip/.config/herbstluftwm'
 let g:netrw_dirhist_5='/home/filip/.config/qutebrowser'
 let g:netrw_dirhist_6='/home/filip/dotfiles/scripts/.bin'
 let g:netrw_dirhist_7='/home/filip/vattnadal/misc/music/Mark Knopfler Discography (1984-2012) [Flac][WwW.LoKoTorrents.CoM]'
+let g:netrw_dirhist_8='/home/yur763/personal/ii-1.7'
