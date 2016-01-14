@@ -9,4 +9,5 @@ unclutter &
 
 setroot -z ~/.config/herbstluftwm/wallhaven-262555.png &
 exec herbstluftwm --locked
+#exec openbox
 

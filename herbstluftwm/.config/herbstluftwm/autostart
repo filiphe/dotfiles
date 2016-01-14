@@ -193,3 +193,4 @@ herbstclient detect_monitors
 if ! pidof lemonbar; then
   sh ~/.config/herbstluftwm/topbar.sh &
 fi
+herbstclient load 1 "$(cat ~/.config/herbstluftwm/layout1)"
