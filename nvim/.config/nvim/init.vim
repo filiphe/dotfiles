@@ -94,7 +94,7 @@ hi def link myTodo Todo
 
 let g:deoplete#enable_at_startup = 1
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'Tomorrow_Night',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
