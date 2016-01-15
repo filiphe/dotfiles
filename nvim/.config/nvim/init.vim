@@ -104,8 +104,19 @@ let g:lightline = {
       \   'readonly': 'LightLineReadonly',
       \   'modified': 'LightLineModified',
       \   'filename': 'LightLineFilename'
+      \ },
+      \ 'separator': { 'left': '', 'right' : '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
-      \ }
+
+"let g:lightline = {
+"      \ 'colorscheme': 'jellybeans',
+"      \ 'component': {
+"      \   'readonly': '%{&readonly?"":""}',
+"      \ },
+"      \ 'separator': { 'left': '', 'right': '' },
+"      \ 'subseparator': { 'left': '', 'right': '' }
+"      \ }
 
 function! LightLineModified()
   if &filetype == "help"
@@ -123,14 +134,18 @@ function! LightLineReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return "⭤"
+    return ""
   else
     return ""
   endif
 endfunction
 
 function! LightLineFugitive()
-  return exists('*fugitive#head') ? fugitive#head() : ''
+  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? ' '._ : ''
+  endif
+  return ''
 endfunction
 
 function! LightLineFilename()
