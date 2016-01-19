@@ -193,6 +193,6 @@ herbstclient detect_monitors
 if ! pidof lemonbar; then
   sh ~/.config/herbstluftwm/topbar.sh &
 fi
-if [[$(xrandr | grep \* | awk '{print $1}') == "3840x2160"]]; then
+if [[ $(xrandr | grep \* | awk '{print $1}') == "3840x2160" ]]; then
   herbstclient load 1 "$(cat ~/.config/herbstluftwm/layout1)"
 fi
