@@ -92,7 +92,28 @@ hi def link myTodo Todo
 " }}}
 
 
+" deoplete
 let g:deoplete#enable_at_startup = 1
+" user smartcase.
+let g:deoplete#enable_smart_case = 1
+" disable autocomplete
+"let g:deoplete#disable_auto_complete = 1
+
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> deoplete#mappings#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>  deoplete#mappings#smart_close_popup()."\<C-h>"
+
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+  return deoplete#mappings#close_popup() . "\<CR>"
+endfunction
+
+" neosnippet
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
 let g:lightline = {
       \ 'colorscheme': 'Tomorrow_Night',
       \ 'active': {
