@@ -193,6 +193,7 @@ herbstclient detect_monitors
 if ! pidof lemonbar; then
   sh ~/.config/herbstluftwm/topbar.sh &
 fi
+# load layout if screen is 4K resolution. otherwise keep as is.
 if [[ $(xrandr | grep \* | awk '{print $1}') == "3840x2160" ]]; then
   herbstclient load 1 "$(cat ~/.config/herbstluftwm/layout1)"
 fi
