@@ -11,6 +11,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/unite.vim'
+Plug 'ujihisa/neco-look'
 
 Plug 'itchyny/lightline.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -103,6 +105,9 @@ let g:deoplete#enable_smart_case = 1
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" Unite.vim
+nnoremap <Leader>f :Unite -start-insert file<CR>
 
 let g:lightline = {
       \ 'colorscheme': 'Tomorrow_Night',
