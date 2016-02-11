@@ -20,7 +20,6 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
 Plug 'tfnico/vim-gradle'
-Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 
 call plug#end()
 

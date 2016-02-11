@@ -16,6 +16,7 @@ fi
 export GOPATH=$HOME/git/go
 export PATH=$HOME/.bin:$GOPATH/bin:$HOME/.cabal/bin:$PATH
 export EDITOR='nvim'
+export SUDO_EDITOR=$EDITOR
 export PAGER='less'
 export LESS='-ir'
 
