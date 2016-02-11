@@ -9,6 +9,7 @@ hc() {
 hc emit_hook reload
 
 #xsetroot -solid '#5A8E3A'
+hsetroot -center ~/.config/herbstluftwm/wallhaven-262555.png
 
 # remove all existing keybindings
 hc keyunbind --all
@@ -113,7 +114,7 @@ hc keybind $Mod-Shift-i jumpto urgent
 # own keybinds
 hc keybind $Mod-d spawn rofi -show run -font "source code pro for powerline 10"
 hc keybind $Mod-q spawn qutebrowser
-hc keybind Ctrl-Mod1-l spawn fancy-lock
+hc keybind Ctrl-Mod1-l spawn ~/.bin/fancy-lock
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer -q set Master 5%-
 hc keybind XF86AudioRaiseVolume spawn amixer -q set Master 5%+
@@ -182,17 +183,17 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 herbstclient detect_monitors
 
 # find the panel
-#panel=~/.config/herbstluftwm/panel.sh
-#[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-#for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-#    # start it on each monitor
-#    "$panel" $monitor &
-#done
+panel=~/.config/herbstluftwm/panel.sh
+[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
+for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
+    # start it on each monitor
+    "$panel" $monitor &
+done
 
 # start bar if it's not running
-if ! pidof lemonbar; then
-  sh ~/.config/herbstluftwm/topbar.sh &
-fi
+#if ! pidof lemonbar; then
+#  sh ~/.config/herbstluftwm/topbar.sh &
+#fi
 # load layout if screen is 4K resolution. otherwise keep as is.
 if [[ $(xrandr | grep \* | awk '{print $1}') == "3840x2160" ]]; then
   herbstclient load 1 "$(cat ~/.config/herbstluftwm/layout1)"

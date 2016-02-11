@@ -5,3 +5,9 @@
 	default = simple
 [core]
 	excludesfile = .gitignore_global
+	pager = diff-so-fancy | less --tabs=1,5 -R
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22

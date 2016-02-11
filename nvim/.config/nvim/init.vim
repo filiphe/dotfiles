@@ -1,5 +1,5 @@
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 " Colors
 Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
@@ -20,6 +20,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
 Plug 'tfnico/vim-gradle'
+Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 
 call plug#end()
 
@@ -98,16 +99,6 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 " disable autocomplete
 "let g:deoplete#disable_auto_complete = 1
-
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> deoplete#mappings#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  deoplete#mappings#smart_close_popup()."\<C-h>"
-
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-  return deoplete#mappings#close_popup() . "\<CR>"
-endfunction
 
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
