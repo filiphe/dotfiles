@@ -1,5 +1,5 @@
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 " Colors
 Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
@@ -11,6 +11,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/unite.vim'
+Plug 'ujihisa/neco-look'
 
 Plug 'itchyny/lightline.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -20,9 +22,9 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
 Plug 'tfnico/vim-gradle'
-Plug 'udalov/kotlin-vim'
 
 call plug#end()
+
 
 " {{{ Settings
 " moving around, searching and patterns
@@ -30,6 +32,9 @@ set ignorecase
 set smartcase
 
 " displaying text
+if has('nvim')
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif 
 let base16colorspace=256
 colorscheme base16-tomorrow
 set background=dark
@@ -37,7 +42,7 @@ syntax on
 set fillchars=vert:│
 set lazyredraw
 set list
-set listchars=eol:¬,tab:▸▸,space:· 
+set listchars=eol:↲,tab:▸▸,space:· 
 set nowrap
 set number
 set relativenumber
@@ -100,20 +105,15 @@ let g:deoplete#enable_smart_case = 1
 " disable autocomplete
 "let g:deoplete#disable_auto_complete = 1
 
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> deoplete#mappings#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  deoplete#mappings#smart_close_popup()."\<C-h>"
-
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-  return deoplete#mappings#close_popup() . "\<CR>"
-endfunction
-
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" Unite.vim
+let g:unite_source_history_yank_enable=1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>t:<C-u>Unite -no-split -buffer-name_files -start-insert file_rec/async:!<cr>
 
 let g:lightline = {
       \ 'colorscheme': 'Tomorrow_Night',
