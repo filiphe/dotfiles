@@ -25,6 +25,10 @@ Plug 'tfnico/vim-gradle'
 
 call plug#end()
 
+if has('nvim')
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif 
+
 " {{{ Settings
 " moving around, searching and patterns
 set ignorecase
@@ -107,7 +111,9 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " Unite.vim
-nnoremap <Leader>f :Unite -start-insert file<CR>
+let g:unite_source_history_yank_enable=1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>t:<C-u>Unite -no-split -buffer-name_files -start-insert file_rec/async:!<cr>
 
 let g:lightline = {
       \ 'colorscheme': 'Tomorrow_Night',
