@@ -25,9 +25,6 @@ Plug 'tfnico/vim-gradle'
 
 call plug#end()
 
-if has('nvim')
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif 
 
 " {{{ Settings
 " moving around, searching and patterns
@@ -35,6 +32,9 @@ set ignorecase
 set smartcase
 
 " displaying text
+if has('nvim')
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif 
 let base16colorspace=256
 colorscheme base16-tomorrow
 set background=dark
@@ -42,7 +42,7 @@ syntax on
 set fillchars=vert:│
 set lazyredraw
 set list
-set listchars=eol:¬,tab:▸▸,space:· 
+set listchars=eol:↲,tab:▸▸,space:· 
 set nowrap
 set number
 set relativenumber
