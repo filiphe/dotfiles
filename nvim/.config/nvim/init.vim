@@ -39,7 +39,7 @@ let base16colorspace=256
 colorscheme base16-tomorrow
 set background=dark
 syntax on
-set fillchars=vert:│
+"set fillchars=vert:│
 set lazyredraw
 set list
 set listchars=eol:↲,tab:▸▸,space:· 
