@@ -11,8 +11,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/unite.vim'
 Plug 'ujihisa/neco-look'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'itchyny/lightline.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -110,10 +111,6 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
-" Unite.vim
-let g:unite_source_history_yank_enable=1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>t:<C-u>Unite -no-split -buffer-name_files -start-insert file_rec/async:!<cr>
 
 let g:lightline = {
       \ 'colorscheme': 'Tomorrow_Night',
