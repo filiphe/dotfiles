@@ -1,3 +1,4 @@
 # nvim
 ###################
-nvim/.nvim/plugged/*
+nvim/.config/nvim/plugged/*
+nvim/.config/nvim/.init.vim-rplugin~
