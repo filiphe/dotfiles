@@ -26,6 +26,8 @@ Plug 'tfnico/vim-gradle'
 
 call plug#end()
 
+" indentLine
+let g:indentLine_char = '┆'
 
 " {{{ Settings
 " moving around, searching and patterns
@@ -36,8 +38,8 @@ set smartcase
 if has('nvim')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif 
-let base16colorspace=256
-colorscheme base16-tomorrow
+"let base16colorspace=256
+colorscheme gruvbox
 set background=dark
 syntax on
 "set fillchars=vert:│
@@ -113,7 +115,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 
 
 let g:lightline = {
-      \ 'colorscheme': 'Tomorrow_Night',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
@@ -123,10 +125,11 @@ let g:lightline = {
       \   'readonly': 'LightLineReadonly',
       \   'modified': 'LightLineModified',
       \   'filename': 'LightLineFilename'
-      \ },
-      \ 'separator': { 'left': '', 'right' : '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+      \ }
+"      \ 'separator': { 'left': '', 'right' : '' },
+"      \ 'subseparator': { 'left': '', 'right': '' }
+"      \ }
 
 "let g:lightline = {
 "      \ 'colorscheme': 'jellybeans',

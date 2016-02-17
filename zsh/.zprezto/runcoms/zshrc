@@ -43,7 +43,7 @@ alias vim='nvim'
 alias bell="echo -ne '\a'"
 
 # dircolors
-eval $(dircolors ~/.dircolors)
+#eval $(dircolors ~/.dircolors)
 
 # options
 setopt nobeep
@@ -51,9 +51,13 @@ setopt nohup
 setopt notify
 unsetopt cdablevars
 
+# gruvbox shell
+GRUVBOX_SHELL="$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+[[ -s $GRUVBOX_SHELL  ]] && source $GRUVBOX_SHELL
+
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
+#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
