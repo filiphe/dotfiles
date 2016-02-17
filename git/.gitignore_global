@@ -40,3 +40,5 @@ Thumbs.db
 ##############
 *~
 *.netrwhist
+nvim/.config/nvim/plugged/*
+nvim/.config/nvim/.init.vim-rplugin~

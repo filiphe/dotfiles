@@ -2,3 +2,11 @@
 ###################
 nvim/.config/nvim/plugged/*
 nvim/.config/nvim/.init.vim-rplugin~
+
+# st
+###################
+st/pkg/
+st/src/
+st/filiphe-st-0.6-2-x86_64.pkg.tar.xz
+st/st-0.6.tar.gz
+st/

@@ -192,9 +192,9 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
 done
 
 # start bar if it's not running
-if ! pidof lemonbar; then
-  sh ~/.config/herbstluftwm/topbar.sh &
-fi
+#if ! pidof lemonbar; then
+#  sh ~/.config/herbstluftwm/topbar.sh &
+#fi
 # load layout if screen is 4K resolution. otherwise keep as is.
 if [[ $(xrandr | grep \* | awk '{print $1}') == "3840x2160" ]]; then
   herbstclient load 1 "$(cat ~/.config/herbstluftwm/layout1)"
