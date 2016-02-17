@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# GRUVBOX
+#######################
 BLACK='#1d2021'
 RED='#cc241d'
 GREEN='#98971a'
