@@ -41,6 +41,7 @@ if has('nvim')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif 
 "let base16colorspace=256
+let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 set background=dark
 syntax on
