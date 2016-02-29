@@ -25,11 +25,14 @@ Plug 'derekwyatt/vim-scala', {'for': 'scala' }
 Plug 'tfnico/vim-gradle'
 Plug 'udalov/kotlin-vim'
 Plug 'NLKNguyen/vim-maven-syntax'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
 " indentLine
 let g:indentLine_char = '┆'
+" rust autoformat
+let g:rustfmt_autosave = 1
 
 " {{{ Settings
 " moving around, searching and patterns
