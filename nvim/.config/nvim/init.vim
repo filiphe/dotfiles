@@ -31,6 +31,8 @@ call plug#end()
 
 " indentLine
 let g:indentLine_char = '┆'
+" rust autoformat
+let g:rustfmt_autosave = 1
 
 " {{{ Settings
 " moving around, searching and patterns
