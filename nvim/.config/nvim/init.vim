@@ -25,6 +25,7 @@ Plug 'derekwyatt/vim-scala', {'for': 'scala' }
 Plug 'tfnico/vim-gradle'
 Plug 'udalov/kotlin-vim'
 Plug 'NLKNguyen/vim-maven-syntax'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
