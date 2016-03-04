@@ -26,6 +26,7 @@ Plug 'tfnico/vim-gradle'
 Plug 'udalov/kotlin-vim'
 Plug 'NLKNguyen/vim-maven-syntax'
 Plug 'rust-lang/rust.vim'
+Plug 'elzr/vim-json'
 
 call plug#end()
 
