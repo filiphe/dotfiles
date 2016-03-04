@@ -27,6 +27,7 @@ Plug 'udalov/kotlin-vim'
 Plug 'NLKNguyen/vim-maven-syntax'
 Plug 'rust-lang/rust.vim'
 Plug 'elzr/vim-json'
+Plug 'kongo2002/fsharp-vim'
 
 call plug#end()
 
