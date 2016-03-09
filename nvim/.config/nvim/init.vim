@@ -11,7 +11,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'ujihisa/neco-look'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -20,13 +19,18 @@ Plug 'itchyny/lightline.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
 
+" Go plugins
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+
+" Python plugins
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
 Plug 'zchee/deoplete-jedi', {'for': 'python', 'rtp': 'nvim', 'do': 'make'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
+
+" Language plugins
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'tfnico/vim-gradle'
 Plug 'udalov/kotlin-vim'
 Plug 'NLKNguyen/vim-maven-syntax'
