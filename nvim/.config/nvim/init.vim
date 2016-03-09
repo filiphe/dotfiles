@@ -14,6 +14,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'ujihisa/neco-look'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 
 Plug 'itchyny/lightline.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -31,11 +32,6 @@ Plug 'kongo2002/fsharp-vim'
 
 call plug#end()
 
-" indentLine
-let g:indentLine_char = '┆'
-" rust autoformat
-let g:rustfmt_autosave = 1
-
 " {{{ Settings
 " moving around, searching and patterns
 set ignorecase
@@ -50,7 +46,6 @@ let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 set background=dark
 syntax on
-"set fillchars=vert:│
 set lazyredraw
 set list
 set listchars=eol:↲,tab:▸▸,space:· 
@@ -63,7 +58,7 @@ set sidescrolloff=5
 " syntax, highlighting and spelling
 set cursorcolumn
 set cursorline
-set colorcolumn=79
+set colorcolumn=120
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
@@ -108,6 +103,28 @@ syn match myTodo contained "\<\(TODO\|FIXME\)"
 hi def link myTodo Todo
 " }}}
 
+" FZF
+nnoremap <silent> <c-p> :FZF<cr>
+nnoremap <silent> <leader>of :FZF %:p:h<cr>
+nnoremap <silent> <leader>ob :Buffers<cr>
+
+" Window navigation
+" Window navigation
+nnoremap <c-left>  <c-w>5>
+nnoremap <c-down>  <c-w>5-
+nnoremap <c-up>    <c-w>5+
+nnoremap <c-right> <c-w>5<
+nnoremap <c-h>     <c-w>h
+nnoremap <c-j>     <c-w>j
+nnoremap <c-k>     <c-w>k
+nnoremap <c-l>     <c-w>l
+nnoremap <m-h>     <c-w>v
+nnoremap <m-j>     <c-w>s<c-w>j
+nnoremap <m-k>     <c-w>s
+nnoremap <m-l>     <c-w>v<c-w>l
+
+" Easy align
+vmap     <leader>as   <plug>(EasyAlign)
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -135,18 +152,6 @@ let g:lightline = {
       \   'filename': 'LightLineFilename'
       \ }
       \ }
-"      \ 'separator': { 'left': '', 'right' : '' },
-"      \ 'subseparator': { 'left': '', 'right': '' }
-"      \ }
-
-"let g:lightline = {
-"      \ 'colorscheme': 'jellybeans',
-"      \ 'component': {
-"      \   'readonly': '%{&readonly?"":""}',
-"      \ },
-"      \ 'separator': { 'left': '', 'right': '' },
-"      \ 'subseparator': { 'left': '', 'right': '' }
-"      \ }
 
 function! LightLineModified()
   if &filetype == "help"
