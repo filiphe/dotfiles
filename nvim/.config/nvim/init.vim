@@ -21,8 +21,12 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
+Plug 'zchee/deoplete-jedi', {'for': 'python', 'rtp': 'nvim', 'do': 'make'}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'tfnico/vim-gradle'
 Plug 'udalov/kotlin-vim'
 Plug 'NLKNguyen/vim-maven-syntax'
@@ -128,6 +132,7 @@ vmap     <leader>as   <plug>(EasyAlign)
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#align_class = 1
 " user smartcase.
 let g:deoplete#enable_smart_case = 1
 " disable autocomplete
