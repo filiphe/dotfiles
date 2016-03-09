@@ -137,6 +137,7 @@ let g:deoplete#sources#go#align_class = 1
 let g:deoplete#enable_smart_case = 1
 " disable autocomplete
 "let g:deoplete#disable_auto_complete = 1
+let g:jedi#popup_select_first = 0
 
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
