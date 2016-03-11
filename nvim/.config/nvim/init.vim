@@ -4,30 +4,38 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 
+" UI
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree' 
+
+" Search
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Syntax and alignment
 Plug 'scrooloose/syntastic'
+Plug 'junegunn/vim-easy-align'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'jiangmiao/auto-pairs'
+
+" Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree' 
+
+" Completion
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-
-Plug 'itchyny/lightline.vim'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'jiangmiao/auto-pairs'
 
 " Go plugins
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-go', { 'for': 'python', 'do': 'make'}
 
 " Python plugins
 Plug 'zchee/deoplete-jedi', {'for': 'python', 'rtp': 'nvim', 'do': 'make'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'nvie/vim-flake8'
+Plug 'nvie/vim-flake8', {'for': 'python'}
 
 " Language plugins
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
