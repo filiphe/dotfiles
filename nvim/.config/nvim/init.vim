@@ -4,7 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree' 
@@ -14,6 +14,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'benekastah/neomake'
 
 Plug 'itchyny/lightline.vim'
 Plug 'kien/rainbow_parentheses.vim'
