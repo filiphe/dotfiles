@@ -75,7 +75,7 @@ set sidescrolloff=5
 " syntax, highlighting and spelling
 set cursorcolumn
 set cursorline
-set colorcolumn=120
+set colorcolumn=74
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
@@ -126,7 +126,6 @@ nnoremap <silent> <leader>of :FZF %:p:h<cr>
 nnoremap <silent> <leader>ob :Buffers<cr>
 
 " Window navigation
-" Window navigation
 nnoremap <c-left>  <c-w>5>
 nnoremap <c-down>  <c-w>5-
 nnoremap <c-up>    <c-w>5+
@@ -144,13 +143,17 @@ nnoremap <m-l>     <c-w>v<c-w>l
 vmap     <leader>as   <plug>(EasyAlign)
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#go#align_class = 1
+let g:deoplete#enable_at_startup         = 1
+let g:deoplete#sources#go#align_class    = 1
 " user smartcase.
-let g:deoplete#enable_smart_case = 1
-" disable autocomplete
-"let g:deoplete#disable_auto_complete = 1
-let g:jedi#popup_select_first = 0
+let g:deoplete#enable_smart_case         = 1
+let g:jedi#popup_select_first            = 0
+
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list            = 1
+let g:syntastic_check_on_open            = 1
+let g:syntastic_check_on_wq              = 0
 
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
