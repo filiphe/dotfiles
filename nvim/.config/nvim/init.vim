@@ -27,6 +27,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 " Python plugins
 Plug 'zchee/deoplete-jedi', {'for': 'python', 'rtp': 'nvim', 'do': 'make'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'nvie/vim-flake8'
 
 " Language plugins
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
