@@ -25,18 +25,18 @@ Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.local/share/nvim/plug
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " Python plugins
-Plug 'derekwyatt/vim-scala', {'for': 'scala' }
 Plug 'zchee/deoplete-jedi', {'for': 'python', 'rtp': 'nvim', 'do': 'make'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 
 " Language plugins
+Plug 'derekwyatt/vim-scala', {'for': 'scala' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-Plug 'tfnico/vim-gradle'
-Plug 'udalov/kotlin-vim'
-Plug 'NLKNguyen/vim-maven-syntax'
-Plug 'rust-lang/rust.vim'
-Plug 'elzr/vim-json'
-Plug 'kongo2002/fsharp-vim'
+Plug 'tfnico/vim-gradle', { 'for': 'gradle' }
+Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
+Plug 'NLKNguyen/vim-maven-syntax', { 'for': 'xml' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust'}
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'kongo2002/fsharp-vim', { 'for': 'fsharp' }
 
 call plug#end()
 
