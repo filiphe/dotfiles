@@ -29,13 +29,13 @@ Plug 'Shougo/neosnippet-snippets'
 
 " Go plugins
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'zchee/deoplete-go', { 'for': 'python', 'do': 'make'}
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " Python plugins
-Plug 'zchee/deoplete-jedi', {'for': 'python', 'rtp': 'nvim', 'do': 'make'}
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'nvie/vim-flake8', {'for': 'python'}
+Plug 'zchee/deoplete-jedi', {'rtp': 'nvim', 'do': 'make'}
+Plug 'davidhalter/jedi-vim'
+Plug 'nvie/vim-flake8'
 
 " Language plugins
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
