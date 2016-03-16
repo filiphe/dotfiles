@@ -7,6 +7,7 @@ Plug 'morhetz/gruvbox'
 " UI
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree' 
+Plug 'mhinz/vim-startify'
 
 " Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -17,6 +18,7 @@ Plug 'scrooloose/syntastic'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
 
 " Git
 Plug 'tpope/vim-fugitive'
