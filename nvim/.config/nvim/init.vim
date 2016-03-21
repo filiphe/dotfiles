@@ -3,6 +3,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Colors
 Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
 
 " UI
 Plug 'itchyny/lightline.vim'
@@ -60,10 +61,44 @@ set smartcase
 if has('nvim')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif 
+
 "let base16colorspace=256
-let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
-set background=dark
+" Set colorscheme based on time of day
+if strftime("%H") < 18
+  set background=light
+  colorscheme PaperColor
+  let g:lightline = {
+        \ 'colorscheme': 'PaperColor',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'fugitive': 'LightLineFugitive',
+        \   'readonly': 'LightLineReadonly',
+        \   'modified': 'LightLineModified',
+        \   'filename': 'LightLineFilename'
+        \ }
+        \ }
+else
+  set background=dark
+  let g:gruvbox_contrast_dark="hard"
+  colorscheme gruvbox
+  let g:lightline = {
+        \ 'colorscheme': 'gruvbox',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'fugitive': 'LightLineFugitive',
+        \   'readonly': 'LightLineReadonly',
+        \   'modified': 'LightLineModified',
+        \   'filename': 'LightLineFilename'
+        \ }
+        \ }
+endif
+
 syntax on
 set lazyredraw
 set list
@@ -122,6 +157,10 @@ syn match myTodo contained "\<\(TODO\|FIXME\)"
 hi def link myTodo Todo
 " }}}
 
+" Copy/paste
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+
 " FZF
 nnoremap <silent> <c-p> :FZF<cr>
 nnoremap <silent> <leader>of :FZF %:p:h<cr>
@@ -163,19 +202,6 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
 
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename' ] ]
-      \ },
-      \ 'component_function': {
-      \   'fugitive': 'LightLineFugitive',
-      \   'readonly': 'LightLineReadonly',
-      \   'modified': 'LightLineModified',
-      \   'filename': 'LightLineFilename'
-      \ }
-      \ }
 
 function! LightLineModified()
   if &filetype == "help"
