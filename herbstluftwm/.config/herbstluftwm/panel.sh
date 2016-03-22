@@ -171,7 +171,15 @@ hc pad $monitor $panel_height
                 windowtitle="${cmd[@]:2}"
                 ;;
             player)
-                mpc=$(mpc current)
+                if [ "$(pidof mpd)" ]; then
+                  if [ "$(mpc status | grep playing)" ]; then
+                    mpc=$(mpc current)
+                  else
+                    mpc="No music playing..."
+                  fi
+                else
+                  mpc="mpd not running..."
+                fi
                 ;;
         esac
     done
