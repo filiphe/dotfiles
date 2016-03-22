@@ -1,4 +1,4 @@
-static char font[] = "Source Code Pro for Powerline:pixelsize=12:antialias=true:autohint=false";
+static char font[] = "Source Code Pro for Powerline:pixelsize=14:antialias=true:autohint=false";
 static int borderpx = 0;
 
 static char shell[] = "/usr/bin/zsh";
