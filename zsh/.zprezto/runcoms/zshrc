@@ -52,8 +52,8 @@ setopt notify
 unsetopt cdablevars
 
 # gruvbox shell
-GRUVBOX_SHELL="$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
-[[ -s $GRUVBOX_SHELL  ]] && source $GRUVBOX_SHELL
+#GRUVBOX_SHELL="$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+#[[ -s $GRUVBOX_SHELL  ]] && source $GRUVBOX_SHELL
 
 # Base16 Shell
 #BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"

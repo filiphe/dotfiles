@@ -63,40 +63,40 @@ if has('nvim')
 endif 
 
 "let base16colorspace=256
+"let g:gruvbox_contrast_dark="hard"
+"colorscheme gruvbox
+"let g:lightline = {
+"      \ 'colorscheme': 'gruvbox',
+"      \ 'active': {
+"      \   'left': [ [ 'mode', 'paste' ],
+"      \             [ 'fugitive', 'filename' ] ]
+"      \ },
+"      \ 'component_function': {
+"      \   'fugitive': 'LightLineFugitive',
+"      \   'readonly': 'LightLineReadonly',
+"      \   'modified': 'LightLineModified',
+"      \   'filename': 'LightLineFilename'
+"      \ }
+"      \ }
+colorscheme PaperColor
+let g:lightline = {
+      \ 'colorscheme': 'PaperColor',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightLineFugitive',
+      \   'readonly': 'LightLineReadonly',
+      \   'modified': 'LightLineModified',
+      \   'filename': 'LightLineFilename'
+      \ }
+      \ }
 " Set colorscheme based on time of day
 if strftime("%H") < 18
   set background=light
-  colorscheme PaperColor
-  let g:lightline = {
-        \ 'colorscheme': 'PaperColor',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'fugitive': 'LightLineFugitive',
-        \   'readonly': 'LightLineReadonly',
-        \   'modified': 'LightLineModified',
-        \   'filename': 'LightLineFilename'
-        \ }
-        \ }
 else
   set background=dark
-  let g:gruvbox_contrast_dark="hard"
-  colorscheme gruvbox
-  let g:lightline = {
-        \ 'colorscheme': 'gruvbox',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'fugitive': 'LightLineFugitive',
-        \   'readonly': 'LightLineReadonly',
-        \   'modified': 'LightLineModified',
-        \   'filename': 'LightLineFilename'
-        \ }
-        \ }
 endif
 
 syntax on

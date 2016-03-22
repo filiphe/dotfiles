@@ -61,7 +61,7 @@ hc pad $monitor $panel_height
     # e.g.
     #   date    ^fg(#efefef)18:33^fg(#909090), 2013-10-^fg(#efefef)29
 
-    #mpc idleloop player &
+    mpc idleloop player &
     while true ; do
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
@@ -117,7 +117,7 @@ hc pad $monitor $panel_height
         echo -n "$separator"
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
         # small adjustments
-        right="$separator^bg() $date $separator"
+        right="$mpc $separator^bg() $date $separator"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only    ")
@@ -170,8 +170,9 @@ hc pad $monitor $panel_height
             focus_changed|window_title_changed)
                 windowtitle="${cmd[@]:2}"
                 ;;
-            #player)
-            #    ;;
+            player)
+                mpc=$(mpc current)
+                ;;
         esac
     done
 

@@ -30,7 +30,7 @@ static unsigned int cursorshape = 2;
 static char termname[] = "st-256color";
 
 static const char *colorname[] = {
-  "#EDEDED",
+  "#EEEEEE",
   "#D7005F",
   "#718C00",
   "#D75F00",
