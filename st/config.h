@@ -30,25 +30,25 @@ static unsigned int cursorshape = 2;
 static char termname[] = "st-256color";
 
 static const char *colorname[] = {
-  "#1d2021",
-  "#cc241d",
-  "#98971a",
-  "#d79921",
-  "#458588",
-  "#b16286",
-  "#689d6a",
-  "#a89984",
-  "#928374",
-  "#fb4934",
-  "#b8bb26",
-  "#fabd2f",
-  "#83a598",
-  "#d3869b",
-  "#8ec07c",
-  "#ebdbb2",
+  "#262626",
+  "#D7005F",
+  "#718C00",
+  "#D75F00",
+  "#4271AE",
+  "#8959A8",
+  "#3E999F",
+  "#d0d0d0",
+  "#969694",
+  "#D7005F",
+  "#718C00",
+  "#D75F00",
+  "#4271AE",
+  "#8959A8",
+  "#3E999F",
+  "#F5F5F5",
 };
 
-static unsigned int defaultfg = 15;
+static unsigned int defaultfg = 7;
 static unsigned int defaultbg = 0;
 static unsigned int defaultcs = 15;
 
