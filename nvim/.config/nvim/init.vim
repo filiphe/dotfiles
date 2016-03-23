@@ -79,6 +79,12 @@ endif
 "      \ }
 "      \ }
 colorscheme PaperColor
+" Set colorscheme based on time of day
+if strftime("%H") < 18
+  set background=light
+else
+  set background=dark
+endif
 let g:lightline = {
       \ 'colorscheme': 'PaperColor',
       \ 'active': {
@@ -92,12 +98,6 @@ let g:lightline = {
       \   'filename': 'LightLineFilename'
       \ }
       \ }
-" Set colorscheme based on time of day
-if strftime("%H") < 18
-  set background=light
-else
-  set background=dark
-endif
 
 syntax on
 set lazyredraw
@@ -186,7 +186,7 @@ vmap     <leader>as   <plug>(EasyAlign)
 " deoplete
 let g:deoplete#enable_at_startup         = 1
 let g:deoplete#sources#go#align_class    = 1
-" user smartcase.
+" use smartcase.
 let g:deoplete#enable_smart_case         = 1
 let g:jedi#popup_select_first            = 0
 
