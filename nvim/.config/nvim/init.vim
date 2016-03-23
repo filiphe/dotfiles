@@ -61,12 +61,12 @@ set smartcase
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Set colorscheme based on time of day
-if strftime("%H") < 18
-  set background=light
-else
-  set background=dark
-endif
 colorscheme PaperColor
+"if strftime("%H") < 18
+"  set background=light
+"else
+"  set background=dark
+"endif
 
 "let base16colorspace=256
 "let g:gruvbox_contrast_dark="hard"
