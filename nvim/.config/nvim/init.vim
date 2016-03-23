@@ -58,26 +58,8 @@ set ignorecase
 set smartcase
 
 " displaying text
-if has('nvim')
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-"let base16colorspace=256
-"let g:gruvbox_contrast_dark="hard"
-"colorscheme gruvbox
-"let g:lightline = {
-"      \ 'colorscheme': 'gruvbox',
-"      \ 'active': {
-"      \   'left': [ [ 'mode', 'paste' ],
-"      \             [ 'fugitive', 'filename' ] ]
-"      \ },
-"      \ 'component_function': {
-"      \   'fugitive': 'LightLineFugitive',
-"      \   'readonly': 'LightLineReadonly',
-"      \   'modified': 'LightLineModified',
-"      \   'filename': 'LightLineFilename'
-"      \ }
-"      \ }
 " Set colorscheme based on time of day
 if strftime("%H") < 18
   set background=light
@@ -86,6 +68,10 @@ else
 endif
 
 colorscheme PaperColor
+
+"let base16colorspace=256
+"let g:gruvbox_contrast_dark="hard"
+"colorscheme gruvbox
 
 syntax on
 set lazyredraw
@@ -167,6 +153,10 @@ nnoremap <m-h>     <c-w>v
 nnoremap <m-j>     <c-w>s<c-w>j
 nnoremap <m-k>     <c-w>s
 nnoremap <m-l>     <c-w>v<c-w>l
+
+" Center matches when searching
+nnoremap N Nzz
+nnoremap n nzz
 
 " Easy align
 vmap     <leader>as   <plug>(EasyAlign)
