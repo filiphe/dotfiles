@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+xrdb -merge "$HOME/.Xresources"
+xsetroot -cursor_name left_ptr
+
+export BROWSER="qutebrowser"
+export TERMCMD="st"
+
+exec openbox
