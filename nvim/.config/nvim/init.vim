@@ -78,26 +78,14 @@ endif
 "      \   'filename': 'LightLineFilename'
 "      \ }
 "      \ }
-colorscheme PaperColor
-let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename' ] ]
-      \ },
-      \ 'component_function': {
-      \   'fugitive': 'LightLineFugitive',
-      \   'readonly': 'LightLineReadonly',
-      \   'modified': 'LightLineModified',
-      \   'filename': 'LightLineFilename'
-      \ }
-      \ }
 " Set colorscheme based on time of day
 if strftime("%H") < 18
   set background=light
 else
   set background=dark
 endif
+
+colorscheme PaperColor
 
 syntax on
 set lazyredraw
@@ -202,6 +190,19 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
 
+let g:lightline = {
+      \ 'colorscheme': 'PaperColor',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightLineFugitive',
+      \   'readonly': 'LightLineReadonly',
+      \   'modified': 'LightLineModified',
+      \   'filename': 'LightLineFilename'
+      \ }
+      \ }
 
 function! LightLineModified()
   if &filetype == "help"
