@@ -1,7 +1,7 @@
 #!/bin/bash
 
-pacaur -Syu
-pacaur -S $(cat package_list)
+pacaur -Syu --noconfirm
+pacaur -S $(cat package_list) --noconfirm
 
 zsh prezto.zsh
 
@@ -11,3 +11,5 @@ for f in $(ls .)
 do
   stow $f
 done
+
+setroot --store $HOME/.config/herbstluftwm/wallhaven-170258.jpg
