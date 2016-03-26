@@ -9,6 +9,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree' 
 Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-unimpaired'
 
 " Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
