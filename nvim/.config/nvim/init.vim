@@ -131,9 +131,16 @@ syn match myTodo contained "\<\(TODO\|FIXME\)"
 hi def link myTodo Todo
 " }}}
 
-" Copy/paste
+" Copy
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+yg
 nnoremap <leader>y "+y
+
+" Paste
 nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
 
 " FZF
 nnoremap <silent> <c-p> :FZF<cr>
