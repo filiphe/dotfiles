@@ -10,6 +10,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree' 
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-unimpaired'
+Plug 'majutsushi/tagbar'
 
 " Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -62,6 +63,7 @@ set smartcase
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Set colorscheme based on time of day
+set background=dark
 colorscheme PaperColor
 "if strftime("%H") < 18
 "  set background=light
@@ -131,6 +133,12 @@ syn match myTodo contained "\<\(TODO\|FIXME\)"
 hi def link myTodo Todo
 " }}}
 
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
 " Copy
 vnoremap <leader>y "+y
 nnoremap <leader>Y "+yg
@@ -160,6 +168,8 @@ nnoremap <m-h>     <c-w>v
 nnoremap <m-j>     <c-w>s<c-w>j
 nnoremap <m-k>     <c-w>s
 nnoremap <m-l>     <c-w>v<c-w>l
+set splitbelow
+set splitright
 
 " Center matches when searching
 nnoremap N Nzz
@@ -170,10 +180,49 @@ vmap     <leader>as   <plug>(EasyAlign)
 
 " deoplete
 let g:deoplete#enable_at_startup         = 1
-let g:deoplete#sources#go#align_class    = 1
 " use smartcase.
 let g:deoplete#enable_smart_case         = 1
 let g:jedi#popup_select_first            = 0
+
+" Go settings
+let g:deoplete#sources#go#align_class    = 1
+let g:go_hightlight_functions            = 1
+let g:go_highlight_methods               = 1
+let g:go_highlight_structs               = 1
+let g:go_highlight_operators             = 1
+let g:go_highlight_build_constraints     = 1
+
+let g:tagbar_type_go = {  
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
+
+au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef" <CR>
+au Filetype go nnoremap <leader>d :sp <CR>:exe "GoDoc" <CR>
+au Filetype go nnoremap <leader>r :GoRun %<CR>
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -188,7 +237,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 
 
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'PaperColor_light',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
