@@ -34,13 +34,13 @@ Plug 'Shougo/neosnippet-snippets'
 
 " Go plugins
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 
 " Python plugins
-Plug 'zchee/deoplete-jedi', {'rtp': 'nvim', 'do': 'make'}
-Plug 'davidhalter/jedi-vim'
-Plug 'nvie/vim-flake8'
+Plug 'zchee/deoplete-jedi', { 'for': 'python', 'rtp': 'nvim', 'do': 'make'}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'nvie/vim-flake8', {'for': 'python'}
 
 " Language plugins
 Plug 'derekwyatt/vim-scala', {'for': 'scala' }
@@ -223,6 +223,16 @@ let g:tagbar_type_go = {
 au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>d :sp <CR>:exe "GoDoc" <CR>
 au Filetype go nnoremap <leader>r :GoRun %<CR>
+
+" Python settings
+au Filetype py set tabstop=4
+au Filetype py set softtabstop=4
+au Filetype py set shiftwidth=4
+au Filetype py set textwidth=79
+au Filetype py set expandtab
+au Filetype py set autoindent
+au Filetype py set fileformat=unix
+au FileType py let python_highlight_all=1
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
