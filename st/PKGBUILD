@@ -8,22 +8,28 @@ depends=('libxft' 'libxext')
 makedepends=('ncurses')
 conflicts=('st')
 url="http://st.suckless.org"
-source=(http://dl.suckless.org/st/st-${pkgver}.tar.gz
+source=('git://git.suckless.org/st'
         config.h
         config.mk)
-md5sums=('1a926f450b4eacb7e2f5ac5b8ffea7c8'
+md5sums=('SKIP'
          'SKIP'
          'SKIP')
 
 build() {
-  cd $srcdir/st-$pkgver
+  cd $srcdir/st
   cp $srcdir/config.h config.h
+  cp $srcdir/../st-git-20151106-scrollback-mouse.diff st-git-20151106-scrollback-mouse.diff
+  cp $srcdir/../st-git-20151217-scrollback.diff st-git-20151217-scrollback.diff
+  cp $srcdir/../st-git-20160203-scrollback-mouse-altscreen.diff st-git-20160203-scrollback-mouse-altscreen.diff 
   cp $srcdir/config.mk config.mk
+  git apply st-git-20151217-scrollback.diff
+  git apply st-git-20151106-scrollback-mouse.diff
+  git apply st-git-20160203-scrollback-mouse-altscreen.diff 
   make
 }
 
 package() {
-  cd $srcdir/st-$pkgver
+  cd $srcdir/st
   make PREFIX=/usr DESTDIR="$pkgdir" install
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/st/LICENSE"
   install -Dm644 README "$pkgdir/usr/share/doc/st/README"
