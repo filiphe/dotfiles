@@ -40,6 +40,8 @@ alias la='ls --almost-all'
 alias lla='ls -o --almost-all'
 alias vim='nvim'
 
+alias wttr='curl wttr.in/gothenburg'
+
 alias bell="echo -ne '\a'"
 
 # dircolors
