@@ -126,7 +126,7 @@ hc keybind XF86MonBrightnessDown spawn xbacklight -dec 10
 hc keybind XF86MonBrightnessUp spawn xbacklight -inc 10
 
 # own settings
-hc set focus_follows_mouse 1
+hc set focus_follows_mouse 0
 
 source ~/.config/herbstluftwm/colors
 # theme
