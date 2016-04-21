@@ -3,9 +3,7 @@
 pacaur -Syu --noconfirm
 pacaur -S $(cat package_list) --noconfirm
 
-zsh prezto.zsh
-
-rm -f $HOME/.zprezto/runcoms/z*
+curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > $HOME/.antigen.zsh
 
 for f in $(ls .)
 do
