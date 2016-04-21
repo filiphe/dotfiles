@@ -6,7 +6,7 @@ antigen bundle pip
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme af-magic
+antigen theme sunrise
 
 antigen apply
 
