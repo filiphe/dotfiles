@@ -5,6 +5,7 @@ antigen bundles <<EOBUNDLES
 colored-man-pages
 sprunge
 vi-mode
+zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions src
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
