@@ -2,6 +2,8 @@ source $HOME/.antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
+colored-man-pages
+sprunge
 vi-mode
 zsh-users/zsh-completions src
 zsh-users/zsh-syntax-highlighting
@@ -29,8 +31,6 @@ alias lla='ls -o --almost-all'
 alias vim='nvim'
 
 alias wttr='curl wttr.in/gothenburg'
-
-alias bell="echo -ne '\a'"
 
 # options
 setopt nobeep

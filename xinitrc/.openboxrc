@@ -7,5 +7,4 @@ setroot --restore
 export BROWSER="qutebrowser"
 export TERMCMD="st"
 
-libinput-gestures&
 exec openbox
