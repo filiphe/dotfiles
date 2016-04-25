@@ -11,7 +11,7 @@ zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
 EOBUNDLES
 
-antigen theme sunrise
+antigen theme af-magic
 bindkey -v
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
