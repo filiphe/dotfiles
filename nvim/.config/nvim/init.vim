@@ -51,6 +51,9 @@ Plug 'NLKNguyen/vim-maven-syntax', { 'for': 'xml' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust'}
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'kongo2002/fsharp-vim', { 'for': 'fsharp' }
+Plug 'ekalinin/Dockerfile.vim'
+
+Plug 'jamessan/vim-gnupg'
 
 call plug#end()
 

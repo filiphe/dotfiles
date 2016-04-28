@@ -23,12 +23,9 @@ antigen apply
 alias ls='ls -hF --si --color=auto --group-directories-first'
 alias tree='tree -C'
 alias grep='grep --color=auto'
-
-alias l='ls'
-alias ll='ls -o'
-alias la='ls --almost-all'
-alias lla='ls -o --almost-all'
 alias vim='nvim'
+
+alias rm='rm -i'
 
 alias wttr='curl wttr.in/gothenburg'
 
