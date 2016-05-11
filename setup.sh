@@ -7,7 +7,9 @@ curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh >
 
 for f in $(ls .)
 do
-  stow $f
+  if [[ -d $f ]]; then
+    stow $f
+  fi
 done
 
 setroot --store $HOME/.config/herbstluftwm/wallhaven-170258.jpg
