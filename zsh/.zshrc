@@ -29,6 +29,8 @@ alias rm='rm -i'
 
 alias wttr='curl wttr.in/gothenburg'
 
+alias tmux='tmux -2 -u'
+
 # options
 setopt nobeep
 setopt nohup
