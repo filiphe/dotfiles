@@ -1,5 +1,5 @@
 # MPD daemon start (if no other user instance exists)
-if [[ ! -o login  && ! -s ~/.mpd/mpd.pid ]] then;
+if [[ ! -o login && ! -s ~/.mpd/mpd.pid ]]; then
   mpd
 fi
 
