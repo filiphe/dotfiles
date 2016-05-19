@@ -34,3 +34,5 @@ setopt nobeep
 setopt nohup
 setopt notify
 unsetopt cdablevars
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
