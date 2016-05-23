@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Mononoki:pixelsize=14:antialias=true:autohint=false";
+static char font[] = "Fantasque Sans Mono:pixelsize=16:antialias=true:autohint=false";
 static int borderpx = 0;
 #define histsize 2000
 
