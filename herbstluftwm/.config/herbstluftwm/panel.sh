@@ -14,20 +14,15 @@ herbstclient pad "$monitor" 20
 RES="3840x20"
 FONT="*-siji-medium-r-*-*-10-*-*-*-*-*-*-*"
 FONT2="-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*"
-BLK="#262626"
-RED="#d7005f"
-YLW="#d75f00"
-BLU="#4271ae"
-GRA="#8959a8"
-VLT="#3e999f"
-FG="#f5f5f5"
-BG=$BLK
+source ~/.config/herbstluftwm/colors
+BG="$BLACK"
+FG="$WHITE"
 
 # icons
-st="%{F$YLW}  %{F-}"
+st="%{F$YELLOW}  %{F-}"
 sm="%{F$RED}  %{F-}"
-sv="%{F$BLU}  %{F-}"
-sd="%{F$VLT}  %{F-}"
+sv="%{F$BLUE}  %{F-}"
+sd="%{F$MAGENTA}  %{F-}"
 
 # functions
 set -f
@@ -72,16 +67,16 @@ while true ; do
   for i in "${TAGS[@]}" ; do
     case ${i:0:1} in
       '#') # current tag
-        echo -n "%{U$RED}%{+u}"
+        echo -n "%{U$YELLOW}%{+u}"
         ;;
       '+') # active on other monitor
-        echo -n "%{U$YLW}%{+u}"
+        echo -n "%{U$BLUE}%{+u}"
         ;;
       ':') # populated tag
-        echo -n "%{U$GRA}%{+u}"
+        echo -n "%{U$BLUE}%{+u}"
         ;;
       '!') # urgent tag
-        echo -n "%{U$YLW}"
+        echo -n "%{U$RED}"
         ;;
       *)
         echo -n "%{-u}"
@@ -92,12 +87,12 @@ while true ; do
   echo -n "%{-u}" # make sure there's no more 'underline'
 
   # center window title
-  echo -n "%{c}$st%{F$GRA}${windowtitle//^/^^} %{F-}"
+  echo -n "%{c}$st%{F$WHITE}${windowtitle//^/^^} %{F-}"
 
   # align right
   echo -n "%{r}"
   echo -n "$sm"
-  echo -n "$song %{F$YLW}$song2%{F-}"
+  echo -n "$song %{F$YELLOW}$song2%{F-}"
   echo -n "$sv"
   echo -n "$volume"
   echo -n "$sd"
