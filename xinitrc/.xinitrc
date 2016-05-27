@@ -4,10 +4,13 @@ xset +fp /usr/share/fonts/local
 xset +fp "$HOME"/.fonts
 xset fp rehash
 
-xrdb -load .Xresources
-xsetroot -cursor_name left_ptr &
-xset m 3/2 0 &
+xrdb -merge "$HOME/.Xresources"
+xsetroot -cursor_name left_ptr
+setroot --restore
 unclutter &
+
+export BROWSER="qutebrowser"
+export TERMCMD="st"
 
 exec herbstluftwm --locked
 

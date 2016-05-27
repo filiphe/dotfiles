@@ -19,9 +19,9 @@ BG="$BLACK"
 FG="$WHITE"
 
 # icons
-st="%{F$YELLOW}  %{F-}"
-sm="%{F$RED}  %{F-}"
-sv="%{F$BLUE}  %{F-}"
+st="%{F$BLUE}  %{F-}"
+sm="%{F$GREEN}  %{F-}"
+sv="%{F$YELLOW}  %{F-}"
 sd="%{F$MAGENTA}  %{F-}"
 
 # functions
@@ -92,7 +92,7 @@ while true ; do
   # align right
   echo -n "%{r}"
   echo -n "$sm"
-  echo -n "$song %{F$YELLOW}$song2%{F-}"
+  echo -n "$song %{F$CYAN}$song2%{F-}"
   echo -n "$sv"
   echo -n "$volume"
   echo -n "$sd"
