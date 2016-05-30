@@ -73,10 +73,10 @@ while true ; do
         echo -n "%{U$BLUE}%{+u}"
         ;;
       ':') # populated tag
-        echo -n "%{U$BLUE}%{+u}"
+        echo -n "%{U$GREY}%{+u}"
         ;;
       '!') # urgent tag
-        echo -n "%{U$RED}"
+        echo -n "%{U$RED}%{+u}"
         ;;
       *)
         echo -n "%{-u}"
