@@ -32,7 +32,7 @@ mpd_connection_timeout = 5
 #
 ## Needed for tag editor and file operations to work.
 ##
-mpd_music_dir = ~/vattnadal/misc/music
+mpd_music_dir = ~/media/music
 #
 #mpd_crossfade_time = 5
 #
@@ -413,7 +413,7 @@ generate_win32_compatible_filenames = yes
 #
 jump_to_now_playing_song_at_start = yes
 #
-#ask_before_clearing_playlists = yes
+ask_before_clearing_playlists = yes
 #
 #clock_display_seconds = no
 #
@@ -436,7 +436,7 @@ regular_expressions = extended
 #
 #block_search_constraints_change_if_items_found = yes
 #
-#mouse_support = yes
+mouse_support = no
 #
 #mouse_list_scroll_whole_page = yes
 #
