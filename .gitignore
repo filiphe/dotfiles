@@ -16,6 +16,7 @@ mpd/.mpd/mpd.log
 mpd/.mpd/mpd.db
 mpd/.mpd/mpd.pid
 mpd/.mpd/mpdstate
+mpd/.mpd/playlists/*
 
 # openbox
 ###################
