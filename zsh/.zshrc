@@ -35,6 +35,7 @@ alias ta='tmux -2 -u attach'
 setopt nobeep
 setopt nohup
 setopt notify
+setopt complete_aliases
+setopt correct
+setopt hist_ignore_dups
 unsetopt cdablevars
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

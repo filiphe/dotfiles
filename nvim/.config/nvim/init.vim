@@ -12,10 +12,6 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-unimpaired'
 Plug 'majutsushi/tagbar'
 
-" Search
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
 " Syntax and alignment
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/vim-easy-align'
@@ -242,9 +238,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
 let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_python_flake8_exec = '/usr/bin/python3'
-let g:syntastic_python_flake8_args = ['-m', 'flake8']
+let g:syntastic_python_flake8_args = ['-m', 'flake8', '--ignore=E501']
 
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
