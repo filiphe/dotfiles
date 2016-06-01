@@ -91,7 +91,7 @@ set sidescrolloff=5
 " syntax, highlighting and spelling
 set cursorcolumn
 set cursorline
-set colorcolumn=74
+set colorcolumn=99
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
@@ -231,7 +231,7 @@ au Filetype go nnoremap <leader>r :GoRun %<CR>
 au Filetype py set tabstop=4
 au Filetype py set softtabstop=4
 au Filetype py set shiftwidth=4
-au Filetype py set textwidth=79
+au Filetype py set textwidth=99
 au Filetype py set expandtab
 au Filetype py set autoindent
 au Filetype py set fileformat=unix
@@ -242,6 +242,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
 let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:syntastic_python_flake8_exec = '/usr/bin/python3'
+let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
