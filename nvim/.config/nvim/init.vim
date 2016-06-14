@@ -59,7 +59,8 @@ set ignorecase
 set smartcase
 
 " displaying text
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 
 " Set colorscheme based on time of day
 set background=dark
