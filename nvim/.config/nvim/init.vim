@@ -47,7 +47,8 @@ Plug 'NLKNguyen/vim-maven-syntax', { 'for': 'xml' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust'}
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'kongo2002/fsharp-vim', { 'for': 'fsharp' }
-Plug 'ekalinin/Dockerfile.vim'
+Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 
 Plug 'jamessan/vim-gnupg'
 
@@ -62,18 +63,10 @@ set smartcase
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
-" Set colorscheme based on time of day
 set background=dark
-colorscheme PaperColor
-"if strftime("%H") < 18
-"  set background=light
-"else
-"  set background=dark
-"endif
-
+colorscheme gruvbox
 "let base16colorspace=256
-"let g:gruvbox_contrast_dark="hard"
-"colorscheme gruvbox
+let g:gruvbox_contrast_dark="hard"
 
 syntax on
 set lazyredraw
@@ -249,7 +242,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 
 
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor_light',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]

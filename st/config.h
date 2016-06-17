@@ -70,6 +70,7 @@ static unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+  /* PaperColor
   "#262626",
   "#D7005F",
   "#718C00",
@@ -85,7 +86,24 @@ static const char *colorname[] = {
   "#4271AE",
   "#8959A8",
   "#3E999F",
-  "#F5F5F5",
+  "#F5F5F5",*/
+  /* Gruvbox */
+  "#1d2021", /* hard contrast: #1d2021 / soft contrast: #32302f */
+  "#cc241d",
+  "#98971a",
+  "#d79921",
+  "#458588",
+  "#b16286",
+  "#689d6a",
+  "#a89984",
+  "#928374",
+  "#fb4934",
+  "#b8bb26",
+  "#fabd2f",
+  "#83a598",
+  "#d3869b",
+  "#8ec07c",
+  "#ebdbb2",
 };
 
 
