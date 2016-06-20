@@ -11,7 +11,8 @@ herbstclient pad "$monitor" 20
 
 # settings
 #RES="x16+1280x"
-RES="3840x20"
+WIDTH=$(xrandr | grep 'current' | cut -d ' ' -f 8)
+RES="$WIDTHx20"
 FONT="*-siji-medium-r-*-*-10-*-*-*-*-*-*-*"
 FONT2="-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*"
 source ~/.config/herbstluftwm/colors
@@ -109,8 +110,14 @@ while true ; do
       unset TAGS[${#TAGS[@]}]
       ;;
     mpd_player|player)
-      song="$(mpc -f %artist% current)"
-      song2="$(mpc -f %title% current)"
+      mpd_status="$(mpc status | tail -n 2 | head -n 1 | cut -d ' ' -f 1 | tr -d '[]')"
+      if [[ $mpd_status == 'paused' ]]; then
+        song="$mpd_status"
+        song2=''
+      else
+        song="$(mpc -f %artist% current)"
+        song2="$(mpc -f %title% current)"
+      fi
       ;;
     vol)
       volume="${cmd[*]:1}"

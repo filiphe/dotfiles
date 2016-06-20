@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Dependencies: imagemagick, i3lock-color-git, scrot
+source ~/.config/herbstluftwm/colors
 
 IMAGE=$(mktemp).png
 TEXT="Type password to unlock"
