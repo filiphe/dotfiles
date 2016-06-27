@@ -184,7 +184,7 @@ def_key "j"
 #def_key "enter"
 #  press_enter
 #
-def_key "delete"
+def_key "d"
   delete_playlist_items
 #
 #def_key "delete"
