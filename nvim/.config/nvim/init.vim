@@ -1,4 +1,8 @@
 
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+
 call plug#begin('~/.local/share/nvim/plugged')
 " Colors
 Plug 'chriskempson/base16-vim'
@@ -24,7 +28,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Completion
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
@@ -49,6 +53,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'kongo2002/fsharp-vim', { 'for': 'fsharp' }
 Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 
 Plug 'jamessan/vim-gnupg'
 
