@@ -16,6 +16,9 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-unimpaired'
 Plug 'majutsushi/tagbar'
 
+" Movement
+Plug 'justinmk/vim-sneak'
+
 " Syntax and alignment
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/vim-easy-align'
