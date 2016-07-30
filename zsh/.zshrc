@@ -19,8 +19,6 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M vicmd '?' history-incremental-search-backward
 antigen apply
 
-source "$HOME"/.pastebin.zsh
-
 # aliases
 alias ls='ls -hF --si --color=auto --group-directories-first'
 alias tree='tree -C'
