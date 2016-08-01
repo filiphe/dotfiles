@@ -65,7 +65,7 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
 #tag_names=( {1..4} )
-tag_names=( "alpha" "beta" "gamma" "delta" )
+tag_names=( "one" "two" "three" "four" )
 tag_keys=( {1..4} )
 
 hc rename default "${tag_names[0]}" || true
@@ -130,7 +130,7 @@ hc keybind $Mod-F1 spawn ~/.bin/toggle_keymap.sh
 # own settings
 hc set focus_follows_mouse 0
 
-source ~/.config/herbstluftwm/colors
+source "$HOME"/.config/herbstluftwm/colors
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
@@ -196,5 +196,5 @@ done
 
 # load layout if screen is 4K resolution. otherwise keep as is.
 if [[ $(xrandr | grep '\*' | awk '{print $1}') == "3840x2160" ]]; then
-  herbstclient load "alpha" "$(cat ~/.config/herbstluftwm/layout1)"
+  herbstclient load "one" "$(cat ~/.config/herbstluftwm/layout1)"
 fi

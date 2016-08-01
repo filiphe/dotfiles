@@ -18,6 +18,11 @@ mpd/.mpd/mpd.db
 mpd/.mpd/mpd.pid
 mpd/.mpd/mpdstate
 mpd/.mpd/playlists/*
+mpd/.mpd/mpd.conf
+mpd/.mpd/pid
+mpd/.mpd/state
+mpd/.mpd/sticker
+mpd/.mpd/tag_cache
 
 # openbox
 ###################
