@@ -71,10 +71,14 @@ set smartcase
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
+let gruvbox_bold = 1
+let g:gruvbox_italic = 1
+let g:gruvbox_invert_selection = 1
+let g:gruvbox_termcolors = 256
+let g:gruvbox_contrast_dark="hard"
 set background=dark
 colorscheme gruvbox
 "let base16colorspace=256
-let g:gruvbox_contrast_dark="hard"
 
 syntax on
 set lazyredraw
