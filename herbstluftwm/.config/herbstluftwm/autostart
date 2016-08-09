@@ -194,7 +194,10 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
     "$panel" "$monitor" &
 done
 
-# load layout if screen is 4K resolution. otherwise keep as is.
+# load layout depending on screen size
 if [[ $(xrandr | grep '\*' | awk '{print $1}') == "3840x2160" ]]; then
   herbstclient load "one" "$(cat ~/.config/herbstluftwm/layout1)"
+fi
+if [[ $(xrandr | grep '\*' | awk '{print $1}') == "1920x1080" ]]; then
+  herbstclient load "one" "$(cat ~/.config/herbstluftwm/layout2)"
 fi
