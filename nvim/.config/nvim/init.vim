@@ -12,23 +12,14 @@ Plug 'NLKNguyen/papercolor-theme'
 " UI
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree' 
-Plug 'mhinz/vim-startify'
-Plug 'tpope/vim-unimpaired'
 Plug 'majutsushi/tagbar'
-
-" Movement
-Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
 
 " Syntax and alignment
 Plug 'scrooloose/syntastic'
-Plug 'junegunn/vim-easy-align'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-commentary'
-
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
@@ -46,19 +37,12 @@ Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
 
 " Language plugins
-Plug 'derekwyatt/vim-scala', {'for': 'scala' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'tfnico/vim-gradle', { 'for': 'gradle' }
-Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'NLKNguyen/vim-maven-syntax', { 'for': 'xml' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust'}
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'kongo2002/fsharp-vim', { 'for': 'fsharp' }
-Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-
-Plug 'jamessan/vim-gnupg'
 
 call plug#end()
 
