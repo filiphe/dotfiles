@@ -38,7 +38,6 @@ Plug 'nvie/vim-flake8', {'for': 'python'}
 
 " Language plugins
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-Plug 'tfnico/vim-gradle', { 'for': 'gradle' }
 Plug 'NLKNguyen/vim-maven-syntax', { 'for': 'xml' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust'}
 Plug 'elzr/vim-json', { 'for': 'json' }
@@ -46,13 +45,21 @@ Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 
 call plug#end()
 
+
+let g:signify_sign_add = '+'
+let g:signify_sign_delete = "-"
+let g:signify_sign_change = '~'
+let g:signify_sign_delete_first_line = g:signify_sign_delete
+let g:signify_sign_changedelete = g:signify_sign_change
+let g:signify_vcs_list = ['git', 'hg']
+let g:signify_sign_show_count = 0
+
 " {{{ Settings
 " moving around, searching and patterns
 set ignorecase
 set smartcase
 
 " displaying text
-"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
 let gruvbox_bold = 1
@@ -139,11 +146,6 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-" FZF
-nnoremap <silent> <c-p> :FZF<cr>
-nnoremap <silent> <leader>of :FZF %:p:h<cr>
-nnoremap <silent> <leader>ob :Buffers<cr>
-
 " Window navigation
 nnoremap <c-left>  <c-w>5>
 nnoremap <c-down>  <c-w>5-
@@ -163,9 +165,6 @@ set splitright
 " Center matches when searching
 nnoremap N Nzz
 nnoremap n nzz
-
-" Easy align
-vmap     <leader>as   <plug>(EasyAlign)
 
 " deoplete
 let g:deoplete#enable_at_startup         = 1
