@@ -23,7 +23,7 @@ antigen apply
 alias ls='ls -hF --si --color=auto --group-directories-first'
 alias tree='tree -C'
 alias grep='grep --color=auto'
-alias vim='nvim'
+test -f /usr/bin/nvim && alias vim='nvim'
 
 alias rm='rm -i'
 
