@@ -24,6 +24,7 @@ st="%{F$BLUE}  %{F-}"
 sm="%{F$GREEN}  %{F-}"
 sv="%{F$YELLOW}  %{F-}"
 sd="%{F$MAGENTA}  %{F-}"
+sma="%{F$RED}  %{F-}"
 
 # functions
 set -f
@@ -52,11 +53,18 @@ awk -W interactive '$0 != l { print ; l=$0 ; fflush(); }' "$@"
   done > >(uniq_linebuffered) &
   date_pid=$!
 
+  # mail
+  while true ; do
+    echo "mail $(~/.bin/get_gmail_count.py)"
+    sleep 1 || break
+  done > >(uniq_linebuffered) &
+  mail_pid=$!
+
   # herbstluftwm
   herbstclient --idle
 
   # exiting; kill stray event-emitting processes
-  kill $mpc_pid $vol_pid $date_pid    
+  kill $mpc_pid $vol_pid $date_pid $mail_pid
 } 2> /dev/null | {
 TAGS=( $(herbstclient tag_status "$monitor") )
 unset TAGS[${#TAGS[@]}]
@@ -94,6 +102,8 @@ while true ; do
   echo -n "%{r}"
   echo -n "$sm"
   echo -n "$song %{F$CYAN}$song2%{F-}"
+  echo -n "$sma"
+  echo -n "$mail_count"
   echo -n "$sv"
   echo -n "$volume"
   echo -n "$sd"
@@ -118,6 +128,9 @@ while true ; do
         song="$(mpc -f %artist% current)"
         song2="$(mpc -f %title% current)"
       fi
+      ;;
+    mail)
+      mail_count="${cmd[*]:1}"
       ;;
     vol)
       volume="${cmd[*]:1}"
