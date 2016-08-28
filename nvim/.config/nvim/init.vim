@@ -60,7 +60,7 @@ set ignorecase
 set smartcase
 
 " displaying text
-set termguicolors
+"set termguicolors
 
 let gruvbox_bold = 1
 let g:gruvbox_italic = 1
