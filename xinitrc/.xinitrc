@@ -8,9 +8,10 @@ xrdb -merge "$HOME/.Xresources"
 xsetroot -cursor_name left_ptr
 setroot --restore
 unclutter &
+urxvtd &
 
 export BROWSER="qutebrowser"
-export TERMCMD="st"
+export TERMCMD="urxvtc"
 
 exec herbstluftwm --locked
 
