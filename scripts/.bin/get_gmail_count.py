@@ -27,7 +27,10 @@ with open(os.path.expanduser('~') + os.sep + '.gmail-app-password', 'r') as f:
 response = requests.get('https://mail.google.com/mail/feed/atom/^all',
                         auth=('filip.hesslund@gmail.com', secret))
 feed = feedparser.parse(response.text)
-mail_count = feed['feed']['fullcount']
+try:
+    mail_count = feed['feed']['fullcount']
+except KeyError:
+    mail_count = '0'
 
 if mail_count is '0':
     sys.stdout.write("no unread emails")

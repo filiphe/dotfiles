@@ -3,6 +3,7 @@
 URxvt.font:\
   xft:fantasque sans mono:pixelsize=16,\
   xft:terminess for powerline:pixelsize=16,\
+  xft:symbola:pixelsize=16,\
   -misc-fixed-bold-r-normal--15-140-75-75-c-90-iso10646-1,\
   -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
 !URxvt.letterSpace: -2
@@ -10,6 +11,13 @@ URxvt.scrollBar: 0
 URxvt.intensityStyles: 0
 !URxvt.visualBell: 1
 URxvt.urgentOnBell: 1
+
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
 
 
 ! Gruvbox colors for URxvt
