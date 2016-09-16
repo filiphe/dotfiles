@@ -37,6 +37,7 @@ Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
 
 " Language plugins
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'NLKNguyen/vim-maven-syntax', { 'for': 'xml' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust'}
