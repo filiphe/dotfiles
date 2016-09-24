@@ -43,6 +43,7 @@ Plug 'NLKNguyen/vim-maven-syntax', { 'for': 'xml' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust'}
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+Plug 'parkr/vim-jekyll'
 
 call plug#end()
 

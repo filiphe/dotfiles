@@ -9,6 +9,7 @@ xsetroot -cursor_name left_ptr
 setroot --restore
 unclutter &
 urxvtd &
+redshift &
 
 export BROWSER="qutebrowser"
 export TERMCMD="urxvtc"
