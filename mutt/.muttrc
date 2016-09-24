@@ -1,8 +1,8 @@
 set folder      = imaps://imap.gmail.com/
 set imap_user   = filip.hesslund@gmail.com
-set imap_pass   = `cat ~/.gmail-app-password-mutt`
+set imap_pass   = `cat ~/.gmail-app-password`
 set smtp_url    = "smtp://filip.hesslund@smtp.gmail.com:587/"
-set smtp_pass   = `cat ~/.gmail-app-password-mutt`
+set smtp_pass   = `cat ~/.gmail-app-password`
 set spoolfile   = +INBOX
 mailboxes       = +INBOX
 
@@ -43,6 +43,7 @@ bind editor <Tab> complete-query
 set sidebar_visible = yes
 # Ctrl-n, Ctrl-p to select next, previous folder.
 # Ctrl-o to open selected folder.
+set sidebar_visible = yes
 bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next
 bind index,pager \CO sidebar-open
