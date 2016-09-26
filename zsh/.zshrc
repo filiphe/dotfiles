@@ -41,7 +41,7 @@ unsetopt cdablevars
 
 # env vars
 export GOPATH=$HOME/repos/go
-export PATH=$HOME/.local/bin:$HOME/.bin:$GOPATH/bin:$HOME/.cabal/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.bin:$GOPATH/bin:$HOME/.cabal/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH
 export EDITOR='nvim'
 export SUDO_EDITOR=$EDITOR
 export PAGER='less'
