@@ -177,8 +177,9 @@ message_delay_time = "1"
 ## Note: colors can be nested.
 ##
 #
-#song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
-song_list_format = "$5 %a $R $2 %t $7 %l"
+song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
+#song_list_format = "$5 %a $R $2 %t $7 %l"
+#song_list_format = "$2 %t - %b - %a $R %l"
 #
 #song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
 #
@@ -223,9 +224,9 @@ song_list_format = "$5 %a $R $2 %t $7 %l"
 ## Note: below variables also support text attributes listed above.
 ##
 #
-#now_playing_prefix = $b
+now_playing_prefix = $u
 #
-#now_playing_suffix = $/b
+now_playing_suffix = $/u
 #
 #browser_playlist_prefix = "$2playlist$9 "
 #
@@ -276,6 +277,7 @@ song_list_format = "$5 %a $R $2 %t $7 %l"
 ##
 #
 #song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (25)[red]{a} (50)[yellow]{t|f:Title} (30)[blue]{br} (7f)[white]{l}
 #
 ##### various settings #####
 #
@@ -297,7 +299,7 @@ song_list_format = "$5 %a $R $2 %t $7 %l"
 ##
 ## Note: Possible display modes: classic, columns.
 ##
-playlist_display_mode = classic
+playlist_display_mode = columns
 #
 #browser_display_mode = classic
 #
@@ -494,7 +496,7 @@ use_console_editor = yes
 #
 progressbar_color = "black"
 #
-progressbar_elapsed_color = "black"
+progressbar_elapsed_color = "white"
 #
 #statusbar_color = default
 #
