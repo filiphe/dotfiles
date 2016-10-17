@@ -46,5 +46,6 @@ export EDITOR='nvim'
 export SUDO_EDITOR=$EDITOR
 export PAGER='less'
 export LESS='-ir'
+export QUOTING_STYLE=literal ls
 
 export BROWSER=qutebrowser
