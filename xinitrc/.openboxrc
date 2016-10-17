@@ -7,9 +7,10 @@ xset fp rehash
 xrdb -merge "$HOME/.Xresources"
 xsetroot -cursor_name left_ptr
 setroot --restore
+urxvtd &
 unclutter &
 
 export BROWSER="chromium"
-export TERMCMD="st"
+export TERMCMD="urxvtc"
 
 exec openbox
