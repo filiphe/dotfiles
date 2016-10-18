@@ -17,7 +17,7 @@ static int borderpx = 0;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char shell[] = "/bin/zsh";
+static char shell[] = "/bin/sh";
 static char *utmp = NULL;
 static char stty_args[] = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
@@ -66,27 +66,25 @@ static int bellvolume = 0;
 /* default TERM value */
 static char termname[] = "st-256color";
 
+/*
+ * spaces per tab
+ *
+ * When you are changing this value, don't forget to adapt the »it« value in
+ * the st.info and appropriately install the st.info in the environment where
+ * you use this st version.
+ *
+ *	it#$tabspaces,
+ *
+ * Secondly make sure your kernel is not expanding tabs. When running `stty
+ * -a` »tab0« should appear. You can tell the terminal to not expand tabs by
+ *  running following command:
+ *
+ *	stty tabs
+ */
 static unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  /* PaperColor
-  "#262626",
-  "#D7005F",
-  "#718C00",
-  "#D75F00",
-  "#4271AE",
-  "#8959A8",
-  "#3E999F",
-  "#d0d0d0",
-  "#969694",
-  "#D7005F",
-  "#718C00",
-  "#D75F00",
-  "#4271AE",
-  "#8959A8",
-  "#3E999F",
-  "#F5F5F5",*/
   /* Gruvbox */
   "#1d2021", /* hard contrast: #1d2021 / soft contrast: #32302f */
   "#cc241d",
@@ -146,14 +144,8 @@ static unsigned int defaultunderline = 7;
  */
 static MouseShortcut mshortcuts[] = {
 	/* button               mask            string */
-	{ Button4,              XK_NO_MOD,      "\031" },
-	{ Button5,              XK_NO_MOD,      "\005" },
-};
-
-static MouseKey mkeys[] = {
-	/* button               mask            function        argument */
-	{ Button4,              XK_NO_MOD,      kscrollup,      {.i =  1} },
-	{ Button5,              XK_NO_MOD,      kscrolldown,    {.i =  1} },
+	{ Button4,              XK_ANY_MOD,     "\031" },
+	{ Button5,              XK_ANY_MOD,     "\005" },
 };
 
 /* Internal keyboard shortcuts. */
@@ -173,8 +165,6 @@ static Shortcut shortcuts[] = {
 	{ MODKEY|ShiftMask,     XK_C,           clipcopy,       {.i =  0} },
 	{ MODKEY|ShiftMask,     XK_V,           clippaste,      {.i =  0} },
 	{ MODKEY,               XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
@@ -321,6 +311,7 @@ static Key key[] = {
 	{ XK_Delete,        XK_ANY_MOD,     "\033[P",       -1,    0,    0},
 	{ XK_Delete,        XK_ANY_MOD,     "\033[3~",      +1,    0,    0},
 	{ XK_BackSpace,     XK_NO_MOD,      "\177",          0,    0,    0},
+	{ XK_BackSpace,     Mod1Mask,       "\033\177",      0,    0,    0},
 	{ XK_Home,          ShiftMask,      "\033[2J",       0,   -1,    0},
 	{ XK_Home,          ShiftMask,      "\033[1;2H",     0,   +1,    0},
 	{ XK_Home,          XK_ANY_MOD,     "\033[H",        0,   -1,    0},
