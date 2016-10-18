@@ -1,6 +1,6 @@
 pkgname=filiphe-st
 pkgver=0.7
-pkgrel=2
+pkgrel=1
 pkgdesc='A simple virtual terminal emulator for X.'
 arch=('i686' 'x86_64')
 license=('MIT')
@@ -14,10 +14,10 @@ source=(http://dl.suckless.org/st/st-${pkgver}.tar.gz
         http://st.suckless.org/patches/st-scrollback-mouse-altscreen-20161020-6e79e83.diff
         config.h
         config.mk)
-md5sums=('SKIP'
-         'SKIP'
-         'SKIP'
-         'SKIP'
+md5sums=('29b2a599cf1511c8062ed8f025c84c63'
+         'c55076d94247e121a1a86d32a793cf2e'
+         '8bc037ef8ddaff6b9e25839774bf736a'
+         '15a5d2e05f4939da14976a9459619956'
          'SKIP'
          'SKIP')
 
