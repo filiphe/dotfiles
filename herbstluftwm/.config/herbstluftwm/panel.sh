@@ -14,7 +14,8 @@ herbstclient pad "$monitor" 20
 WIDTH=$(xrandr | grep 'current' | cut -d ' ' -f 8)
 RES="$WIDTHx20"
 FONT="*-siji-medium-r-*-*-10-*-*-*-*-*-*-*"
-FONT2="-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*"
+#FONT2="-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*"
+FONT2="-misc-dejavu sans mono-medium-r-normal-*-12-120-*-*-*-*-*-*"
 source ~/.config/herbstluftwm/colors
 BG="$BLACK"
 FG="$WHITE"

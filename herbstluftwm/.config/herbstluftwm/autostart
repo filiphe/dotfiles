@@ -22,7 +22,7 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
-TERMINAL=st
+TERMINAL=urxvtc
 hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Shift-Return spawn ~/.bin/scratchpad.sh
 
@@ -110,7 +110,7 @@ hc keybind $Mod-Shift-i jumpto urgent
 
 
 # own keybinds
-hc keybind $Mod-d spawn rofi -show run -font "source code pro for powerline 10"
+hc keybind $Mod-d spawn rofi -show run -font "fantasque sans mono 12"
 hc keybind $Mod-q spawn qutebrowser
 hc keybind Ctrl-Mod1-l spawn ~/.config/herbstluftwm/fancy-lock
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
