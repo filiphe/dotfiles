@@ -7,8 +7,8 @@ sprunge
 vi-mode
 zsh-users/zsh-completions src
 zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting
 EOBUNDLES
-#zsh-users/zsh-syntax-highlighting
 
 antigen theme af-magic
 bindkey -v
