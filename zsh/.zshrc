@@ -49,3 +49,5 @@ export LESS='-ir'
 export QUOTING_STYLE=literal ls
 
 export BROWSER=qutebrowser
+
+source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
