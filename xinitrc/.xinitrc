@@ -9,9 +9,9 @@ xsetroot -cursor_name left_ptr
 setroot --restore
 unclutter &
 urxvtd &
-redshift &
+#redshift &
 
-export BROWSER="qutebrowser"
+export BROWSER="chromium"
 export TERMCMD="urxvtc"
 
 exec herbstluftwm --locked

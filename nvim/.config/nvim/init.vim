@@ -69,7 +69,8 @@ let g:gruvbox_italic = 1
 let g:gruvbox_invert_selection = 1
 let g:gruvbox_termcolors = 256
 let g:gruvbox_contrast_dark="hard"
-set background=dark
+let g:gruvbox_contrast_light="soft"
+set background=light
 colorscheme gruvbox
 "let base16colorspace=256
 

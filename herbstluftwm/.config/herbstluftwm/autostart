@@ -185,14 +185,16 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc detect_monitors
 #~/.screenlayout/dual.sh
 herbstclient detect_monitors
+herbstclient pad 0 20
+polybar primary &
 
 # find the panel
-panel=~/.config/herbstluftwm/panel.sh
-[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    "$panel" "$monitor" &
-done
+#panel=~/.config/herbstluftwm/panel.sh
+#[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
+#for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
+#    # start it on each monitor
+#    "$panel" "$monitor" &
+#done
 
 # load layout depending on screen size
 if [[ $(xrandr | grep '\*' | awk '{print $1}') == "3840x2160" ]]; then

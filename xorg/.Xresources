@@ -15,10 +15,16 @@ URxvt.keysym.M-s:           perl:keyboard-select:search
 
 
 ! Gruvbox colors for URxvt
-URxvt.background: #1d2021
+!URxvt.background: #1d2021
 ! medium contrast: *background: #282828
 ! soft contrast: *background: #32302f
-URxvt.foreground: #a89984
+!URxvt.foreground: #a89984
+
+! hard contrast: *background: #f9f5d7
+!*background: #fbf1c7
+URxvt.background: #f2e5bc
+URxvt.foreground: #3c3836
+
 ! Black + DarkGrey
 URxvt.color0:  #282828
 URxvt.color8:  #928374
