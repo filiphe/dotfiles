@@ -1,6 +1,6 @@
 ! URxvt settings
 URxvt.font:xft:fantasque sans mono:pixelsize=16
-!URxvt.letterSpace: -2
+URxvt.letterSpace: -2
 URxvt.scrollBar: 0
 URxvt.intensityStyles: 0
 !URxvt.visualBell: 1
@@ -14,14 +14,20 @@ URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
 
 
+! Dark
 ! Gruvbox colors for URxvt
 !URxvt.background: #1d2021
-! medium contrast: *background: #282828
-! soft contrast: *background: #32302f
+!! medium contrast: *background: #282828
+!! soft contrast: *background: #32302f
 !URxvt.foreground: #a89984
 
-! hard contrast: *background: #f9f5d7
-!*background: #fbf1c7
+! Light
+! Gruvbox colors for URxvt
+! Hard contrast
+!URxvt.background: #f9f5d7
+! medium contrast: *background: #fbf1c7
+!URxvt.background: #fbf1c7
+! soft contrast: *background: #f2e5bc
 URxvt.background: #f2e5bc
 URxvt.foreground: #3c3836
 
