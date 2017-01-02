@@ -40,7 +40,7 @@ margin-top = 5
 margin-bottom = 5
 
 [bar/primary]
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR:DP-1}
 width = 100%
 height = 20
 offset-x = 0
@@ -73,6 +73,38 @@ modules-right = mpd volume date powermenu
 
 tray-position = right
 tray-padding = 2
+
+[bar/secondary]
+monitor = ${env:MONITOR:DP-2}
+width = 100%
+height = 20
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 2
+overline-color = #f00
+underline-size = 2
+underline-color = #00f
+
+border-bottom = 2
+border-bottom-color = #333
+
+spacing = 1
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;0
+font-1 = unifont:size=6:heavy:fontformat=truetype;-2
+font-2 = siji:pixelsize=10;0
+
+modules-left = ewmh 
+modules-center = xwindow 
+modules-right = cpu filesystem date
 
 [module/ewmh]
 type                            = internal/xworkspaces
@@ -197,5 +229,53 @@ menu-2-0 = power off
 menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/filesystem]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /
+mount-1 = /home/yur763/music
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 10
+
+; Display fixed precision values 
+; Default: false
+fixed-values = true
+
+; Spacing between entries
+; Default: 2
+spacing = 4
+
+[module/cpu]
+type = internal/cpu
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+format = <label> <ramp-coreload>
+
+; Available tokens:
+;   %percentage% (default) - total cpu load
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label = CPU %percentage%
+
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-8 = █
 
 ; vim:ft=dosini
