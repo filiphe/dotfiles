@@ -113,6 +113,7 @@ hc keybind $Mod-Shift-i jumpto urgent
 hc keybind $Mod-d spawn rofi -show run -font "fantasque sans mono 12"
 hc keybind $Mod-q spawn qutebrowser
 hc keybind Ctrl-Mod1-l spawn i3lock-fancy
+hc keybind Ctrl-Mod1-f spawn ~/.local/bin/find-cursor
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer -q set Master 5%-
 hc keybind XF86AudioRaiseVolume spawn amixer -q set Master 5%+
