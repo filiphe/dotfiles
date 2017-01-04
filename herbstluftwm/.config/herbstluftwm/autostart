@@ -188,8 +188,8 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 herbstclient detect_monitors
 herbstclient pad 0 20
 polybar primary &
-herbstclient pad 1 20
-polybar secondary &
+#herbstclient pad 1 20
+#polybar secondary &
 
 # find the panel
 #panel=~/.config/herbstluftwm/panel.sh
