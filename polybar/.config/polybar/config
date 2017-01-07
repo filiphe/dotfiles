@@ -63,9 +63,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;0
+font-0 = -misc-fixed-medium-r-normal--10-*-75-75-c-60-iso10646-1
 font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-font-2 = siji:pixelsize=10;0
+font-2 = -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
 
 modules-left = ewmh
 modules-center = xwindow 
