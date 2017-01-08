@@ -166,7 +166,7 @@ toggle-off-foreground = ${colors.grey}
 type = internal/date
 interval = 5
 
-date = "%Y-%m-%d "
+date = " %Y-%m-%d"
 date-alt = " %Y-%m-%d"
 
 time = "%H:%M"
@@ -371,6 +371,7 @@ animation-charging-framerate = 750
 
 [module/battery1]
 inherit = module/battery0
+full-at = 81
 battery = BAT1
 
 [module/powermenu]
