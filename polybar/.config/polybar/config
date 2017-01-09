@@ -45,6 +45,7 @@ width = 100%
 height = 20
 offset-x = 0
 offset-y = 0
+bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
