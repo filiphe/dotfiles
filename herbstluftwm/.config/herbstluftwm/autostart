@@ -187,7 +187,8 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 #~/.screenlayout/dual.sh
 herbstclient detect_monitors
 herbstclient pad 0 "" "" 20
-polybar primary &
+#polybar primary &
+$HOME/.config/polybar/launch_polybar.sh
 #herbstclient pad 1 20
 #polybar secondary &
 
