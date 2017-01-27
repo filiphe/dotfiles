@@ -89,10 +89,10 @@ URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
 
 rofi.color-enabled: true
-rofi.color-window: #262626, #262626, #f5f5f5
-rofi.color-normal: #262626, #f5f5f5, #262626, #394249, #ffffff
-rofi.color-active: #273238, #80cbc4, #969694, #394249, #80cbc4
-rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+rofi.color-window: #1d2021, #a89984, #a89984
+rofi.color-normal: #1d2021, #ebdbb2, #282828, #504945, #fbf1c7
+rofi.color-active: #d79921, #1d2021, #d79921, #fabd2f, #1d2021
+rofi.color-urgent: #cc241d, #1d2021, #cc241d, #fb4934, #1d2021
 
 Xft.dpi: 96
 Xft.autohint: 0

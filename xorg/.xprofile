@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+setroot --restore
+unclutter &
+urxvtd &
+light-locker &
+
+export BROWSER="chromium"
+export TERMCMD="urxvtc"
+
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
