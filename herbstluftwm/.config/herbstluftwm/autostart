@@ -185,7 +185,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc detect_monitors
 #~/.screenlayout/dual.sh
 herbstclient detect_monitors
-herbstclient pad 0 20
+herbstclient pad 0 "" "" 20
 polybar primary &
 
 # find the panel
