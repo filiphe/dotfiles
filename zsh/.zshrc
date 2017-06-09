@@ -8,9 +8,11 @@ vi-mode
 zsh-users/zsh-completions src
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting
+mafredri/zsh-async
+sindresorhus/pure
 EOBUNDLES
 
-antigen theme af-magic
+# antigen theme af-magic
 bindkey -v
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo

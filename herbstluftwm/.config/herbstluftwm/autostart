@@ -112,7 +112,7 @@ hc keybind $Mod-Shift-i jumpto urgent
 # own keybinds
 hc keybind $Mod-d spawn rofi -show run -font "fantasque sans mono 12"
 hc keybind $Mod-q spawn qutebrowser
-hc keybind Ctrl-Mod1-l spawn i3lock-fancy
+hc keybind Ctrl-Mod1-l spawn i3lock -f
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer -q set Master 5%-
 hc keybind XF86AudioRaiseVolume spawn amixer -q set Master 5%+
@@ -185,7 +185,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc detect_monitors
 #~/.screenlayout/dual.sh
 herbstclient detect_monitors
-herbstclient pad 0 20
+herbstclient pad 0 "" "" 20
 polybar primary &
 
 # find the panel
