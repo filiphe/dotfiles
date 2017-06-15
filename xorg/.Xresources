@@ -1,9 +1,27 @@
 ! URxvt settings
-URxvt.font:xft:fantasque sans mono:pixelsize=16
+! URxvt.font:\
+!   xft:fantasque sans mono:pixelsize=16,\
+!   xft:symbola:pixelsize=16
+URxvt.font:\
+  xft:meslolgs nerd font:regularforpowerline:size=10,\
+  xft:unifont:regular:size=10,\
+ URxvt.imFont:\
+   xft:meslolgs nerd font:regularforpowerline:size=10,\
+   xft:unifont:regular:size=10
+ URxvt.boldFont:\
+   xft:meslolgs nerd font:bold:size=10,\
+   xft:unifont:bold:size=10
+ URxvt.italicFont:\
+   xft:meslolgs nerd font:regularforpowerline:size=10,\
+   xft:unifont:italic:size=10
+ URxvt.boldItalicFont:\
+   xft:meslolgs nerd font:bold:regularforpowerline:size=10,\
+   xft:unifont:bold:italic:size=10
+
 URxvt.letterSpace: -2
 URxvt.scrollBar: 0
 URxvt.intensityStyles: 0
-!URxvt.visualBell: 1
+URxvt.visualBell: 1
 URxvt.urgentOnBell: 1
 
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
@@ -89,10 +107,10 @@ URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
 
 rofi.color-enabled: true
-rofi.color-window: #262626, #262626, #f5f5f5
-rofi.color-normal: #262626, #f5f5f5, #262626, #394249, #ffffff
-rofi.color-active: #273238, #80cbc4, #969694, #394249, #80cbc4
-rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+rofi.color-window: #1d2021, #a89984, #a89984
+rofi.color-normal: #1d2021, #ebdbb2, #282828, #504945, #fbf1c7
+rofi.color-active: #d79921, #1d2021, #d79921, #fabd2f, #1d2021
+rofi.color-urgent: #cc241d, #1d2021, #cc241d, #fb4934, #1d2021
 
 Xft.dpi: 96
 Xft.autohint: 0

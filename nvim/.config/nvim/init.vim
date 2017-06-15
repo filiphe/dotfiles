@@ -15,9 +15,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
+Plug 'ryanoasis/vim-devicons'
 
 " Syntax and alignment
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
 
@@ -45,6 +47,9 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'parkr/vim-jekyll'
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'pearofducks/ansible-vim'
+Plug 'hashivim/vim-vagrant'
 
 call plug#end()
 
@@ -225,13 +230,22 @@ au Filetype py set autoindent
 au Filetype py set fileformat=unix
 au FileType py let python_highlight_all=1
 
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list            = 1
-let g:syntastic_check_on_open            = 1
-let g:syntastic_check_on_wq              = 0
+" Ansible settings
+let g:ansible_extra_keywords_highlight = '1'
+let g:ansible_attribute_highlight = 'ab'
+let g:ansible_name_highlight = 'b'
 
-let g:syntastic_python_flake8_args='--max-line-length=120'
+" syntastic
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list            = 1
+" let g:syntastic_check_on_open            = 1
+" let g:syntastic_check_on_wq              = 0
+" 
+" let g:syntastic_python_flake8_args='--max-line-length=120'
+
+" ale
+let g:ale_sign_column_always = 1
+let g:ale_python_flake8_options = "--max-line-length=120"
 
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)

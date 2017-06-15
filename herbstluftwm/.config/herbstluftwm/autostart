@@ -24,7 +24,7 @@ hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
 TERMINAL=urxvtc
 hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
-hc keybind $Mod-Shift-Return spawn ~/.bin/scratchpad.sh
+hc keybind $Mod-Shift-Return spawn ~/.local/bin/scratchpad.sh
 
 # basic movement
 # focusing clients
@@ -112,7 +112,9 @@ hc keybind $Mod-Shift-i jumpto urgent
 # own keybinds
 hc keybind $Mod-d spawn rofi -show run -font "fantasque sans mono 12"
 hc keybind $Mod-q spawn qutebrowser
-hc keybind Ctrl-Mod1-l spawn ~/.config/herbstluftwm/fancy-lock
+#hc keybind Ctrl-Mod1-l spawn i3lock-fancy
+hc keybind Ctrl-Mod1-l spawn i3lock -f
+hc keybind Ctrl-Mod1-f spawn ~/.local/bin/find-cursor
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer -q set Master 5%-
 hc keybind XF86AudioRaiseVolume spawn amixer -q set Master 5%+
@@ -185,8 +187,11 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc detect_monitors
 #~/.screenlayout/dual.sh
 herbstclient detect_monitors
-herbstclient pad 0 "" "" 20
-polybar primary &
+#herbstclient pad 0 "" "" 20
+#polybar primary &
+#$HOME/.config/polybar/launch_polybar.sh
+#herbstclient pad 1 20
+#polybar secondary &
 
 # find the panel
 #panel=~/.config/herbstluftwm/panel.sh
