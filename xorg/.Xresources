@@ -1,23 +1,24 @@
 ! URxvt settings
 URxvt.font:\
-  xft:meslo lg s for powerline:regular:pixelsize=14,\
-  xft:symbola:regular:pixelsize=14
-URxvt.imFont:\
-  xft:meslo lg s for powerline:regular:pixelsize=14,\
-  xft:symbola:regular:pixelsize=14
-URxvt.boldFont:\
-  xft:meslo lg s for powerline:bold:pixelsize=14,\
-  xft:symbola:bold:pixelsize=14
-URxvt.italicFont:\
-  xft:meslo lg s for powerline:italic:pixelsize=14,\
-  xft:symbola:italic:pixelsize=14
-URxvt.boldItalicFont:\
-  xft:meslo lg s for powerline:bold:italic:pixelsize=14,\
-  xft:symbola:bold:italic:pixelsize=14
+  xft:meslolgs nerd font:regularforpowerline:size=10,\
+  xft:unifont:regular:size=10,\
+ URxvt.imFont:\
+   xft:meslolgs nerd font:regularforpowerline:size=10,\
+   xft:unifont:regular:size=10
+ URxvt.boldFont:\
+   xft:meslolgs nerd font:bold:size=10,\
+   xft:unifont:bold:size=10
+ URxvt.italicFont:\
+   xft:meslolgs nerd font:regularforpowerline:size=10,\
+   xft:unifont:italic:size=10
+ URxvt.boldItalicFont:\
+   xft:meslolgs nerd font:bold:regularforpowerline:size=10,\
+   xft:unifont:bold:italic:size=10
+
 URxvt.letterSpace: -2
 URxvt.scrollBar: 0
 URxvt.intensityStyles: 0
-!URxvt.visualBell: 1
+URxvt.visualBell: 1
 URxvt.urgentOnBell: 1
 
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select

@@ -24,7 +24,7 @@ hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
 TERMINAL=urxvtc
 hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
-hc keybind $Mod-Shift-Return spawn ~/.bin/scratchpad.sh
+hc keybind $Mod-Shift-Return spawn ~/.local/bin/scratchpad.sh
 
 # basic movement
 # focusing clients
@@ -185,8 +185,16 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc detect_monitors
 #~/.screenlayout/dual.sh
 herbstclient detect_monitors
+<<<<<<< HEAD
 herbstclient pad 0 "" "" 20
 polybar primary &
+=======
+#herbstclient pad 0 "" "" 20
+#polybar primary &
+#$HOME/.config/polybar/launch_polybar.sh
+#herbstclient pad 1 20
+#polybar secondary &
+>>>>>>> work
 
 # find the panel
 #panel=~/.config/herbstluftwm/panel.sh
