@@ -1,9 +1,27 @@
 ! URxvt settings
-URxvt.font:xft:fantasque sans mono:pixelsize=16
+! URxvt.font:\
+!   xft:fantasque sans mono:pixelsize=16,\
+!   xft:symbola:pixelsize=16
+URxvt.font:\
+  xft:meslolgs nerd font:regularforpowerline:size=10,\
+  xft:unifont:regular:size=10,\
+ URxvt.imFont:\
+   xft:meslolgs nerd font:regularforpowerline:size=10,\
+   xft:unifont:regular:size=10
+ URxvt.boldFont:\
+   xft:meslolgs nerd font:bold:size=10,\
+   xft:unifont:bold:size=10
+ URxvt.italicFont:\
+   xft:meslolgs nerd font:regularforpowerline:size=10,\
+   xft:unifont:italic:size=10
+ URxvt.boldItalicFont:\
+   xft:meslolgs nerd font:bold:regularforpowerline:size=10,\
+   xft:unifont:bold:italic:size=10
+
 URxvt.letterSpace: -2
 URxvt.scrollBar: 0
 URxvt.intensityStyles: 0
-!URxvt.visualBell: 1
+URxvt.visualBell: 1
 URxvt.urgentOnBell: 1
 
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
