@@ -49,6 +49,7 @@ Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'parkr/vim-jekyll'
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'pearofducks/ansible-vim'
+Plug 'saltstack/salt-vim'
 Plug 'hashivim/vim-vagrant'
 
 call plug#end()
