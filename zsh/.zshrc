@@ -5,8 +5,11 @@ antigen bundle archlinux
 antigen bundle docker-compose
 antigen bundle git
 antigen bundle history-substring-search
+antigen bundle mvn
 antigen bundle sprunge
 antigen bundle vi-mode
+
+antigen bundle MichaelAquilina/zsh-you-should-use
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
