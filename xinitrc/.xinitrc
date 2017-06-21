@@ -9,6 +9,7 @@ xsetroot -cursor_name left_ptr
 setroot --restore
 unclutter &
 urxvtd &
+dunst &
 #redshift &
 
 export BROWSER="chromium"
