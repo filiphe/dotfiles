@@ -72,6 +72,7 @@ set smartcase
 
 let gruvbox_bold = 1
 let g:gruvbox_italic = 1
+let g:gruvbox_italicize_comments=1
 let g:gruvbox_invert_selection = 1
 let g:gruvbox_termcolors = 256
 let g:gruvbox_contrast_dark="hard"
