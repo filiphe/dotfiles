@@ -20,13 +20,6 @@ antigen theme refined
 
 antigen apply
 
-bindkey -v
-# bind UP and DOWN arrow keys
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-bindkey -M vicmd '?' history-incremental-search-backward
-
 # aliases
 alias ls='ls -hF --si --color=auto --group-directories-first'
 alias tree='tree -C'
