@@ -3,6 +3,7 @@
 nvim/.config/nvim/plugged/*
 nvim/.config/nvim/.init.vim-rplugin~
 nvim/.config/nvim/autoload/plug.vim.old
+nvim/.config/nvim/autoload/plug.vim
 
 # st
 ###################
