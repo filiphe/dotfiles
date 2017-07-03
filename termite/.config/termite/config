@@ -6,6 +6,7 @@ allow_bold = true
 allow_italic = true
 urgent_on_bell = true
 clickable_url = true
+browser=firefox
 font = MesloLGS Nerd Font 10
 scrollback_lines = 10000
 
