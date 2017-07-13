@@ -5,9 +5,9 @@ antigen bundle archlinux
 antigen bundle docker-compose
 antigen bundle git
 antigen bundle history-substring-search
-antigen bundle jsontools
 antigen bundle mvn
 antigen bundle sprunge
+antigen bundle tmux
 antigen bundle vi-mode
 
 antigen bundle MichaelAquilina/zsh-you-should-use
