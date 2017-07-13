@@ -113,7 +113,8 @@ hc keybind $Mod-Shift-i jumpto urgent
 hc keybind $Mod-d spawn rofi -show run -font "fantasque sans mono 12"
 hc keybind $Mod-q spawn qutebrowser
 hc keybind $Mod-t spawn bash -c ~/.local/bin/show_date.sh
-hc keybind Ctrl-Mod1-l spawn i3lock -i "$(cat ~/.config/setroot/.setroot-restore|cut -f2 -d' '|tr -d \')"
+hc keybind $Mod-b spawn bash -c ~/.local/bin/show_song.sh
+hc keybind Ctrl-Mod1-l spawn i3lock -i "$(cat ~/.config/setroot/.setroot-restore|cut -f4 -d' '|tr -d \')" -t
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer -q set Master 5%-
 hc keybind XF86AudioRaiseVolume spawn amixer -q set Master 5%+
@@ -184,7 +185,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
 # hc detect_monitors
-#~/.screenlayout/dual.sh
+~/.screenlayout/dual.sh
 herbstclient detect_monitors
 #herbstclient pad 0 "" "" 20
 #polybar primary &
