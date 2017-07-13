@@ -6,6 +6,7 @@ allow_bold = true
 allow_italic = true
 urgent_on_bell = true
 clickable_url = true
+browser=firefox
 font = MesloLGS Nerd Font 10
 scrollback_lines = 10000
 
@@ -13,11 +14,19 @@ cursor_blink = system
 cursor_shape = block
 
 [colors]
-# special
-foreground      = #3c3836
-foreground_bold = #3c3836
-cursor          = #3c3836
-background      = #f2e5bc
+# light
+#foreground      = #3c3836
+#foreground_bold = #3c3836
+#cursor          = #3c3836
+#background      = #f2e5bc
+#######
+
+# dark
+background      = #1d2021
+foreground      = #ebdbb2
+foreground_bold = #ebdbb2
+cursor          = #ebdbb2
+#######
 
 # black
 color0  = #282828
