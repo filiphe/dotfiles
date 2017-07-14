@@ -113,6 +113,7 @@ hc keybind $Mod-Shift-i jumpto urgent
 hc keybind $Mod-d spawn rofi -show run -font "fantasque sans mono 12"
 hc keybind $Mod-q spawn qutebrowser
 hc keybind $Mod-t spawn bash -c ~/.local/bin/show_date.sh
+hc keybind $Mod-b spawn bash -c ~/.local/bin/show_current_song.sh
 hc keybind Ctrl-Mod1-l spawn i3lock -i "$(cat ~/.config/setroot/.setroot-restore|cut -f2 -d' '|tr -d \')"
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer -q set Master 5%-
@@ -186,8 +187,8 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc detect_monitors
 #~/.screenlayout/dual.sh
 herbstclient detect_monitors
-herbstclient pad 0 "" "" 20
-polybar primary &
+#herbstclient pad 0 "" "" 20
+#polybar primary &
 
 # find the panel
 #panel=~/.config/herbstluftwm/panel.sh
