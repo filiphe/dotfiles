@@ -1,5 +1,6 @@
 [global]
-font = Meslolgs Nerd Font 12
+#font = Meslolgs Nerd Font 12
+font = Monospace 10
 
 # Allow a small subset of html markup:
 #   <b>bold</b>
@@ -148,16 +149,16 @@ dmenu = /usr/bin/dmenu -p dunst:
 browser = /usr/bin/firefox -new-tab
 
 # Align icons left/right/off
-icon_position = off
+icon_position = left
 max_icon_size = 80
 
 # Paths to default icons.
 icon_folders = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/
 
 
-[frame]
-width = 3
-color = "#83a598"
+#[frame]
+#width = 3
+##color = "#"
 
 [shortcuts]
 
@@ -183,25 +184,25 @@ context = ctrl+shift+period
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-frame_color = "#458588"
-foreground = "#3c3836"
-background = "#f2e5bc"
+frame_color = "#f5f5f5"
+foreground = "#525d76"
+background = "#ffffff"
 #background = "#2B313C"
 timeout = 4
 
 [urgency_normal]
-frame_color = "#98971a"
-foreground = "#3c3836"
-background = "#f2e5bc"
+frame_color = "#f5f5f5"
+foreground = "#525d76"
+background = "#ffffff"
 #background = "#2B313C"
 timeout = 6
 
 [urgency_critical]
-frame_color = "#cc241d"
-foreground = "#3c3836"
-background = "#f2e5bc"
+frame_color = "#f5f5f5"
+foreground = "#dc322f"
+background = "#ffffff"
 #background = "#2B313C"
-timeout = 8
+timeout = 3
 
 
 # Every section that isn't one of the above is interpreted as a rules to
