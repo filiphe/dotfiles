@@ -22,7 +22,7 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
-TERMINAL=urxvtc
+TERMINAL=termite
 hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Shift-Return spawn ~/.local/bin/scratchpad.sh
 
@@ -112,9 +112,9 @@ hc keybind $Mod-Shift-i jumpto urgent
 # own keybinds
 hc keybind $Mod-d spawn rofi -show run -font "fantasque sans mono 12"
 hc keybind $Mod-q spawn qutebrowser
-#hc keybind Ctrl-Mod1-l spawn i3lock-fancy
-hc keybind Ctrl-Mod1-l spawn i3lock -f
-hc keybind Ctrl-Mod1-f spawn ~/.local/bin/find-cursor
+hc keybind $Mod-t spawn bash -c ~/.local/bin/show_date.sh
+hc keybind $Mod-b spawn bash -c ~/.local/bin/show_song.sh
+hc keybind Ctrl-Mod1-l spawn i3lock -i "$(cat ~/.config/setroot/.setroot-restore|cut -f2 -d' '|tr -d \')"
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer -q set Master 5%-
 hc keybind XF86AudioRaiseVolume spawn amixer -q set Master 5%+
@@ -127,7 +127,7 @@ hc keybind $Mod-Right spawn mpc next
 hc keybind XF86MonBrightnessDown spawn light -U 1
 hc keybind XF86MonBrightnessUp spawn light -A 1
 
-hc keybind $Mod-F1 spawn ~/.bin/toggle_keymap.sh
+hc keybind $Mod-F1 spawn ~/.local/bin/toggle-keymap.sh
 
 # own settings
 hc set focus_follows_mouse 0
@@ -159,7 +159,7 @@ hc attr theme.active.inner_color "${BLACK}"
 hc attr theme.active.outer_color "${BRIGHT_BLUE}"
 hc attr theme.background_color "${BLACK}"
 
-hc set window_gap 5
+hc set window_gap 0
 hc set frame_padding 0
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1
@@ -189,9 +189,6 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 herbstclient detect_monitors
 #herbstclient pad 0 "" "" 20
 #polybar primary &
-#$HOME/.config/polybar/launch_polybar.sh
-#herbstclient pad 1 20
-#polybar secondary &
 
 # find the panel
 #panel=~/.config/herbstluftwm/panel.sh
