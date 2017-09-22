@@ -6,56 +6,95 @@ allow_bold = true
 allow_italic = true
 urgent_on_bell = true
 clickable_url = true
-browser=firefox
-font = MesloLGS Nerd Font 10
+browser=chromium
+#font = MesloLGS Nerd Font 10
+font = Monospace 10
 scrollback_lines = 10000
 
 cursor_blink = system
 cursor_shape = block
 
+#[colors]
+## light
+##foreground      = #3c3836
+##foreground_bold = #3c3836
+##cursor          = #3c3836
+##background      = #f2e5bc
+########
+#
+## dark
+#background      = #1d2021
+#foreground      = #ebdbb2
+#foreground_bold = #ebdbb2
+#cursor          = #ebdbb2
+########
+#
+## black
+#color0  = #282828
+#color8  = #928374
+#
+## red
+#color1  = #cc241d
+#color9  = #fb4934
+#
+## green
+#color2  = #98971a
+#color10 = #b8bb26
+#
+## yellow
+#color3  = #d79921
+#color11 = #fabd2f
+#
+## blue
+#color4  = #458588
+#color12 = #83a598
+#
+## magenta
+#color5  = #b16286
+#color13 = #d3869b
+#
+## cyan
+#color6  = #689d6a
+#color14 = #8ec07c
+#
+## white
+#color7  = #a89984
+#color15 = #ebdbb2
+
 [colors]
-# light
-#foreground      = #3c3836
-#foreground_bold = #3c3836
-#cursor          = #3c3836
-#background      = #f2e5bc
-#######
+#special
+foreground=   #ABB2BF
+background=   #282C34
+cursor=  #ABB2BF
 
-# dark
-background      = #1d2021
-foreground      = #ebdbb2
-foreground_bold = #ebdbb2
-cursor          = #ebdbb2
-#######
+#black
+color0=       #282C34
+color8=       #3E4452
 
-# black
-color0  = #282828
-color8  = #928374
+#red
+color1=       #E06C75
+color9=       #BE5046
 
-# red
-color1  = #cc241d
-color9  = #fb4934
+#green
+color2=       #98C379
+color10=      #98C379
 
-# green
-color2  = #98971a
-color10 = #b8bb26
+#yellow
+color3=       #E5C07B
+color11=      #D19A66
 
-# yellow
-color3  = #d79921
-color11 = #fabd2f
+#blue
+color4=       #61AFEF
+color12=      #61AFEF
 
-# blue
-color4  = #458588
-color12 = #83a598
+#magenta
+color5=       #C678DD
+color13=      #C678DD
 
-# magenta
-color5  = #b16286
-color13 = #d3869b
+#cyan
+color6=       #56B6C2
+color14=      #56B6C2
 
-# cyan
-color6  = #689d6a
-color14 = #8ec07c
-
-# white
-color7  = #a89984
-color15 = #ebdbb2
+#white
+color7=       #ABB2BF
+color15=      #5C6370
