@@ -8,33 +8,34 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'joshdick/onedark.vim'
 
 " UI
-Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree' 
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Syntax and alignment
-" Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 
 " Completion
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'roxma/nvim-completion-manager'
 
 " Go plugins
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 
 " Python plugins
-Plug 'zchee/deoplete-jedi', { 'for': 'python', 'rtp': 'nvim', 'do': 'make'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
 
@@ -51,6 +52,10 @@ Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'pearofducks/ansible-vim'
 Plug 'saltstack/salt-vim'
 Plug 'hashivim/vim-vagrant'
+Plug 'dleonard0/pony-vim-syntax'
+Plug 'NLKNguyen/vim-docker-compose-syntax'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 call plug#end()
 
@@ -68,7 +73,7 @@ set ignorecase
 set smartcase
 
 " displaying text
-"set termguicolors
+set termguicolors
 
 let gruvbox_bold = 1
 let g:gruvbox_italic = 1
@@ -77,14 +82,15 @@ let g:gruvbox_invert_selection = 1
 let g:gruvbox_termcolors = 256
 let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_contrast_light="soft"
+let g:onedark_terminal_italics=1
+let base16colorspace=256
 set background=dark
-colorscheme gruvbox
-"let base16colorspace=256
+colorscheme onedark
 
 syntax on
 set lazyredraw
 set list
-set listchars=eol:↲,tab:▸▸,space:· 
+set listchars=tab:▸\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set nowrap
 set number
 set relativenumber
@@ -109,17 +115,18 @@ set noerrorbells
 set novisualbell
 set showcmd
 set noshowmode
+set noruler
 
 " editing text
 set formatoptions+=ron
-set nojoinspaces
 set undolevels=500
 
 " tabs and indenting
 set expandtab
 set shiftround
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 
 " reading and writing files set autowrite
 set nobackup
@@ -172,25 +179,22 @@ nnoremap <m-l>     <c-w>v<c-w>l
 set splitbelow
 set splitright
 
+" Center file when j / k
+nnoremap j jzz
+nnoremap k kzz
+
 " Center matches when searching
 nnoremap N Nzz
 nnoremap n nzz
 
-" deoplete
-let g:deoplete#enable_at_startup         = 1
-" use smartcase.
-let g:deoplete#enable_smart_case         = 1
-let g:jedi#popup_select_first            = 0
-
 " Go settings
-let g:deoplete#sources#go#align_class    = 1
 let g:go_hightlight_functions            = 1
 let g:go_highlight_methods               = 1
 let g:go_highlight_structs               = 1
 let g:go_highlight_operators             = 1
 let g:go_highlight_build_constraints     = 1
 
-let g:tagbar_type_go = {  
+let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
         \ 'p:package',
@@ -237,70 +241,24 @@ let g:ansible_extra_keywords_highlight = '1'
 let g:ansible_attribute_highlight = 'ab'
 let g:ansible_name_highlight = 'b'
 
-" syntastic
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list            = 1
-" let g:syntastic_check_on_open            = 1
-" let g:syntastic_check_on_wq              = 0
-" 
-" let g:syntastic_python_flake8_args='--max-line-length=120'
+" Markdown settings
+let vim_markdown_preview_toggle = 1 " Display images on toggle preview C-p
+let vim_markdown_preview_browser = 'chromium'
+let vim_markdown_preview_use_xdg_open = 1
 
 " ale
 let g:ale_sign_column_always = 1
 let g:ale_python_flake8_options = "--max-line-length=120"
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename' ] ]
-      \ },
-      \ 'component_function': {
-      \   'fugitive': 'LightLineFugitive',
-      \   'readonly': 'LightLineReadonly',
-      \   'modified': 'LightLineModified',
-      \   'filename': 'LightLineFilename'
-      \ }
-      \ }
-
-function! LightLineModified()
-  if &filetype == "help"
-    return ""
-  elseif &modified
-    return "+"
-  elseif &modifiable
-    return ""
-  else
-    return ""
-  endif
-endfunction
-
-function! LightLineReadonly()
-  if &filetype == "help"
-    return ""
-  elseif &readonly
-    return ""
-  else
-    return ""
-  endif
-endfunction
-
-function! LightLineFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? ' '._ : ''
-  endif
-  return ''
-endfunction
-
-function! LightLineFilename()
-  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-       \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-endfunction

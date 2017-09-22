@@ -4,28 +4,5 @@ nvim/.config/nvim/plugged/*
 nvim/.config/nvim/.init.vim-rplugin~
 nvim/.config/nvim/autoload/plug.vim.old
 nvim/.config/nvim/autoload/plug.vim
-
-# st
-###################
-st/pkg/
-st/src/
-st/filiphe-st-0.6-2-x86_64.pkg.tar.xz
-st/st-0.6.tar.gz
-
-# mpd
-###################
-mpd/.mpd/mpd.log
-mpd/.mpd/mpd.db
-mpd/.mpd/mpd.pid
-mpd/.mpd/mpdstate
-mpd/.mpd/playlists/*
-mpd/.mpd/mpd.conf
-mpd/.mpd/pid
-mpd/.mpd/state
-mpd/.mpd/sticker
-mpd/.mpd/tag_cache
-
-# openbox
-###################
-openbox/.config/obmenu-generator/cache.db
-openbox/.config/obmenu-generator/icons.db
+nvim/.config/nvim/.netrwhist
+nvim/.config/nvim/spell/

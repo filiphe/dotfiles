@@ -113,7 +113,7 @@ hc keybind $Mod-Shift-i jumpto urgent
 hc keybind $Mod-d spawn rofi -show run -font "fantasque sans mono 12"
 hc keybind $Mod-q spawn qutebrowser
 hc keybind $Mod-t spawn bash -c ~/.local/bin/show_date.sh
-hc keybind $Mod-b spawn bash -c ~/.local/bin/show_current_song.sh
+hc keybind $Mod-b spawn bash -c ~/.local/bin/show_song.sh
 hc keybind Ctrl-Mod1-l spawn i3lock -i "$(cat ~/.config/setroot/.setroot-restore|cut -f2 -d' '|tr -d \')"
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer -q set Master 5%-
@@ -127,7 +127,7 @@ hc keybind $Mod-Right spawn mpc next
 hc keybind XF86MonBrightnessDown spawn xbacklight -dec 10
 hc keybind XF86MonBrightnessUp spawn xbacklight -inc 10
 
-hc keybind $Mod-F1 spawn ~/.bin/toggle_keymap.sh
+hc keybind $Mod-F1 spawn ~/.local/bin/toggle-keymap.sh
 
 # own settings
 hc set focus_follows_mouse 0
@@ -159,7 +159,7 @@ hc attr theme.active.inner_color "${BLACK}"
 hc attr theme.active.outer_color "${BRIGHT_BLUE}"
 hc attr theme.background_color "${BLACK}"
 
-hc set window_gap 5
+hc set window_gap 0
 hc set frame_padding 0
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1

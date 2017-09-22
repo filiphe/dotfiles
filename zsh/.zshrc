@@ -2,13 +2,11 @@ source $HOME/.dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle archlinux
-antigen bundle docker-compose
 antigen bundle git
 antigen bundle history-substring-search
-antigen bundle jsontools
 antigen bundle mvn
 antigen bundle sprunge
-antigen bundle vi-mode
+antigen bundle ssh-agent
 
 antigen bundle MichaelAquilina/zsh-you-should-use
 
@@ -16,7 +14,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme refined
+antigen theme robbyrussell
 
 antigen apply
 
@@ -37,4 +35,4 @@ setopt correct
 setopt hist_ignore_dups
 unsetopt cdablevars
 
-source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+#source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"

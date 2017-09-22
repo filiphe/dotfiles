@@ -3,7 +3,8 @@
 pacaur -Syu --noconfirm
 pacaur -S $(cat package_list) --noconfirm
 
-curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > $HOME/.antigen.zsh
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 for f in $(ls .)
 do
@@ -12,4 +13,3 @@ do
   fi
 done
 
-setroot --store $HOME/.config/herbstluftwm/wallhaven-170258.jpg
