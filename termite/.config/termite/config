@@ -8,93 +8,196 @@ urgent_on_bell = true
 clickable_url = true
 browser=chromium
 #font = MesloLGS Nerd Font 10
-font = Monospace 10
+font = Monospace 13
 scrollback_lines = 10000
 
 cursor_blink = system
 cursor_shape = block
 
-#[colors]
+[colors]
 ## light
-##foreground      = #3c3836
-##foreground_bold = #3c3836
-##cursor          = #3c3836
-##background      = #f2e5bc
-########
+#foreground      = #3c3836
+#foreground_bold = #3c3836
+#cursor          = #3c3836
+#background      = #f2e5bc
+#########
 #
 ## dark
-#background      = #1d2021
-#foreground      = #ebdbb2
-#foreground_bold = #ebdbb2
-#cursor          = #ebdbb2
+background      = #1d2021
+foreground      = #ebdbb2
+foreground_bold = #ebdbb2
+cursor          = #ebdbb2
 ########
+
+# black
+color0  = #282828
+color8  = #928374
+
+# red
+color1  = #cc241d
+color9  = #fb4934
+
+# green
+color2  = #98971a
+color10 = #b8bb26
+
+# yellow
+color3  = #d79921
+color11 = #fabd2f
+
+# blue
+color4  = #458588
+color12 = #83a598
+
+# magenta
+color5  = #b16286
+color13 = #d3869b
+
+# cyan
+color6  = #689d6a
+color14 = #8ec07c
+
+# white
+color7  = #a89984
+color15 = #ebdbb2
+
+# OneDark
+#[colors]
+##special
+#foreground=   #ABB2BF
+#background=   #282C34
+#cursor=  #ABB2BF
+#
+##black
+#color0=       #282C34
+#color8=       #3E4452
+#
+##red
+#color1=       #E06C75
+#color9=       #BE5046
+#
+##green
+#color2=       #98C379
+#color10=      #98C379
+#
+##yellow
+#color3=       #E5C07B
+#color11=      #D19A66
+#
+##blue
+#color4=       #61AFEF
+#color12=      #61AFEF
+#
+##magenta
+#color5=       #C678DD
+#color13=      #C678DD
+#
+##cyan
+#color6=       #56B6C2
+#color14=      #56B6C2
+#
+##white
+#color7=       #ABB2BF
+#color15=      #5C6370
+
+# Solarized Dark
+#[colors]
+#foreground = #839496
+#foreground_bold = #eee8d5
+##foreground_dim = #888888
+#background = #002b36
+#cursor = #93a1a1
+#
+## if unset, will reverse foreground and background
+##highlight = #839496
+#
+## colors from color0 to color254 can be set
+#color0 = #073642
+#color1 = #dc322f
+#color2 = #859900
+#color3 = #b58900
+#color4 = #268bd2
+#color5 = #d33682
+#color6 = #2aa198
+#color7 = #eee8d5
+#color8 = #002b36
+#color9 = #cb4b16
+#color10 = #586e75
+#color11 = #657b83
+#color12 = #839496
+#color13 = #6c71c4
+#color14 = #93a1a1
+#color15 = #fdf6e3
+
+## Monokai Dark
+#[colors]
+#
+## special
+#foreground      = #f8f8f2
+#foreground_bold = #f8f8f2
+#cursor          = #f8f8f2
+#background      = #272822
 #
 ## black
-#color0  = #282828
-#color8  = #928374
+#color0  = #272822
+#color8  = #75715e
 #
 ## red
-#color1  = #cc241d
-#color9  = #fb4934
+#color1  = #f92672
+#color9  = #f92672
 #
 ## green
-#color2  = #98971a
-#color10 = #b8bb26
+#color2  = #a6e22e
+#color10 = #a6e22e
 #
 ## yellow
-#color3  = #d79921
-#color11 = #fabd2f
+#color3  = #f4bf75
+#color11 = #f4bf75
 #
 ## blue
-#color4  = #458588
-#color12 = #83a598
+#color4  = #66d9ef
+#color12 = #66d9ef
 #
 ## magenta
-#color5  = #b16286
-#color13 = #d3869b
+#color5  = #ae81ff
+#color13 = #ae81ff
 #
 ## cyan
-#color6  = #689d6a
-#color14 = #8ec07c
+#color6  = #a1efe4
+#color14 = #a1efe4
 #
 ## white
-#color7  = #a89984
-#color15 = #ebdbb2
+#color7  = #f8f8f2
+#color15 = #f9f8f5
 
-[colors]
-#special
-foreground=   #ABB2BF
-background=   #282C34
-cursor=  #ABB2BF
+# Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2016-present Sven Greb <code@svengreb.de>
 
-#black
-color0=       #282C34
-color8=       #3E4452
+# Project:    Nord Termite
+# Repository: https://github.com/arcticicestudio/nord-termite
+# License:    MIT
 
-#red
-color1=       #E06C75
-color9=       #BE5046
-
-#green
-color2=       #98C379
-color10=      #98C379
-
-#yellow
-color3=       #E5C07B
-color11=      #D19A66
-
-#blue
-color4=       #61AFEF
-color12=      #61AFEF
-
-#magenta
-color5=       #C678DD
-color13=      #C678DD
-
-#cyan
-color6=       #56B6C2
-color14=      #56B6C2
-
-#white
-color7=       #ABB2BF
-color15=      #5C6370
+#[colors]
+#foreground = #D8DEE9
+#background = #2E3440
+#foreground_bold = #D8DEE9
+#cursor = #D8DEE9
+#cursor_foreground = #2E3440
+#highlight = #4C566A
+#
+#color0  = #3B4252
+#color1  = #BF616A
+#color2  = #A3BE8C
+#color3  = #EBCB8B
+#color4  = #81A1C1
+#color5  = #B48EAD
+#color6  = #88C0D0
+#color7  = #E5E9F0
+#color8  = #4C566A
+#color9  = #BF616A
+#color10 = #A3BE8C
+#color11 = #EBCB8B
+#color12 = #81A1C1
+#color13 = #B48EAD
+#color14 = #8FBCBB
+#color15 = #ECEFF4
