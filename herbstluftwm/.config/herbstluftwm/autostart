@@ -9,7 +9,7 @@ hc() {
 hc emit_hook reload
 
 #xsetroot -solid '#5A8E3A'
-setroot --restore 
+setroot --restore
 
 # remove all existing keybindings
 hc keyunbind --all
@@ -110,20 +110,23 @@ hc keybind $Mod-Shift-i jumpto urgent
 
 
 # own keybinds
-hc keybind $Mod-d spawn rofi -show run -font "fantasque sans mono 12"
+hc keybind $Mod-d spawn rofi -show combi
 hc keybind $Mod-q spawn qutebrowser
 hc keybind $Mod-t spawn bash -c ~/.local/bin/show_date.sh
 hc keybind $Mod-b spawn bash -c ~/.local/bin/show_song.sh
 hc keybind Ctrl-Mod1-l spawn i3lock -i "$(cat ~/.config/setroot/.setroot-restore|cut -f2 -d' '|tr -d \')"
-hc keybind XF86AudioMute spawn amixer -q set Master toggle
-hc keybind XF86AudioLowerVolume spawn amixer -q set Master 5%-
-hc keybind XF86AudioRaiseVolume spawn amixer -q set Master 5%+
-hc keybind XF86AudioNext spawn mpc next
-hc keybind XF86AudioPrev spawn mpc prev
-hc keybind XF86AudioPlay spawn mpc toggle
-hc keybind $Mod-Left  spawn mpc prev
-hc keybind $Mod-Down  spawn mpc toggle
-hc keybind $Mod-Right spawn mpc next
+#hc keybind XF86AudioMute spawn amixer -q set PCM toggle
+#hc keybind XF86AudioLowerVolume spawn amixer -q set PCM 5%-
+#hc keybind XF86AudioRaiseVolume spawn amixer -q set PCM 5%+
+hc keybind XF86AudioMute spawn ~/.local/bin/volctl toggle
+hc keybind XF86AudioLowerVolume spawn ~/.local/bin/volctl down
+hc keybind XF86AudioRaiseVolume spawn ~/.local/bin/volctl up
+hc keybind XF86AudioNext spawn playerctl next
+hc keybind XF86AudioPrev spawn playerctl previous
+hc keybind XF86AudioPlay spawn playerctl play-pause
+hc keybind $Mod-Left  spawn playerctl previous
+hc keybind $Mod-Down  spawn playerctl play-pause
+hc keybind $Mod-Right spawn playerctl next
 hc keybind XF86MonBrightnessDown spawn light -U 1
 hc keybind XF86MonBrightnessUp spawn light -A 1
 
@@ -147,7 +150,7 @@ hc set frame_transparent_width 1
 hc set frame_gap 15
 
 hc attr theme.active.color "${BRIGHT_BLUE}"
-hc attr theme.normal.color "${BLACK}" 
+hc attr theme.normal.color "${BLACK}"
 hc attr theme.urgent.color red
 hc attr theme.inner_width 0
 hc attr theme.inner_color black
@@ -201,6 +204,9 @@ herbstclient detect_monitors
 # load layout depending on screen size
 if [[ $(xrandr | grep '\*' | awk '{print $1}') == "3840x2160" ]]; then
   herbstclient load "one" "$(cat ~/.config/herbstluftwm/layout1)"
+  herbstclient load "two" "$(cat ~/.config/herbstluftwm/layout1)"
+  herbstclient load "three" "$(cat ~/.config/herbstluftwm/layout1)"
+  herbstclient load "four" "$(cat ~/.config/herbstluftwm/layout1)"
 fi
 if [[ $(xrandr | grep '\*' | awk '{print $1}') == "1920x1080" ]]; then
   herbstclient load "one" "$(cat ~/.config/herbstluftwm/layout2)"
