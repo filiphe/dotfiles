@@ -8,13 +8,14 @@ xrdb -merge "$HOME/.Xresources"
 xsetroot -cursor_name left_ptr
 setroot --restore
 dunst &
-redshift &
-compton -b &
+unclutter &
+xautolock -time 2 -locker "i3lock -i \"$(cut -f2 -d' ' ~/.config/setroot/.setroot-restore | tr -d \')\"" &
+#redshift &
+#compton -b &
 
-export BROWSER="chromium"
 export TERMCMD="termite"
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+eval "$(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
 export SSH_AUTH_SOCK
 
 exec herbstluftwm --locked
