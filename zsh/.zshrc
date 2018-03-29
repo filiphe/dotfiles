@@ -1,22 +1,34 @@
-source $HOME/.dotfiles/antigen/antigen.zsh
-antigen use oh-my-zsh
+source "${HOME}/.zgen/zgen.zsh"
 
-antigen bundle archlinux
-antigen bundle git
-antigen bundle history-substring-search
-antigen bundle mvn
-antigen bundle sprunge
-antigen bundle ssh-agent
+# if the init scipt doesn't exist
+if ! zgen saved; then
 
-antigen bundle MichaelAquilina/zsh-you-should-use
+  # specify plugins here
+  zgen oh-my-zsh
+  zgen oh-my-zsh plugins/archlinux
+  zgen oh-my-zsh plugins/docker
+  zgen oh-my-zsh plugins/encode64
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/mvn
+  zgen oh-my-zsh plugins/sprunge
+  zgen oh-my-zsh plugins/ssh-agent
+  zgen oh-my-zsh plugins/tmux
 
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-completions src
+  zgen load zsh-users/zsh-autosuggestions
 
-antigen theme robbyrussell
+  zgen load MichaelAquilina/zsh-you-should-use
+  zgen load mafredi/zsh-async
 
-antigen apply
+#  zgen load sobolevn/sobole-zsh-theme sobole
+  zgen load denysdovhan/spaceship-prompt spaceship
+
+  # generate the init script from plugins above
+  zgen save
+fi
+
+#eval $(dircolors ~/.dir_colors)
 
 # aliases
 alias ls='ls -hF --si --color=auto --group-directories-first'
@@ -35,4 +47,15 @@ setopt correct
 setopt hist_ignore_dups
 unsetopt cdablevars
 
-#source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+
+source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fd - cd to selected directory
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}

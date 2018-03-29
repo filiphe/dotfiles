@@ -10,3 +10,4 @@ export QUOTING_STYLE=literal ls
 export PAGER="nvim -R -c 'silent! %sm/\\e.\\{-\\}m//g' -"
 export MANPAGER="bash -c \"nvim -c \\\"set ft=man\\\" </dev/tty <(col -bx)\""
 export BROWSER=firefox
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
