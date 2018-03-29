@@ -5,10 +5,14 @@ endfunction
 
 call plug#begin('~/.local/share/nvim/plugged')
 " Colors
-Plug 'chriskempson/base16-vim'
+"Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'joshdick/onedark.vim'
+"Plug 'NLKNguyen/papercolor-theme'
+"Plug 'joshdick/onedark.vim'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'nanotech/jellybeans.vim'
+"Plug 'sickill/vim-monokai'
+"Plug 'arcticicestudio/nord-vim'
 
 " UI
 Plug 'scrooloose/nerdtree'
@@ -19,14 +23,18 @@ Plug 'mhinz/vim-signify'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Syntax and alignment
-Plug 'w0rp/ale'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
 " Completion
+Plug 'w0rp/ale'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'roxma/nvim-completion-manager'
@@ -37,7 +45,7 @@ Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.local/share/nvim/plug
 
 " Python plugins
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'nvie/vim-flake8', {'for': 'python'}
+"Plug 'nvie/vim-flake8', {'for': 'python'}
 
 " Language plugins
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
@@ -47,14 +55,8 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust'}
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
-Plug 'parkr/vim-jekyll'
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'pearofducks/ansible-vim'
-Plug 'saltstack/salt-vim'
-Plug 'hashivim/vim-vagrant'
-Plug 'dleonard0/pony-vim-syntax'
-Plug 'NLKNguyen/vim-docker-compose-syntax'
-Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 
 call plug#end()
@@ -84,8 +86,16 @@ let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_contrast_light="soft"
 let g:onedark_terminal_italics=1
 let base16colorspace=256
+let g:solarized_termcolors=256
+let g:jellybeans_use_term_italics=1
+let g:nord_italic=1
+let g:nord_italic_comments = 1
+let g:nord_uniform_status_lines = 1
+let g:nord_uniform_diff_background = 1
+let g:nord_comment_brightness = 15
 set background=dark
-colorscheme onedark
+"colorscheme monokai
+colorscheme gruvbox
 
 syntax on
 set lazyredraw
@@ -188,11 +198,18 @@ nnoremap N Nzz
 nnoremap n nzz
 
 " Go settings
-let g:go_hightlight_functions            = 1
-let g:go_highlight_methods               = 1
-let g:go_highlight_structs               = 1
-let g:go_highlight_operators             = 1
-let g:go_highlight_build_constraints     = 1
+let g:go_highlight_functions            = 1
+let g:go_highlight_methods              = 1
+let g:go_highlight_structs              = 1
+let g:go_highlight_operators            = 1
+let g:go_highlight_build_constraints    = 1
+let g:go_highlight_extra_types          = 1
+let g:go_highlight_function_arguments   = 1
+let g:go_highlight_function_calls       = 1
+let g:go_highlight_types                = 1
+let g:go_highlight_fields               = 1
+let g:go_fold_enable = ['import']
+
 
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
@@ -243,7 +260,7 @@ let g:ansible_name_highlight = 'b'
 
 " Markdown settings
 let vim_markdown_preview_toggle = 1 " Display images on toggle preview C-p
-let vim_markdown_preview_browser = 'chromium'
+let vim_markdown_preview_browser = 'firefox'
 let vim_markdown_preview_use_xdg_open = 1
 
 " ale
@@ -262,3 +279,12 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" Prose mode
+function! ProseMode()
+  call goyo#execute(0, [])
+  set spell noci nosi noai nolist noshowmode noshowcmd
+  set complete+=s
+endfunction
+
+command! ProseMode call ProseMode()
+nmap \p :ProseMode<CR>
