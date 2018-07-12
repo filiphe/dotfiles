@@ -28,14 +28,18 @@ if ! zgen saved; then
   zgen save
 fi
 
-#eval $(dircolors ~/.dir_colors)
 
 # aliases
+alias pacaur='yay'
 alias ls='ls -hF --si --color=auto --group-directories-first'
 alias tree='tree -C'
 alias grep='grep --color=auto'
 alias rm='rm -i'
 test -f /usr/bin/nvim && alias vim='nvim'
+
+upgrade () {
+    yay -Syu
+}
 
 
 # options
@@ -48,14 +52,4 @@ setopt hist_ignore_dups
 unsetopt cdablevars
 
 
-source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# fd - cd to selected directory
-fd() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
-}
