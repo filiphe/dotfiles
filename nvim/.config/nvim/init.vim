@@ -5,14 +5,7 @@ endfunction
 
 call plug#begin('~/.local/share/nvim/plugged')
 " Colors
-"Plug 'chriskempson/base16-vim'
-Plug 'morhetz/gruvbox'
-"Plug 'NLKNguyen/papercolor-theme'
-"Plug 'joshdick/onedark.vim'
-"Plug 'altercation/vim-colors-solarized'
-"Plug 'nanotech/jellybeans.vim'
-"Plug 'sickill/vim-monokai'
-"Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " UI
 Plug 'scrooloose/nerdtree'
@@ -23,41 +16,38 @@ Plug 'mhinz/vim-signify'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'mhinz/vim-grepper'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 " Syntax and alignment
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
 
 " Completion
 Plug 'w0rp/ale'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/nvim-cm-racer'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 " Go plugins
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
 
-" Python plugins
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
-"Plug 'nvie/vim-flake8', {'for': 'python'}
-
 " Language plugins
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'NLKNguyen/vim-maven-syntax', { 'for': 'xml' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust'}
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'pearofducks/ansible-vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+Plug 'gko/vim-coloresque'
 
 call plug#end()
 
@@ -83,10 +73,10 @@ let g:gruvbox_italicize_comments=1
 let g:gruvbox_invert_selection = 1
 let g:gruvbox_termcolors = 256
 let g:gruvbox_contrast_dark="hard"
-let g:gruvbox_contrast_light="soft"
+let g:gruvbox_contrast_light="medium"
 let g:onedark_terminal_italics=1
 let base16colorspace=256
-let g:solarized_termcolors=256
+let g:solarized_termcolors=16
 let g:jellybeans_use_term_italics=1
 let g:nord_italic=1
 let g:nord_italic_comments = 1
@@ -94,8 +84,7 @@ let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_comment_brightness = 15
 set background=dark
-"colorscheme monokai
-colorscheme gruvbox
+colorscheme dracula
 
 syntax on
 set lazyredraw
@@ -243,6 +232,15 @@ au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>d :sp <CR>:exe "GoDoc" <CR>
 au Filetype go nnoremap <leader>r :GoRun %<CR>
 
+" YAML settings
+au FileType yaml setlocal ts=2
+au FileType yaml setlocal sts=2
+au FileType yaml setlocal sw=2
+au FileType yaml setlocal expandtab
+au FileType yml setlocal ts=2
+au FileType yml setlocal sts=2
+au FileType yml setlocal sw=2
+au FileType yml setlocal expandtab
 " Python settings
 au Filetype py set tabstop=4
 au Filetype py set softtabstop=4
@@ -260,14 +258,36 @@ let g:ansible_name_highlight = 'b'
 
 " Markdown settings
 let vim_markdown_preview_toggle = 1 " Display images on toggle preview C-p
-let vim_markdown_preview_browser = 'firefox'
+let vim_markdown_preview_browser = 'chromium'
 let vim_markdown_preview_use_xdg_open = 1
 
 " ale
 let g:ale_sign_column_always = 1
 let g:ale_python_flake8_options = "--max-line-length=120"
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+let g:ale_fix_on_save = 0
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+
+" rust settings
+let g:racer_cmd = "~/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
+
+" typescript settings
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compile_options = ''
+au FileType typescript setlocal ts=2
+au FileType typescript setlocal sts=2
+au FileType typescript setlocal sw=2
+au FileType typescript setlocal expandtab
+au FileType typescript setlocal smarttab
+
+" javascript settings
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
 
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
