@@ -9,7 +9,7 @@ xsetroot -cursor_name left_ptr
 setroot --restore
 dunst &
 unclutter &
-xautolock -time 2 -locker "i3lock -i \"$(cut -f2 -d' ' ~/.config/setroot/.setroot-restore | tr -d \')\"" &
+xautolock -time 5 -locker "i3lock -i \"$(cut -f2 -d' ' ~/.config/setroot/.setroot-restore | tr -d \')\"" &
 #redshift &
 #compton -b &
 
