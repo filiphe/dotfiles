@@ -4,4 +4,4 @@
 
 export FZF_DEFAULT_OPTS="--height 40% --reverse"
 typeset -U path
-path=($path[@] $HOME/.local/bin $GOPATH/bin)
+path=($HOME/.local/bin $path[@] $GOPATH/bin $HOME/.cargo/bin)
