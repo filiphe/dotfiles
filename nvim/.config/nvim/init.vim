@@ -28,28 +28,36 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
 
 " Completion
-Plug 'w0rp/ale'
-Plug 'Shougo/neosnippet'
+Plug 'mhartington/nvim-typescript', { 'for': 'typescript', 'do': './install.sh' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neco-syntax'
+Plug 'Shougo/neco-vim'
+Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'roxma/nvim-completion-manager'
-Plug 'roxma/nvim-cm-racer'
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+Plug 'w0rp/ale'
+Plug 'wellle/tmux-complete.vim'
+Plug 'zchee/deoplete-go', { 'for': 'go' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python'}
 
 " Go plugins
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
+"Plug 'fatih/vim-go', { 'for': 'go' }
+"Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
 
-" Language plugins
-Plug 'NLKNguyen/vim-maven-syntax', { 'for': 'xml' }
-Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'martinda/Jenkinsfile-vim-syntax'
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-Plug 'gko/vim-coloresque'
+" TypeScript plugins
+"Plug 'leafgarland/typescript-vim'
+"Plug 'HerringtonDarkholme/yats.vim'
+"Plug 'gko/vim-coloresque'
 
 call plug#end()
+
+let g:deoplete#enable_at_startup = 1
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+let g:neosnippet#enable_completed_snippet = 1
+let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Signify
 let g:signify_sign_add = '+'
@@ -288,11 +296,6 @@ au FileType typescript setlocal smarttab
 " javascript settings
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
-
-" neosnippet
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " airline
 let g:airline_powerline_fonts = 1
