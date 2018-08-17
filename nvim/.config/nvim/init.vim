@@ -28,7 +28,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
 
 " Completion
-Plug 'mhartington/nvim-typescript', { 'for': 'typescript', 'do': './install.sh' }
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
@@ -46,8 +46,8 @@ Plug 'zchee/deoplete-jedi', { 'for': 'python'}
 
 " TypeScript plugins
 "Plug 'leafgarland/typescript-vim'
-"Plug 'HerringtonDarkholme/yats.vim'
-"Plug 'gko/vim-coloresque'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'gko/vim-coloresque'
 
 call plug#end()
 
