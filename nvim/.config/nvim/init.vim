@@ -22,6 +22,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mhinz/vim-grepper'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'terryma/vim-multiple-cursors'
 
 " Syntax and alignment
 Plug 'kien/rainbow_parentheses.vim'
@@ -41,8 +42,8 @@ Plug 'zchee/deoplete-go', { 'for': 'go' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python'}
 
 " Go plugins
-"Plug 'fatih/vim-go', { 'for': 'go' }
-"Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
 
 " TypeScript plugins
 "Plug 'leafgarland/typescript-vim'
@@ -206,6 +207,10 @@ let g:go_highlight_function_calls       = 1
 let g:go_highlight_types                = 1
 let g:go_highlight_fields               = 1
 let g:go_fold_enable = ['import']
+let g:go_auto_type_info = 1
+let g:go_fmt_command = "goimports"
+let g:go_auto_sameids = 1
+let g:go_gocode_propose_source=1
 
 
 let g:tagbar_type_go = {
@@ -301,6 +306,18 @@ let g:jsx_ext_required = 0
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
+
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-m>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 " Prose mode
 function! ProseMode()
