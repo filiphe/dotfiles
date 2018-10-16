@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Colors
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
 
 " UI
 Plug 'scrooloose/nerdtree'
@@ -93,8 +94,8 @@ let g:nord_italic_comments = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_comment_brightness = 15
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme nord
 
 syntax on
 set lazyredraw

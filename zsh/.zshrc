@@ -28,8 +28,6 @@ if ! zgen saved; then
   zgen save
 fi
 
-eval $(dircolors ~/.dircolors.solarized.ansi-light)
-
 
 # aliases
 alias pacaur='yay'
