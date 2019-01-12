@@ -43,6 +43,8 @@ upgrade () {
     yay -Syu
 }
 
+peek() { tmux split-window -p 33 less $@ || exit; }
+
 
 # options
 setopt nobeep
@@ -55,3 +57,6 @@ unsetopt cdablevars
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(kubectl completion zsh)
+source <(minikube completion zsh)
+source /home/yur763/vcs/bitbucket/DC-PLATFORM/dev-tools/minikube-functions

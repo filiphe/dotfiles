@@ -40,20 +40,58 @@
 
 # NORD
 ######################
-BLACK='#3B4252'
-RED='#BF616A'
-GREEN='#A3BE8C'
-YELLOW='#EBCB8B'
-BLUE='#81A1C1'
-MAGENTA='#B48EAD'
-CYAN='#88C0D0'
-LIGHT_GRAY='#E5E9F0'
-GRAY='#4C566A'
-BRIGHT_RED='#BF616A'
-BRIGHT_GREEN='#A3BE8C'
-BRIGHT_YELLOW='#EBCB8B'
-BRIGHT_BLUE='#81A1C1'
-BRIGHT_MAGENTA='#B48EAD'
-BRIGHT_CYAN='#8FBCBB'
-WHITE='#ECEFF4'
+#BLACK='#3B4252'
+#RED='#BF616A'
+#GREEN='#A3BE8C'
+#YELLOW='#EBCB8B'
+#BLUE='#81A1C1'
+#MAGENTA='#B48EAD'
+#CYAN='#88C0D0'
+#LIGHT_GRAY='#E5E9F0'
+#GRAY='#4C566A'
+#BRIGHT_RED='#BF616A'
+#BRIGHT_GREEN='#A3BE8C'
+#BRIGHT_YELLOW='#EBCB8B'
+#BRIGHT_BLUE='#81A1C1'
+#BRIGHT_MAGENTA='#B48EAD'
+#BRIGHT_CYAN='#8FBCBB'
+#WHITE='#ECEFF4'
 
+# OCEANICNEXT
+######################
+BLACK="#1a2b34" # Base 00 - Black
+RED="#ee5d64" # Base 08 - Red
+GREEN="#98c892" # Base 0B - Green
+YELLOW="#fbc959" # Base 0A - Yellow
+BLUE="#6498ce" # Base 0D - Blue
+MAGENTA="#C693C6" # Base 0E - Magenta
+CYAN="#5ab3b4" # Base 0C - Cyan
+LIGHT_GRAY="#c0c5ce" # Base 05 - White
+GRAY="#65737e" # Base 03 - Bright Black
+BRIGHT_RED="#ee5d64" # Base 08 - Red
+BRIGHT_GREEN="#98c892" # Base 0B - Green
+BRIGHT_YELLOW="#fbc959" # Base 0A - Yellow
+BRIGHT_BLUE="#6498ce" # Base 0D - Blue
+BRIGHT_MAGENTA="#C693C6" # Base 0E - Magenta
+BRIGHT_CYAN="#5ab3b4" # Base 0C - Cyan
+WHITE="#cdd3de" # Base 07 - Bright White
+
+# MONOKAI
+######################
+
+BLACK="#272822" # Base 00 - Black
+RED="#f92672" # Base 08 - Red
+GREEN="#a6e22e" # Base 0B - Green
+YELLOW="#f4bf75" # Base 0A - Yellow
+BLUE="#66d9ef" # Base 0D - Blue
+MAGENTA="#ae81ff" # Base 0E - Magenta
+CYAN="#a1efe4" # Base 0C - Cyan
+LIGHT_GRAY="#f8f8f2" # Base 05 - White
+GRAY="#75715e" # Base 03 - Bright Black
+BRIGHT_RED="$RED" # Base 08 - Red
+BRIGHT_GREEN="$GREEN" # Base 0B - Green
+BRIGHT_YELLOW="$YELLOW" # Base 0A - Yellow
+BRIGHT_BLUE="$BLUE" # Base 0D - Blue
+BRIGHT_MAGENTA="$MAGENTA" # Base 0E - Magenta
+BRIGHT_CYAN="$CYAN" # Base 0C - Cyan
+WHITE="#f9f8f5" # Base 07 - Bright White

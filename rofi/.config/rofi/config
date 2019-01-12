@@ -1,5 +1,5 @@
 #include "/usr/share/rofi/themes//Arc.theme"
 rofi.combi-modi: run,window
 rofi.font: Monospace 14
-rofi.modi: combi,run
-rofi.theme: .local/share/rofi/dracula.rasi
+rofi.modi: run,window,ssh
+rofi.theme: /usr/share/rofi/themes/Pop-Dark.rasi

@@ -4,18 +4,25 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin('~/.local/share/nvim/plugged')
+
+"Plug 'filiphe/nvim-example-python-plugin'
+
 " Colors
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'arcticicestudio/nord-vim'
+Plug 'mhartington/oceanic-next'
+Plug 'chriskempson/base16-vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'jnurmine/Zenburn'
 
 " UI
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
-Plug 'ryanoasis/vim-devicons'
+Plug 'airblade/vim-gitgutter'
+"Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -24,7 +31,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mhinz/vim-grepper'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-multiple-cursors'
 
 " Syntax and alignment
 Plug 'kien/rainbow_parentheses.vim'
@@ -62,21 +68,12 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 let g:neosnippet#enable_completed_snippet = 1
 let g:neosnippet#enable_snipmate_compatibility = 1
 
-" Signify
-let g:signify_sign_add = '+'
-let g:signify_sign_delete = "-"
-let g:signify_sign_change = '~'
-let g:signify_sign_delete_first_line = g:signify_sign_delete
-let g:signify_sign_changedelete = g:signify_sign_change
-let g:signify_vcs_list = ['git', 'hg']
-let g:signify_sign_show_count = 0
-
 " moving around, searching and patterns
 set ignorecase
 set smartcase
 
 " displaying text
-"set termguicolors
+set termguicolors
 
 let gruvbox_bold = 1
 let g:gruvbox_italic = 1
@@ -94,8 +91,10 @@ let g:nord_italic_comments = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_comment_brightness = 15
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 set background=dark
-colorscheme nord
+colorscheme base16-monokai
 
 syntax on
 set lazyredraw
@@ -178,10 +177,10 @@ nnoremap <c-left>  <c-w>5>
 nnoremap <c-down>  <c-w>5-
 nnoremap <c-up>    <c-w>5+
 nnoremap <c-right> <c-w>5<
-nnoremap <c-h>     <c-w>h
-nnoremap <c-j>     <c-w>j
-nnoremap <c-k>     <c-w>k
-nnoremap <c-l>     <c-w>l
+"nnoremap <c-h>     <c-w>h
+"nnoremap <c-j>     <c-w>j
+"nnoremap <c-k>     <c-w>k
+"nnoremap <c-l>     <c-w>l
 nnoremap <m-h>     <c-w>v
 nnoremap <m-j>     <c-w>s<c-w>j
 nnoremap <m-k>     <c-w>s
@@ -309,17 +308,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
-let g:multi_cursor_use_default_mapping=0
-
-" Default mapping
-let g:multi_cursor_start_word_key      = '<C-m>'
-let g:multi_cursor_select_all_word_key = '<A-n>'
-let g:multi_cursor_start_key           = 'g<C-n>'
-let g:multi_cursor_select_all_key      = 'g<A-n>'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
 
 " Prose mode
 function! ProseMode()
