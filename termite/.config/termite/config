@@ -8,11 +8,56 @@ urgent_on_bell = true
 clickable_url = true
 browser=google-chrome-stable
 #font = MesloLGS Nerd Font 10
-font = Monospace 12
+font = Monospace 11
 scrollback_lines = 10000
 
 cursor_blink = system
 cursor_shape = block
+
+# Gruvbox
+[colors]
+# # light
+# background = #fbf1c7
+# foreground = #3c3836
+# foreground_bold = #3c3836
+#
+# dark
+background = #1d2021
+foreground = #ebdbb2
+foreground_bold = #ebdbb2
+
+# light0 + gray
+color0 = #fbf1c7
+color8 = #928374
+
+# neutral_red + faded_red
+color1 = #cc241d
+color9 = #9d0006
+
+# neutral_green + faded_green
+color2 = #98971a
+color10 = #79740e
+
+# neutral_yellow + faded_yellow
+color3 = #d79921
+color11 = #b57614
+
+# neutral_blue + faded_blue
+color4 = #458588
+color12 = #076678
+
+# neutral_purple + faded_purple
+color5 = #b16286
+color13 = #8f3f71
+
+# neutral_aqua + faded_aqua
+color6 = #689d6a
+color14 = #427b58
+
+# dark4 + dark1
+color7 = #7c6f64
+color15 = #3c3836
+
 
 #[colors]
 #
@@ -88,52 +133,52 @@ cursor_shape = block
 #color14 = #8fbcbb
 #color15 = #eceff4
 
-[colors]
-# Base16 Monokai
-# Author: Wimer Hazenberg (http://www.monokai.nl)
-
-foreground          = #f8f8f2
-foreground_bold     = #f5f4f1
-cursor              = #f5f4f1
-cursor_foreground   = #272822
-background          = rgba(39, 40, 34)
-
-# 16 color space
-
-# Black, Gray, Silver, White
-color0  = #272822
-color8  = #75715e
-color7  = #f8f8f2
-color15 = #f9f8f5
-
-# Red
-color1  = #f92672
-color9  = #f92672
-
-# Green
-color2  = #a6e22e
-color10 = #a6e22e
-
-# Yellow
-color3  = #f4bf75
-color11 = #f4bf75
-
-# Blue
-color4  = #66d9ef
-color12 = #66d9ef
-
-# Purple
-color5  = #ae81ff
-color13 = #ae81ff
-
-# Teal
-color6  = #a1efe4
-color14 = #a1efe4
-
-# Extra colors
-color16 = #fd971f
-color17 = #cc6633
-color18 = #383830
-color19 = #49483e
-color20 = #a59f85
-color21 = #f5f4f1
+#[colors]
+## Base16 Monokai
+## Author: Wimer Hazenberg (http://www.monokai.nl)
+#
+#foreground          = #f8f8f2
+#foreground_bold     = #f5f4f1
+#cursor              = #f5f4f1
+#cursor_foreground   = #272822
+#background          = rgba(39, 40, 34)
+#
+## 16 color space
+#
+## Black, Gray, Silver, White
+#color0  = #272822
+#color8  = #75715e
+#color7  = #f8f8f2
+#color15 = #f9f8f5
+#
+## Red
+#color1  = #f92672
+#color9  = #f92672
+#
+## Green
+#color2  = #a6e22e
+#color10 = #a6e22e
+#
+## Yellow
+#color3  = #f4bf75
+#color11 = #f4bf75
+#
+## Blue
+#color4  = #66d9ef
+#color12 = #66d9ef
+#
+## Purple
+#color5  = #ae81ff
+#color13 = #ae81ff
+#
+## Teal
+#color6  = #a1efe4
+#color14 = #a1efe4
+#
+## Extra colors
+#color16 = #fd971f
+#color17 = #cc6633
+#color18 = #383830
+#color19 = #49483e
+#color20 = #a59f85
+#color21 = #f5f4f1

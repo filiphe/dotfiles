@@ -1,24 +1,37 @@
-#!/usr/bin/bash
+#!/bin/sh
 
-xset +fp /usr/share/fonts/local
-xset +fp "$HOME"/.fonts
-xset fp rehash
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
 
-xrdb -merge "$HOME/.Xresources"
-xsetroot -cursor_name left_ptr
-setroot --restore
-dunst &
+# merge in defaults and keymaps
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
+# start some nice programs
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
 unclutter &
-xautolock -time 5 -locker "i3lock -fo" &
-#redshift &
-#compton -b &
-
-export TERMCMD="termite"
-
-eval "$(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
-export SSH_AUTH_SOCK
-
-exec herbstluftwm --locked
-#export XDG_CURRENT_DESKTOP=Budgie:GNOME
-#exec budgie-desktop
-
+dunst &
+xautolock -time 20 -locker "i3lock -i $(cat ${HOME}/.config/setroot/.setroot-restore | cut -d ' ' -f 2 | tr -d \')" -detectsleep &
+redshift &
+exec herbstluftwm

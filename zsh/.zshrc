@@ -22,7 +22,7 @@ if ! zgen saved; then
   zgen load mafredi/zsh-async
 
 #  zgen load sobolevn/sobole-zsh-theme sobole
-  zgen load denysdovhan/spaceship-prompt spaceship
+#  zgen load denysdovhan/spaceship-prompt spaceship
 
   # generate the init script from plugins above
   zgen save
@@ -57,6 +57,6 @@ unsetopt cdablevars
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source <(kubectl completion zsh)
-source <(minikube completion zsh)
-source /home/yur763/vcs/bitbucket/DC-PLATFORM/dev-tools/minikube-functions
+source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+
+eval $(starship init zsh)

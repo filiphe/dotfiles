@@ -114,7 +114,7 @@ hc keybind $Mod-d spawn rofi -show run -display-run '$ '
 hc keybind $Mod-q spawn qutebrowser
 hc keybind $Mod-t spawn bash -c ~/.local/bin/show_date.sh
 hc keybind $Mod-b spawn bash -c ~/.local/bin/show_song.sh
-hc keybind Ctrl-Mod1-l spawn i3lock -fo
+hc keybind Ctrl-Mod1-l spawn i3lock -i "$(cat ${HOME}/.config/setroot/.setroot-restore | cut -d ' ' -f 2 | tr -d \')"
 #hc keybind XF86AudioMute spawn amixer -q set PCM toggle
 #hc keybind XF86AudioLowerVolume spawn amixer -q set PCM 5%-
 #hc keybind XF86AudioRaiseVolume spawn amixer -q set PCM 5%+

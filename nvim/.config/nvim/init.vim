@@ -15,6 +15,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'chriskempson/base16-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jnurmine/Zenburn'
+Plug 'morhetz/gruvbox'
 
 " UI
 Plug 'scrooloose/nerdtree'
@@ -51,12 +52,15 @@ Plug 'zchee/deoplete-jedi', { 'for': 'python'}
 
 " Go plugins
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
 
 " TypeScript plugins
 "Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'gko/vim-coloresque'
+
+" Dart plugins
+Plug 'dart-lang/dart-vim-plugin'
 
 call plug#end()
 
@@ -94,7 +98,7 @@ let g:nord_comment_brightness = 15
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 set background=dark
-colorscheme base16-monokai
+colorscheme gruvbox
 
 syntax on
 set lazyredraw

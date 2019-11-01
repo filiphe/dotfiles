@@ -1,1 +1,1 @@
-/home/yur763/.local/share/nvim/plugged/gocode/nvim/ftplugin/go/gocomplete.vim
+/home/filip/.local/share/nvim/plugged/gocode/nvim/ftplugin/go/gocomplete.vim
