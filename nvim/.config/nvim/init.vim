@@ -16,6 +16,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jnurmine/Zenburn'
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 
 " UI
 Plug 'scrooloose/nerdtree'
@@ -98,7 +99,7 @@ let g:nord_comment_brightness = 15
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
 
 syntax on
 set lazyredraw
