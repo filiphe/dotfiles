@@ -59,4 +59,6 @@ unsetopt cdablevars
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
 
+source "$HOME/.proxy.zsh"
+
 eval $(starship init zsh)
