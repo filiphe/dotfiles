@@ -2,4 +2,4 @@
 rofi.combi-modi: run,window
 rofi.font: Monospace 14
 rofi.modi: run,window,ssh
-rofi.theme: /usr/share/rofi/themes/gruvbox-dark.rasi
+rofi.theme: /usr/share/rofi/themes/Pop-Dark.rasi
