@@ -42,6 +42,10 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neosnippet.vim'
@@ -250,6 +254,11 @@ let g:tagbar_type_go = {
 au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>d :sp <CR>:exe "GoDoc" <CR>
 au Filetype go nnoremap <leader>r :GoRun %<CR>
+
+" Java settings
+let g:LanguageClient_serverCommands = {
+    \ 'java': ['/usr/bin/jdtls', '-data', getcwd()],
+    \ }
 
 " YAML settings
 au FileType yaml setlocal ts=2
