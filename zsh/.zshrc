@@ -28,8 +28,6 @@ if ! zgen saved; then
   zgen save
 fi
 
-eval $(dircolors ~/.dircolors.nord)
-
 
 # aliases
 alias pacaur='yay'
@@ -60,5 +58,7 @@ unsetopt cdablevars
 source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
 
 source "$HOME/.proxy.zsh"
+
+source <(stern --completion=zsh)
 
 eval $(starship init zsh)
