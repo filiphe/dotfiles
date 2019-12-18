@@ -63,20 +63,7 @@ hc keybind $Mod-Control-Down    resize down +$resizestep
 hc keybind $Mod-Control-Up      resize up +$resizestep
 hc keybind $Mod-Control-Right   resize right +$resizestep
 
-# tags
-#tag_names=( {1..4} )
-tag_names=( "one" "two" "three" "four" )
-tag_keys=( {1..4} )
 
-hc rename default "${tag_names[0]}" || true
-for i in "${!tag_names[@]}" ; do
-    hc add "${tag_names[$i]}"
-    key="${tag_keys[$i]}"
-    if ! [ -z "$key" ] ; then
-        hc keybind "$Mod-$key" use_index "$i"
-        hc keybind "$Mod-Shift-$key" move_index "$i"
-    fi
-done
 
 # cycle through tags
 hc keybind $Mod-period use_index +1 --skip-visible
@@ -203,11 +190,28 @@ herbstclient detect_monitors
 
 # load layout depending on screen size
 if [[ $(xrandr | grep '\*' | awk '{print $1}') == "3840x2160" ]]; then
+  # tags
+  tag_names=( "one" "two" "three" "four" )
+  tag_keys=( {1..4} )
   herbstclient load "one" "$(cat ~/.config/herbstluftwm/layout1)"
   herbstclient load "two" "$(cat ~/.config/herbstluftwm/layout1)"
   herbstclient load "three" "$(cat ~/.config/herbstluftwm/layout1)"
   herbstclient load "four" "$(cat ~/.config/herbstluftwm/layout1)"
 fi
 if [[ $(xrandr | grep '\*' | awk '{print $1}') == "1920x1080" ]]; then
-  herbstclient load "one" "$(cat ~/.config/herbstluftwm/layout2)"
+  # tags
+  tag_names=( "term" "web" "code" "music" "chat" "misc" )
+  tag_keys=( {1..4} )
+  herbstclient pad 0 35 "" ""
+  polybar example &
 fi
+
+hc rename default "${tag_names[0]}" || true
+for i in "${!tag_names[@]}" ; do
+    hc add "${tag_names[$i]}"
+    key="${tag_keys[$i]}"
+    if ! [ -z "$key" ] ; then
+        hc keybind "$Mod-$key" use_index "$i"
+        hc keybind "$Mod-Shift-$key" move_index "$i"
+    fi
+done
