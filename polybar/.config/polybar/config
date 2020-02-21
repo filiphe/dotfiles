@@ -18,14 +18,14 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #2e3440
+background-alt = #d8dee9
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+foreground = #d8dee9
+foreground-alt = #2e3440
+primary = #ebcb8b
+secondary = #81a1c1
+alert = #bf616a
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -123,9 +123,9 @@ label-monitor = %name%
 ;   %index%
 ; Default: %icon%  %name%
 label-active = %icon% %name%
-label-active-foreground = #ffffff
-label-active-background = #3f3f3f
-label-active-underline = #fba922
+label-active-foreground = #d8dee9
+label-active-background = #4c566a
+label-active-underline = #e5e9f0
 label-active-padding = 1
 
 ; Available tokens:
@@ -134,7 +134,7 @@ label-active-padding = 1
 ;   %index%
 ; Default: %icon%  %name%
 label-occupied = %icon% %name%
-label-occupied-underline = #555555
+label-occupied-underline = #d8dee9
 label-occupied-padding = 1
 
 ; Available tokens:
@@ -145,7 +145,7 @@ label-occupied-padding = 1
 label-urgent = %icon% %name%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
-label-urgent-underline = #9b0a20
+label-urgent-underline = #bfb616a
 label-urgent-padding = 1
 
 ; Available tokens:
@@ -154,7 +154,7 @@ label-urgent-padding = 1
 ;   %index%
 ; Default: %icon%  %name%
 label-empty = %icon% %name%
-label-empty-foreground = #55
+label-empty-foreground = #d8dee9
 label-empty-padding = 1
 
 [module/xwindow]

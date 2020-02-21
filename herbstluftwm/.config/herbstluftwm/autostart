@@ -201,7 +201,7 @@ fi
 if [[ $(xrandr | grep '\*' | awk '{print $1}') == "1920x1080" ]]; then
   # tags
   tag_names=( "term" "web" "code" "music" "chat" "misc" )
-  tag_keys=( {1..4} )
+  tag_keys=( {1..6} )
   herbstclient pad 0 35 "" ""
   polybar example &
 fi
