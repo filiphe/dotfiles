@@ -99,11 +99,11 @@ let g:nord_italic=1
 let g:nord_italic_comments = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
-let g:nord_comment_brightness = 15
+"let g:nord_comment_brightness = 15
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 set background=dark
-colorscheme onedark
+colorscheme nord
 
 syntax on
 set lazyredraw
@@ -322,6 +322,10 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
+let g:airline_left_sep = ' '
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ' '
+let g:airline_right_alt_sep = '|'
 
 " Prose mode
 function! ProseMode()
