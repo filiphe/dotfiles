@@ -37,10 +37,6 @@ alias grep='grep --color=auto'
 alias rm='rm -i'
 test -f /usr/bin/nvim && alias vim='nvim'
 
-upgrade () {
-    yay -Syu
-}
-
 peek() { tmux split-window -p 33 less $@ || exit; }
 
 
