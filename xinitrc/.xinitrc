@@ -33,5 +33,5 @@ fi
 unclutter &
 dunst &
 xautolock -time 20 -locker "i3lock -i $(cat ${HOME}/.config/setroot/.setroot-restore | cut -d ' ' -f 2 | tr -d \')" -detectsleep &
-redshift &
+#redshift &
 exec herbstluftwm
