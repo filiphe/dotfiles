@@ -97,7 +97,7 @@ hc keybind $Mod-Shift-i jumpto urgent
 
 
 # own keybinds
-hc keybind $Mod-d spawn rofi -show run -theme nord -display-run '$ '
+hc keybind $Mod-d spawn rofi -show combi
 hc keybind $Mod-q spawn qutebrowser
 hc keybind $Mod-t spawn bash -c ~/.local/bin/show_date.sh
 hc keybind $Mod-b spawn bash -c ~/.local/bin/show_song.sh
