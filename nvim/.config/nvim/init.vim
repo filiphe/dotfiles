@@ -170,6 +170,9 @@ nmap <F8> :TagbarToggle<CR>
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+map <leader>b :Buffers<CR>
+map <leader>f :Files<CR>
+
 " Copy
 vnoremap <leader>y "+y
 nnoremap <leader>Y "+yg
