@@ -215,3 +215,5 @@ for i in "${!tag_names[@]}" ; do
         hc keybind "$Mod-Shift-$key" move_index "$i"
     fi
 done
+
+hc keybind "$Mod-Shift-0" move "scratchpad"
