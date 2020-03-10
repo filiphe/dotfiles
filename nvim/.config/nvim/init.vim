@@ -40,7 +40,6 @@ Plug 'jiangmiao/auto-pairs'
 
 " Completion
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -50,14 +49,12 @@ Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'w0rp/ale'
 Plug 'wellle/tmux-complete.vim'
 Plug 'zchee/deoplete-go', { 'for': 'go' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python'}
 
 " Go plugins
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'fatih/vim-go', {  'for': 'go', 'tag': 'v1.22', 'do': ':GoUpdateBinaries' }
 
 " TypeScript plugins
 "Plug 'leafgarland/typescript-vim'
@@ -84,24 +81,10 @@ set smartcase
 " displaying text
 set termguicolors
 
-let gruvbox_bold = 1
-let g:gruvbox_italic = 1
-let g:gruvbox_italicize_comments=1
-let g:gruvbox_invert_selection = 1
-let g:gruvbox_termcolors = 256
-let g:gruvbox_contrast_dark="hard"
-let g:gruvbox_contrast_light="medium"
-let g:onedark_terminal_italics=1
-let base16colorspace=256
-let g:solarized_termcolors=16
-let g:jellybeans_use_term_italics=1
 let g:nord_italic=1
 let g:nord_italic_comments = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
-"let g:nord_comment_brightness = 15
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
 set background=dark
 colorscheme nord
 
@@ -223,9 +206,9 @@ let g:go_fold_enable = ['import']
 let g:go_auto_type_info = 1
 let g:go_fmt_command = "goimports"
 let g:go_auto_sameids = 1
-let g:go_gocode_propose_source=1
-
-
+"let g:go_gocode_propose_source=1
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
@@ -261,7 +244,12 @@ au Filetype go nnoremap <leader>r :GoRun %<CR>
 " Java settings
 let g:LanguageClient_serverCommands = {
     \ 'java': ['/usr/bin/jdtls', '-data', getcwd()],
+    \ 'go': ['gopls'],
+    \ 'rust': ['rls'],
+    \ 'python': ['pyls'],
     \ }
+" Run gofmt on save
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 " YAML settings
 au FileType yaml setlocal ts=2
@@ -292,16 +280,7 @@ let vim_markdown_preview_toggle = 1 " Display images on toggle preview C-p
 let vim_markdown_preview_browser = 'chromium'
 let vim_markdown_preview_use_xdg_open = 1
 
-" ale
-let g:ale_sign_column_always = 1
-let g:ale_python_flake8_options = "--max-line-length=120"
-let g:ale_fix_on_save = 0
-let g:ale_set_loclist = 1
-let g:ale_set_quickfix = 0
-
 " rust settings
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
@@ -322,7 +301,6 @@ let g:jsx_ext_required = 0
 
 " airline
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_left_sep = ' '
