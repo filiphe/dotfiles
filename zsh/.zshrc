@@ -56,5 +56,6 @@ unsetopt cdablevars
 source "$HOME/.proxy.zsh"
 
 source <(stern --completion=zsh)
+source <(helm2 completion zsh)
 
 eval $(starship init zsh)
