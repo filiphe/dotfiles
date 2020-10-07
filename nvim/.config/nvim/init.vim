@@ -8,15 +8,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Plug 'filiphe/nvim-example-python-plugin'
 
 " Colors
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'arcticicestudio/nord-vim'
-Plug 'mhartington/oceanic-next'
-Plug 'chriskempson/base16-vim'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'jnurmine/Zenburn'
 Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
+Plug 'jacoborus/tender.vim'
 
 " UI
 Plug 'scrooloose/nerdtree'
@@ -85,8 +80,9 @@ let g:nord_italic=1
 let g:nord_italic_comments = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
+let g:nord_underline = 1
 set background=dark
-colorscheme nord
+colorscheme tender
 
 syntax on
 set lazyredraw
