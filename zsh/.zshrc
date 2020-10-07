@@ -9,6 +9,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/docker
   zgen oh-my-zsh plugins/encode64
   zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/kubectl
   zgen oh-my-zsh plugins/mvn
   zgen oh-my-zsh plugins/sprunge
   zgen oh-my-zsh plugins/ssh-agent
