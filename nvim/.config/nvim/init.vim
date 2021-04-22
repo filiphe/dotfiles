@@ -12,6 +12,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'jacoborus/tender.vim'
+Plug 'dracula/vim'
 
 " UI
 Plug 'scrooloose/nerdtree'
@@ -35,18 +36,19 @@ Plug 'jiangmiao/auto-pairs'
 
 " Completion
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"    \ }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'wellle/tmux-complete.vim'
-Plug 'zchee/deoplete-go', { 'for': 'go' }
-Plug 'zchee/deoplete-jedi', { 'for': 'python'}
+"Plug 'zchee/deoplete-go', { 'for': 'go' }
+"Plug 'zchee/deoplete-jedi', { 'for': 'python'}
 
 " Go plugins
 Plug 'fatih/vim-go', {  'for': 'go', 'tag': 'v1.22', 'do': ':GoUpdateBinaries' }
@@ -59,6 +61,9 @@ Plug 'gko/vim-coloresque'
 " Dart plugins
 Plug 'dart-lang/dart-vim-plugin'
 
+Plug 'udalov/kotlin-vim'
+
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
@@ -82,7 +87,7 @@ let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_underline = 1
 set background=dark
-colorscheme tender
+colorscheme dracula
 
 syntax on
 set lazyredraw
@@ -238,12 +243,13 @@ au Filetype go nnoremap <leader>d :sp <CR>:exe "GoDoc" <CR>
 au Filetype go nnoremap <leader>r :GoRun %<CR>
 
 " Java settings
-let g:LanguageClient_serverCommands = {
-    \ 'java': ['/usr/bin/jdtls', '-data', getcwd()],
-    \ 'go': ['gopls'],
-    \ 'rust': ['rls'],
-    \ 'python': ['pyls'],
-    \ }
+" let g:LanguageClient_serverCommands = {
+"     \ 'java': ['/usr/bin/jdtls', '-data', getcwd()],
+"     \ 'go': ['gopls'],
+"     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable' ,'rls'],
+"     \ 'python': ['pyls'],
+"     \ 'kotlin': ['kotlin-language-server'],
+"     \ }
 " Run gofmt on save
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
