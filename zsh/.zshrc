@@ -32,11 +32,13 @@ fi
 
 # aliases
 alias pacaur='yay'
-alias ls='ls -hF --si --color=auto --group-directories-first'
+#alias ls='ls -hF --si --color=auto --group-directories-first'
+alias ls='exa --group-directories-first --icons'
 alias tree='tree -C'
 alias grep='grep --color=auto'
 alias rm='rm -i'
 test -f /usr/bin/nvim && alias vim='nvim'
+alias cal='cal -m'
 
 peek() { tmux split-window -p 33 less $@ || exit; }
 
@@ -55,8 +57,5 @@ unsetopt cdablevars
 #source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"
 
 source "$HOME/.proxy.zsh"
-
-source <(stern --completion=zsh)
-source <(helm2 completion zsh)
 
 eval $(starship init zsh)

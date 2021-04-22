@@ -7,6 +7,6 @@ export GOPATH=$HOME/.go
 export EDITOR='nvim'
 export SUDO_EDITOR=$EDITOR
 export QUOTING_STYLE=literal ls
-export PAGER="nvim -R -c 'silent! %sm/\\e.\\{-\\}m//g' -"
-export MANPAGER="bash -c \"nvim -c \\\"set ft=man\\\" </dev/tty <(col -bx)\""
+#export PAGER="nvim -R -c 'silent! %sm/\\e.\\{-\\}m//g' -"
+#export MANPAGER="bash -c \"nvim -c \\\"set ft=man\\\" </dev/tty <(col -bx)\""
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
