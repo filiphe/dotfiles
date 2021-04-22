@@ -33,6 +33,8 @@ hc keybind $Mod-j     focus down
 hc keybind $Mod-k     focus up
 hc keybind $Mod-l     focus right
 
+hc keybind $Mod-m   spawn ~/.local/bin/windowmenu.sh
+
 # moving clients
 hc keybind $Mod-Shift-Left  shift left
 hc keybind $Mod-Shift-Down  shift down
@@ -73,6 +75,7 @@ hc keybind $Mod-comma  use_index -1 --skip-visible
 hc keybind $Mod-r remove
 hc keybind $Mod-s floating toggle
 hc keybind $Mod-f fullscreen toggle
+hc keybind $Mod-Shift-f set_attr clients.focus.floating toggle
 hc keybind $Mod-p pseudotile toggle
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
@@ -98,24 +101,8 @@ hc keybind $Mod-Shift-i jumpto urgent
 
 # own keybinds
 hc keybind $Mod-d spawn rofi -show combi
-hc keybind $Mod-q spawn qutebrowser
-hc keybind $Mod-t spawn bash -c ~/.local/bin/show_date.sh
-hc keybind $Mod-b spawn bash -c ~/.local/bin/show_song.sh
 hc keybind Ctrl-Mod1-l spawn i3lock -i "$(cat ${HOME}/.config/setroot/.setroot-restore | cut -d ' ' -f 2 | tr -d \')"
-#hc keybind XF86AudioMute spawn amixer -q set PCM toggle
-#hc keybind XF86AudioLowerVolume spawn amixer -q set PCM 5%-
-#hc keybind XF86AudioRaiseVolume spawn amixer -q set PCM 5%+
-hc keybind XF86AudioMute spawn ~/.local/bin/volctl toggle
-hc keybind XF86AudioLowerVolume spawn ~/.local/bin/volctl down
-hc keybind XF86AudioRaiseVolume spawn ~/.local/bin/volctl up
-hc keybind XF86AudioNext spawn playerctl next
-hc keybind XF86AudioPrev spawn playerctl previous
-hc keybind XF86AudioPlay spawn playerctl play-pause
-hc keybind $Mod-Left  spawn playerctl previous
-hc keybind $Mod-Down  spawn playerctl play-pause
-hc keybind $Mod-Right spawn playerctl next
-hc keybind XF86MonBrightnessDown spawn light -U 1
-hc keybind XF86MonBrightnessUp spawn light -A 1
+hc keybind $Mod-Mod1-m spawn bash -c ~/.local/bin/play_xclip.sh
 
 hc keybind $Mod-F1 spawn ~/.local/bin/toggle-keymap.sh
 
@@ -159,6 +146,7 @@ hc set mouse_recenter_gap 0
 hc unrule -F
 #hc rule class=XTerm tag=3 # move all xterms to tag 3
 hc rule focus=on # normally focus new clients
+hc rule floatplacement=smart
 #hc rule focus=off # normally do not focus new clients
 # give focus to most common terminals
 #hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
