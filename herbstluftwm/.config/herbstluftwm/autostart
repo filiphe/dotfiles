@@ -106,6 +106,12 @@ hc keybind $Mod-Mod1-m spawn bash -c ~/.local/bin/play_xclip.sh
 
 hc keybind $Mod-F1 spawn ~/.local/bin/toggle-keymap.sh
 
+hc keybind XF86AudioMute spawn pactl set-sink-mute @DEFAULT_SINK@ toggle
+hc keybind XF86AudioLowerVolume spawn pactl set-sink-volume @DEFAULT_SINK@ -1000
+hc keybind XF86AudioRaiseVolume spawn pactl set-sink-volume @DEFAULT_SINK@ +1000
+hc keybind XF86MonBrightnessUp spawn xbacklight -inc 10
+hc keybind XF86MonBrightnessDown spawn xbacklight -dec 10
+
 # own settings
 hc set focus_follows_mouse 0
 
