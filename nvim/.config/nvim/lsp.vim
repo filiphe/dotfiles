@@ -35,6 +35,15 @@ end
 nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
 nvim_lsp.gopls.setup({ on_attach=on_attach })
 nvim_lsp.pyls.setup({ on_attach=on_attach })
+nvim_lsp.yamlls.setup({ 
+    yaml = {
+        schemas = {
+            ['https://json.schemastore.org/github-workflow.json'] = '/.github/workflows/*.yml',
+            ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = '/docker-compose.*'
+            }
+    },
+    on_attach = on_attach,
+    })
 EOF
 
 "autocmd FileType go lua require'lspconfig'.gopls.setup{on_attach=on_attach}
