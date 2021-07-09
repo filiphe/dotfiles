@@ -23,10 +23,6 @@ set sidescrolloff=5
 set cursorcolumn
 set cursorline
 set colorcolumn=95
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 
 set noerrorbells
 set novisualbell

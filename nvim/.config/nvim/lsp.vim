@@ -1,9 +1,9 @@
 lua << EOF
 require'lspsaga'.init_lsp_saga {
-  error_sign = '',
-  warn_sign = '',
-  hint_sign = '',
-  infor_sign = '',
+  error_sign = 'ﮊ',
+  warn_sign = '',
+  hint_sign = '',
+  infor_sign = '',
   border_style = "round",
 }
 
@@ -13,7 +13,7 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
   },
   indent = {
-    enable = true,
+    enable = false,
     disable = {},
   },
   ensure_installed = "maintained",
@@ -29,12 +29,31 @@ require('lualine').setup {
 
 local nvim_lsp = require'lspconfig'
 
-local on_attach = function(client)
-  require'completion'.on_attach(client)
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
+
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  buf_set_keymap('n', '<space>gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', '<space>gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+
+
 end
-nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
-nvim_lsp.gopls.setup({ on_attach=on_attach })
-nvim_lsp.pyls.setup({ on_attach=on_attach })
+
+nvim_lsp.rust_analyzer.setup({ on_attach=on_attach, capabilities=capabilities })
+nvim_lsp.gopls.setup({ on_attach=on_attach, capabilities=capabilities })
+nvim_lsp.pyls.setup({ on_attach=on_attach, capabilities=capabilities })
 nvim_lsp.yamlls.setup({ 
     yaml = {
         schemas = {
@@ -43,12 +62,9 @@ nvim_lsp.yamlls.setup({
             }
     },
     on_attach = on_attach,
+    capabilities=capabilities,
     })
 EOF
-
-"autocmd FileType go lua require'lspconfig'.gopls.setup{on_attach=on_attach}
-"autocmd FileType python lua require'lspconfig'.pyls.setup{on_attach=on_attach}
-
 
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
@@ -59,7 +75,7 @@ set shortmess+=c
 let g:completion_chain_complete_list = {
 			\'default' : {
 			\	'default' : [
-			\		{'complete_items' : ['lsp', 'snippet']},
+			\		{'complete_items' : ['lsp', 'tmux', 'vsnip']},
 			\		{'mode' : 'file'}
 			\	],
 			\	'comment' : [],
