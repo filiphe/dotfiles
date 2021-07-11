@@ -10,7 +10,6 @@ vim.cmd('colorscheme dracula')
 o.background = 'dark'
 o.termguicolors = true
 o.list = true
-o.listchars = 'tab:▸\\,extends:›,precedes:‹,nbsp:·,trail:·'
 wo.number = true
 wo.relativenumber = true
 o.showcmd = true -- show command as it's being typed
