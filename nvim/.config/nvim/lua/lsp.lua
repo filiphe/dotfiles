@@ -1,4 +1,5 @@
-lua << EOF
+-- lsp.lua
+
 require'lspsaga'.init_lsp_saga {
   error_sign = 'ﮊ',
   warn_sign = '',
@@ -19,15 +20,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
 }
 
-require('lualine').setup {
-  options = {
-    theme = 'dracula',
-    section_separators = {'', ''},
-    component_separators = {'', ''}
-  },
-}
-
-local nvim_lsp = require'lspconfig'
+local nvim_lsp = require('lspconfig')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -64,21 +57,42 @@ nvim_lsp.yamlls.setup({
     on_attach = on_attach,
     capabilities=capabilities,
     })
-EOF
 
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
+vim.g.completion_chain_complete_list = {
+    default = {
+        default = {
+            complete_items = {'lsp','tmux','vsnip'},
+            mode = { 'file' },
+        },
+        comment = {},
+        string = {},
+    }
+}
 
-" Avoid showing message extra message when using completion
-set shortmess+=c
-
-let g:completion_chain_complete_list = {
-			\'default' : {
-			\	'default' : [
-			\		{'complete_items' : ['lsp', 'tmux', 'vsnip']},
-			\		{'mode' : 'file'}
-			\	],
-			\	'comment' : [],
-			\	'string' : []
-			\	},
-			\}
+vim.g.tagbar_type_go = {
+    ctagstype = 'go',
+    kinds = {
+        'p:package',
+        'i:imports:1',
+        'c:constants',
+        'v:variables',
+        't:types',
+        'n:interfaces',
+        'w:fields',
+        'e:embedded',
+        'm:methods',
+        'r:constructor',
+        'f:functions',
+    },
+    sro = '.',
+    kind2scope = {
+        t = 'ctype',
+        n = 'ntype',
+    },
+    scope2kind = {
+        ctype = 't',
+        ntype = 'n',
+    },
+    ctagsbin = 'gotags',
+    ctagsargs = '-sort -silent',
+}
