@@ -27,26 +27,26 @@ map('n', '<leader>fb', '<cmd>Telescope buffesr<CR>', options)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', options)
 
 -- Compe
-map('i', '<expr><C-Space>', 'compe#complete()', options)
-map('i', '<expr><CR>', "compe#confirm('<CR>')", options)
-map('i', '<expr><C-e>', "compe#close('<C-e>')", options)
-map('i', '<expr><C-f>', "compe#scroll({ 'delta': +4 })", options)
-map('i', '<expr><C-d>', "compe#scroll({ 'delta': -4 })", options)
+map('i', '<C-Space>', 'compe#complete()', { noremap = true, expr = true})
+map('i', '<CR>', "compe#confirm('<CR>')", { noremap = true, expr = true})
+map('i', '<C-e>', "compe#close('<C-e>')", { noremap = true, expr = true})
+map('i', '<C-f>', "compe#scroll({ 'delta': +4 })", { noremap = true, expr = true})
+map('i', '<C-d>', "compe#scroll({ 'delta': -4 })", { noremap = true, expr = true})
 
 
 -- VSnip
 -- Expand
-map('i', '<expr><C-j>', "vsnip#expandable()?'<Plug>(vsnip-expand)':'<C-j>'", { noremap = false})
-map('s', '<expr><C-j>', "vsnip#expandable()?'<Plug>(vsnip-expand)':'<C-j>'", { noremap = false})
+map('i', '<C-k>', "vsnip#expandable()?'<Plug>(vsnip-expand)':'<C-k>'", { expr = true, silent = true})
+map('s', '<C-k>', "vsnip#expandable()?'<Plug>(vsnip-expand)':'<C-k>'", { expr = true, silent = true})
 -- Expand or jump
-map('i', '<expr><C-l>', "vsnip#available(1)?'<Plug>(vsnip-expand-or-jump)':'<C-l>'", { noremap = false})
-map('s', '<expr><C-l>', "vsnip#available(1)?'<Plug>(vsnip-expand-or-jump)':'<C-l>'", { noremap = false})
+map('i', '<C-l>', "vsnip#available(1)?'<Plug>(vsnip-expand-or-jump)':'<C-l>'", {expr = true})
+map('s', '<C-l>', "vsnip#available(1)?'<Plug>(vsnip-expand-or-jump)':'<C-l>'", {expr = true})
 
 -- Jump forward or backward
-map('i', '<expr><Tab>', "vsnip#jumpable(1)?'<Plug>(vsnip-jump-next)':'<Tab>'", { noremap = false})
-map('s', '<expr><Tab>', "vsnip#jumpable(1)?'<Plug>(vsnip-jump-next)':'<Tab>'", { noremap = false})
-map('i', '<expr><S-Tab>', "vsnip#jumpable(-1)?'<Plug>(vsnip-jump-prev)':'<S-Tab>'", { noremap = false})
-map('s', '<expr><S-Tab>', "vsnip#jumpable(-1)?'<Plug>(vsnip-jump-prev)':'<S-Tab>'", { noremap = false})
+map('i', '<Tab>', "vsnip#jumpable(1)?'<Plug>(vsnip-jump-next)':'<Tab>'", { expr = true})
+map('s', '<Tab>', "vsnip#jumpable(1)?'<Plug>(vsnip-jump-next)':'<Tab>'", { expr = true})
+map('i', '<S-Tab>', "vsnip#jumpable(-1)?'<Plug>(vsnip-jump-prev)':'<S-Tab>'", { expr = true})
+map('s', '<S-Tab>', "vsnip#jumpable(-1)?'<Plug>(vsnip-jump-prev)':'<S-Tab>'", { expr = true})
 
 
 
