@@ -7,9 +7,12 @@ map('n', '<Space>', '', {})
 vim.g.mapleader = ' ' -- 'vim.g' sets global variables
 vim.g.maplocalleader = ' '
 
+-- commaround (commenting plugin)
+vim.g.toggle_commaround = 'gcc'
+
 options = { noremap = true }
 -- nerdtree
-map('n', '<C-n>', ':NERDTreeToggle<CR>', options)
+map('n', '<C-n>', ':NvimTreeToggle<CR>', options)
 
 --LSPSaga
 map('n', 'gh', ':Lspsaga lsp_finder<CR>', options)

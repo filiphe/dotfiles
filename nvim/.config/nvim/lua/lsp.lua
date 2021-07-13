@@ -18,6 +18,9 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
   },
   ensure_installed = "maintained",
+  autopairs = {
+      enable = true
+  }
 }
 
 local nvim_lsp = require('lspconfig')

@@ -4,15 +4,14 @@ require "paq" {
 	"dracula/vim";
 
 	-- ui
-	"scrooloose/nerdtree";
-	"Xuyuanp/nerdtree-git-plugin";
+    "kyazdani42/nvim-tree.lua";
+    "kyazdani42/nvim-web-devicons";
 	"majutsushi/tagbar";
 	"tpope/vim-fugitive";
-	"airblade/vim-gitgutter";
 	"christoomey/vim-tmux-navigator";
 	"mhinz/vim-grepper";
 	"tpope/vim-surround";
-	"tpope/vim-commentary";
+    "gennaro-tedesco/nvim-commaround";
 
 	-- lsp stuff
 	"neovim/nvim-lspconfig";
@@ -29,15 +28,17 @@ require "paq" {
 
 	-- modeline
 	"hoob3rt/lualine.nvim";
-	"ryanoasis/vim-devicons";
 
 	-- fuzzy searching
 	"nvim-lua/popup.nvim";
 	"nvim-lua/plenary.nvim";
 	"nvim-telescope/telescope.nvim";
-	
-	
 
+    -- git
+    "lewis6991/gitsigns.nvim";
+
+    -- autopairs
+    "windwp/nvim-autopairs";
 }
 
 require('settings') -- lua/settings.lua
