@@ -8,7 +8,7 @@ vim.g.mapleader = ' ' -- 'vim.g' sets global variables
 vim.g.maplocalleader = ' '
 
 -- commaround (commenting plugin)
-vim.g.toggle_commaround = 'gcc'
+map("v", "gc", "<Plug>ToggleCommaround", {} )
 
 options = { noremap = true }
 -- nerdtree
