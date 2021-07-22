@@ -12,6 +12,8 @@ zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-completions", defer:2, use:"src"
 zplug "zsh-users/zsh-autosuggestions"
 
+zplug "marlonrichert/zsh-autocomplete"
+
 zplug "MichaelAquilina/zsh-you-should-use"
 zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
 
