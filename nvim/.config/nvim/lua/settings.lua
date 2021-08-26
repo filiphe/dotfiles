@@ -5,7 +5,7 @@ local bo = vim.bo -- buffer options
 
 -- setting colorscheme doesn't work in lua?
 vim.g.syntax_on = true
-vim.cmd('colorscheme dracula')
+vim.cmd('colorscheme gruvbox')
 
 o.background = 'dark'
 o.termguicolors = true
@@ -50,7 +50,7 @@ wo.wrap = false
 -- modeline setup
 require('lualine').setup {
     options = {
-        theme = 'dracula',
+        theme = 'gruvbox',
         section_separators = {'', ''},
         component_separators = {'', ''}
     },
