@@ -21,6 +21,7 @@ require "paq" {
     "mhinz/vim-grepper";
     "tpope/vim-surround";
     "gennaro-tedesco/nvim-commaround";
+    "folke/which-key.nvim";
 
     -- lsp stuff
     "neovim/nvim-lspconfig";
