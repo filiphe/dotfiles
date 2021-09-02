@@ -2,7 +2,7 @@
 [character]      # The name of the module we are confguring is "character"
 success_symbol = "[➜](bold green)"     # The "symbol" segment is being set to "➜"
 error_symbol = "[✗](bold red)"
-use_symbol_for_status = true
+vicmd_symbol = "[←](bold blue)"
 
 [kubernetes]
 disabled = false
