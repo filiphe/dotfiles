@@ -28,6 +28,7 @@ require "paq" {
     "glepnir/lspsaga.nvim";
     "nvim-lua/lsp_extensions.nvim";
     "hrsh7th/nvim-compe";
+    "romgrk/nvim-treesitter-context";
 
     -- snippets
     "hrsh7th/vim-vsnip";

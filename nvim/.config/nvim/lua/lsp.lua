@@ -23,6 +23,10 @@ require'nvim-treesitter.configs'.setup {
     }
 }
 
+require'treesitter-context'.setup {
+    enable = true
+}
+
 local nvim_lsp = require('lspconfig')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
