@@ -28,13 +28,17 @@ require "paq" {
     {"nvim-treesitter/nvim-treesitter", run=vim.fn['TSUpdate']}; -- update the parsers on update
     "glepnir/lspsaga.nvim";
     "nvim-lua/lsp_extensions.nvim";
-    "hrsh7th/nvim-compe";
+    "hrsh7th/nvim-cmp";
+    "hrsh7th/cmp-nvim-lsp";
+    "saadparwaiz1/cmp_luasnip";
     "romgrk/nvim-treesitter-context";
 
     -- snippets
+    "L3MON4D3/LuaSnip";
     "hrsh7th/vim-vsnip";
     "hrsh7th/vim-vsnip-integ";
     "rafamadriz/friendly-snippets";
+    "hrsh7th/cmp-buffer";
     --"andersevenrud/compe-tmux";
 
     -- modeline
