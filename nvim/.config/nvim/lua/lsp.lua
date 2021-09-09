@@ -55,6 +55,7 @@ end
 nvim_lsp.rust_analyzer.setup({ on_attach=on_attach, capabilities=capabilities })
 nvim_lsp.gopls.setup({ on_attach=on_attach, capabilities=capabilities })
 nvim_lsp.pylsp.setup({ on_attach=on_attach, capabilities=capabilities })
+nvim_lsp.tsserver.setup({ on_attach=on_attach, capabilities=capabilities })
 nvim_lsp.yamlls.setup({ 
     yaml = {
         schemas = {
