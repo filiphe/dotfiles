@@ -22,6 +22,13 @@ require "paq" {
     "tpope/vim-surround";
     "gennaro-tedesco/nvim-commaround";
     "folke/which-key.nvim";
+    
+    -- fuzzy searching
+    "nvim-lua/popup.nvim";
+    "nvim-lua/plenary.nvim";
+    "nvim-telescope/telescope.nvim";
+
+    "crispgm/nvim-go";
 
     -- lsp stuff
     "neovim/nvim-lspconfig";
@@ -41,13 +48,10 @@ require "paq" {
     "hrsh7th/cmp-buffer";
     --"andersevenrud/compe-tmux";
 
+
     -- modeline
     "hoob3rt/lualine.nvim";
 
-    -- fuzzy searching
-    "nvim-lua/popup.nvim";
-    "nvim-lua/plenary.nvim";
-    "nvim-telescope/telescope.nvim";
 
     -- git
     "lewis6991/gitsigns.nvim";
@@ -55,6 +59,11 @@ require "paq" {
     -- autopairs
     "windwp/nvim-autopairs";
 }
+
+--[[ require('go').config.update_tool('quicktype', function(tool)
+    tool.pkg_mgr = 'npm'
+end)
+require('go').setup({}) ]]
 
 require('settings') -- lua/settings.lua
 require('maps') -- lua/maps.lua
