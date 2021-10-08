@@ -65,6 +65,9 @@ require "paq" {
 end)
 require('go').setup({}) ]]
 
+require('nvim-tree').setup {
+}
+
 require('settings') -- lua/settings.lua
 require('maps') -- lua/maps.lua
 require('lsp') -- lua/lsp.lua
