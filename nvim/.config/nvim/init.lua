@@ -22,7 +22,7 @@ require "paq" {
     "tpope/vim-surround";
     "gennaro-tedesco/nvim-commaround";
     "folke/which-key.nvim";
-    
+
     -- fuzzy searching
     "nvim-lua/popup.nvim";
     "nvim-lua/plenary.nvim";
@@ -32,7 +32,7 @@ require "paq" {
 
     -- lsp stuff
     "neovim/nvim-lspconfig";
-    {"nvim-treesitter/nvim-treesitter", run=vim.fn['TSUpdate']}; -- update the parsers on update
+    {"nvim-treesitter/nvim-treesitter", run='TSUpdate'}; -- update the parsers on update
     "glepnir/lspsaga.nvim";
     "nvim-lua/lsp_extensions.nvim";
     "hrsh7th/nvim-cmp";
