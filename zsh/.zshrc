@@ -1,5 +1,7 @@
 source ~/.zplug/init.zsh
 
+zplug "lib/directories", from:oh-my-zsh
+
 zplug "plugins/archlinux", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
@@ -8,7 +10,7 @@ zplug "plugins/mvn", from:oh-my-zsh
 zplug "plugins/ssh-agent", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
 
-zplug "zdharma/fast-syntax-highlighting"
+zplug "zdharma-continuum/fast-syntax-highlighting"
 zplug "zsh-users/zsh-completions", defer:2, use:"src"
 zplug "zsh-users/zsh-autosuggestions"
 
