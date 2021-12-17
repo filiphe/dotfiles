@@ -54,7 +54,6 @@ setopt correct
 setopt hist_ignore_dups
 unsetopt cdablevars
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval $(starship init zsh)
