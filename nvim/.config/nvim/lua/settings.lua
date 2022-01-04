@@ -48,13 +48,17 @@ o.mouse = ''
 wo.wrap = false
 
 -- modeline setup
-require('lualine').setup {
-    options = {
-        theme = 'gruvbox',
-        section_separators = {'', ''},
-        component_separators = {'', ''}
-    },
-}
+--require('lualine').setup {
+--    options = {
+--        theme = 'gruvbox',
+----        section_separators = {'', ''},
+----        component_separators = {'', ''}
+--        section_separators = { left = '', right = ''},
+--        component_separators = { left = '', right = ''},
+--        extensions = { 'nvim-tree', 'quickfix' }
+--        --disabled_filetypes = {"NvimTree"},
+--    },
+--}
 
 local cmp = require'cmp'
 cmp.setup({

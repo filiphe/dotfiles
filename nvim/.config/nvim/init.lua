@@ -69,6 +69,7 @@ require('nvim-tree').setup {
 }
 
 require('settings') -- lua/settings.lua
+require('modeline')
 require('maps') -- lua/maps.lua
 require('lsp') -- lua/lsp.lua
 
