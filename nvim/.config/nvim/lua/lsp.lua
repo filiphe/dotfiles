@@ -67,6 +67,8 @@ nvim_lsp.yamlls.setup({
     capabilities=capabilities,
 })
 
+require'flutter-tools'.setup {}
+
 vim.g.completion_chain_complete_list = {
     default = {
         default = {

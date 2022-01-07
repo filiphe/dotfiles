@@ -37,11 +37,13 @@ require "paq" {
     "nvim-lua/lsp_extensions.nvim";
     "hrsh7th/nvim-cmp";
     "hrsh7th/cmp-nvim-lsp";
-    "saadparwaiz1/cmp_luasnip";
+    --"saadparwaiz1/cmp_luasnip";
     "romgrk/nvim-treesitter-context";
+    "akinsho/flutter-tools.nvim";
+
 
     -- snippets
-    "L3MON4D3/LuaSnip";
+    --"L3MON4D3/LuaSnip";
     "hrsh7th/vim-vsnip";
     "hrsh7th/vim-vsnip-integ";
     "rafamadriz/friendly-snippets";
