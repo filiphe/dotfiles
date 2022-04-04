@@ -11,6 +11,7 @@ require "paq" {
     -- colorscheme
     "dracula/vim";
     "morhetz/gruvbox";
+    "phanviet/vim-monokai-pro";
 
     -- ui
     "kyazdani42/nvim-tree.lua";
@@ -33,13 +34,17 @@ require "paq" {
     -- lsp stuff
     "neovim/nvim-lspconfig";
     {"nvim-treesitter/nvim-treesitter", run='TSUpdate'}; -- update the parsers on update
-    "glepnir/lspsaga.nvim";
+    {"tami5/lspsaga.nvim", branch='nvim6.0'};
     "nvim-lua/lsp_extensions.nvim";
     "hrsh7th/nvim-cmp";
     "hrsh7th/cmp-nvim-lsp";
     --"saadparwaiz1/cmp_luasnip";
     "romgrk/nvim-treesitter-context";
     "akinsho/flutter-tools.nvim";
+
+    "evanleck/vim-svelte";
+    "pangloss/vim-javascript";
+    "othree/html5.vim";
 
 
     -- snippets
@@ -71,7 +76,7 @@ require('nvim-tree').setup {
 }
 
 require('settings') -- lua/settings.lua
-require('modeline')
+--require('modeline')
 require('maps') -- lua/maps.lua
 require('lsp') -- lua/lsp.lua
 
