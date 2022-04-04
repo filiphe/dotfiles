@@ -52,10 +52,14 @@ local on_attach = function(client, bufnr)
 
 end
 
-nvim_lsp.rust_analyzer.setup({ on_attach=on_attach, capabilities=capabilities })
+nvim_lsp.bashls.setup({ on_attach=on_attach, capabilities=capabilities })
+nvim_lsp.jsonls.setup({ on_attach=on_attach, capabilities=capabilities })
 nvim_lsp.gopls.setup({ on_attach=on_attach, capabilities=capabilities })
 nvim_lsp.pylsp.setup({ on_attach=on_attach, capabilities=capabilities })
+nvim_lsp.svelte.setup({ on_attach=on_attach, capabilities=capabilities })
+nvim_lsp.rust_analyzer.setup({ on_attach=on_attach, capabilities=capabilities })
 nvim_lsp.tsserver.setup({ on_attach=on_attach, capabilities=capabilities })
+nvim_lsp.terraformls.setup({ on_attach=on_attach, capabilities=capabilities })
 nvim_lsp.yamlls.setup({ 
     yaml = {
         schemas = {
