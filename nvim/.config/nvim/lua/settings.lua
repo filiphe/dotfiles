@@ -5,7 +5,7 @@ local bo = vim.bo -- buffer options
 
 -- setting colorscheme doesn't work in lua?
 vim.g.syntax_on = true
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme monokai_pro')
 
 o.background = 'dark'
 o.termguicolors = true
@@ -21,7 +21,7 @@ o.lazyredraw = true
 
 vim.opt.completeopt={'menuone','noinsert','noselect'}
 vim.opt.shortmess:append({c = true})
-vim.opt.formatoptions:append({r = true, o = true, n = true})
+vim.opt.formatoptions:append({r = false, o = false, n = true})
 
 -- don't be noisy
 o.errorbells = false
@@ -48,17 +48,14 @@ o.mouse = ''
 wo.wrap = false
 
 -- modeline setup
---require('lualine').setup {
---    options = {
---        theme = 'gruvbox',
-----        section_separators = {'', ''},
-----        component_separators = {'', ''}
---        section_separators = { left = '', right = ''},
---        component_separators = { left = '', right = ''},
---        extensions = { 'nvim-tree', 'quickfix' }
---        --disabled_filetypes = {"NvimTree"},
---    },
---}
+require('lualine').setup {
+    options = {
+        theme = 'modus-vivendi',
+        section_separators = {'', ''},
+        component_separators = {'', ''},
+        extensions = { 'nvim-tree', 'quickfix' }
+    },
+}
 
 local cmp = require'cmp'
 cmp.setup({
