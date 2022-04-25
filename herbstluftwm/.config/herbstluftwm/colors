@@ -21,22 +21,22 @@
 
 # GRUVBOX
 ######################
-BLACK='#1d2021'
-RED='#cc241d'
-GREEN='#98971a'
-YELLOW='#d79921'
-BLUE='#458588'
-MAGENTA='#b16286'
-CYAN='#689d6a'
-LIGHT_GREY='#a89984'
-GREY='#928374'
-BRIGHT_RED='#fb4934'
-BRIGHT_GREEN='#b8bb26'
-BRIGHT_YELLOW='#fabd2f'
-BRIGHT_BLUE='#83a598'
-BRIGHT_MAGENTA='d3869b'
-BRIGHT_CYAN='#8ec07c'
-WHITE='#ebdbb2'
+#BLACK='#1d2021'
+#RED='#cc241d'
+#GREEN='#98971a'
+#YELLOW='#d79921'
+#BLUE='#458588'
+#MAGENTA='#b16286'
+#CYAN='#689d6a'
+#LIGHT_GREY='#a89984'
+#GREY='#928374'
+#BRIGHT_RED='#fb4934'
+#BRIGHT_GREEN='#b8bb26'
+#BRIGHT_YELLOW='#fabd2f'
+#BRIGHT_BLUE='#83a598'
+#BRIGHT_MAGENTA='d3869b'
+#BRIGHT_CYAN='#8ec07c'
+#WHITE='#ebdbb2'
 
 # DRACULA
 ######################
@@ -117,22 +117,22 @@ WHITE='#ebdbb2'
 # MONOKAI
 ######################
 
-#BLACK="#272822" # Base 00 - Black
-#RED="#f92672" # Base 08 - Red
-#GREEN="#a6e22e" # Base 0B - Green
-#YELLOW="#f4bf75" # Base 0A - Yellow
-#BLUE="#66d9ef" # Base 0D - Blue
-#MAGENTA="#ae81ff" # Base 0E - Magenta
-#CYAN="#a1efe4" # Base 0C - Cyan
-#LIGHT_GRAY="#f8f8f2" # Base 05 - White
-#GRAY="#75715e" # Base 03 - Bright Black
-#BRIGHT_RED="$RED" # Base 08 - Red
-#BRIGHT_GREEN="$GREEN" # Base 0B - Green
-#BRIGHT_YELLOW="$YELLOW" # Base 0A - Yellow
-#BRIGHT_BLUE="$BLUE" # Base 0D - Blue
-#BRIGHT_MAGENTA="$MAGENTA" # Base 0E - Magenta
-#BRIGHT_CYAN="$CYAN" # Base 0C - Cyan
-#WHITE="#f9f8f5" # Base 07 - Bright White
+BLACK="#272822" # Base 00 - Black
+RED="#f92672" # Base 08 - Red
+GREEN="#a6e22e" # Base 0B - Green
+YELLOW="#f4bf75" # Base 0A - Yellow
+BLUE="#66d9ef" # Base 0D - Blue
+MAGENTA="#ae81ff" # Base 0E - Magenta
+CYAN="#a1efe4" # Base 0C - Cyan
+LIGHT_GRAY="#f8f8f2" # Base 05 - White
+GRAY="#75715e" # Base 03 - Bright Black
+BRIGHT_RED="$RED" # Base 08 - Red
+BRIGHT_GREEN="$GREEN" # Base 0B - Green
+BRIGHT_YELLOW="$YELLOW" # Base 0A - Yellow
+BRIGHT_BLUE="$BLUE" # Base 0D - Blue
+BRIGHT_MAGENTA="$MAGENTA" # Base 0E - Magenta
+BRIGHT_CYAN="$CYAN" # Base 0C - Cyan
+WHITE="#f9f8f5" # Base 07 - Bright White
 
 # TENDER
 #BLACK='#282828'
