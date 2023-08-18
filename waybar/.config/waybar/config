@@ -1,0 +1,79 @@
+{
+  "layer": "top",
+  "output": "DP-1",
+  "modules-left": ["custom/launcher","cpu","memory","mpris","tray"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["custom/updates","idle_inhibitor","network","pulseaudio","clock"],
+
+  "pulseaudio": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "{icon} {volume}%",
+    "on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+  "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+          "activated": " Active",
+          "deactivated": " Inactive"
+      }
+  },
+
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player-icons": {
+      "default": "▶",
+      "spotify": "",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "ignored-players": ["firefox"] 
+  },
+
+  "network": {
+    "tooltip": false,
+    "interface": "enp5s0",
+    "format-wifi": "  {essid}",
+    "format-ethernet": " {ipaddr}/{cidr}"
+  },
+  "tray":{
+    "icon-size":18,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{: %H:%M   %d/%m/%Y}"
+  },
+  "cpu": {
+    "interval": 15,
+    "format": " {}%",
+    "max-length": 10
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {}%",
+    "max-length": 10
+  },
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "show-special": true
+  },
+  "custom/launcher":{
+    "format": " ",
+    "on-click": "wofi --show drun",
+    "on-click-right": "killall wofi"
+  },
+  "custom/updates":{
+    "format": "{} Update(s)",
+    "exec": "checkupdates | wc -l",
+    "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+    "interval": 15,
+    "on-click": "kitty -e paru -Syu && notify-send 'The system has been updated' "
+  },
+}
